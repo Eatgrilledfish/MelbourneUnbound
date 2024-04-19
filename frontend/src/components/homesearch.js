@@ -20,10 +20,13 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function useEnhancedTrigger(options) {
   const trigger = useScrollTrigger(options);
-  const [lastScroll, setLastScroll] = React.useState(window.pageYOffset);
+  const [lastScroll, setLastScroll] =React.useState(typeof window !== 'undefined' ? window.pageYOffset : 0);
   const [hide, setHide] = React.useState(false);
 
   React.useEffect(() => {
+    if (typeof window === 'undefined') {
+      return; // 如果是服务器环境，直接返回不执行以下代码
+    }
     const handleScroll = () => {
       const currentScroll = window.pageYOffset; // 获取当前滚动位置
       console.log('Current Scroll:', currentScroll); // 调试当前滚动位置
