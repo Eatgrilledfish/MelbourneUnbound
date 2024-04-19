@@ -1,0 +1,10 @@
+/* styles/globals.css */
+
+/* CSS重置，移除默认边距 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'sans-serif';
+    /* 添加其他想要全局应用的样式 */
+  }
+  
