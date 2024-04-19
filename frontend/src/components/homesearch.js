@@ -18,10 +18,47 @@ import { useRouter } from 'next/navigation';
 const pages = ['Recreation', 'Planning', 'Travel', 'Coming soon'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
+function useEnhancedTrigger(options) {
+  const trigger = useScrollTrigger(options);
+  const [lastScroll, setLastScroll] = React.useState(window.pageYOffset);
+  const [hide, setHide] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.pageYOffset; // 获取当前滚动位置
+      console.log('Current Scroll:', currentScroll); // 调试当前滚动位置
+      console.log('Last Scroll:', lastScroll); // 调试上一次滚动位置
+
+      if (lastScroll > currentScroll) {
+        console.log('Scrolling Up - Showing AppBar'); // 向上滚动时的调试输出
+        setHide(false); // 向上滚动时显示AppBar
+      } else if (lastScroll < currentScroll) {
+        console.log('Scrolling Down - Hiding AppBar'); // 向下滚动时的调试输出
+        setHide(true); // 向下滚动时隐藏AppBar
+      }
+      setLastScroll(currentScroll);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    console.log('Scroll Event Listener Added'); // 添加监听时的调试输出
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      console.log('Scroll Event Listener Removed'); // 移除监听时的调试输出
+    };
+  }, [lastScroll]); // 注意这里使用 lastScroll 作为依赖
+
+  console.log('Hide State:', hide); // 调试隐藏状态
+  console.log('Trigger State:', trigger); // 调试useScrollTrigger返回的状态
+  console.log('final result', hide && trigger);
+  return hide && trigger;
+
+}
+
 function HideOnScroll(props) {
   const { children } = props;
-  const trigger = useScrollTrigger({
-    threshold: 100,
+  const shouldHideAppBar = useEnhancedTrigger({
+    threshold: 250,
     disableHysteresis: true,
   });
 
@@ -29,10 +66,10 @@ function HideOnScroll(props) {
     <Slide
       appear={false}
       direction="down"
-      in={!trigger}
+      in={!shouldHideAppBar}
       timeout={{
-        enter: 225, // Duration for enter animation, default is 225ms
-        exit: 195  // Duration for exit animation, default is 195ms
+        enter: 500, // Duration for enter animation, default is 225ms
+        exit: 495  // Duration for exit animation, default is 195ms
       }}
       easing={{
         enter: 'cubic-bezier(0, 1.5, .8, 1)', // Customize the transition easing function for entering
