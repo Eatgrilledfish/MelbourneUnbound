@@ -3,10 +3,10 @@
 
 import '../styles/globals.css';
 import React from 'react';
-import SearchBar from '../components/homesearch'; // 调整路径以符合您的文件结构
-import VideoBackground from '../components/VideoBackground';
-import HomeContent from '../components/HomeContent';
-import Footer from '../components/Footer';
+import SearchBar from '../components/main/homesearch'; // 调整路径以符合您的文件结构
+import VideoBackground from '../components/main/VideoBackground';
+import HomeContent from '../components/main/HomeContent';
+import Footer from '../components/main/Footer';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';  // 用于应用基础 CSS 样式
 
@@ -29,7 +29,7 @@ export default function Home() {
         <SearchBar />
       </Box>
       <VideoBackground />
-      <Box mt={2} mb={10}>
+      <Box mt={10} mb={10}>
       <HomeContent />
       </Box>
       <Box

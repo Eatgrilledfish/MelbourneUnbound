@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Box, Card, Container, CardContent, useTheme, CardActionArea, CardMedia, Typography, Button, useMediaQuery } from '@mui/material';
-import '../styles/globals.css';
+import '../../styles/globals.css';
 
 
 export default function Home() {
@@ -32,7 +32,7 @@ export default function Home() {
 
   return (
     <Box sx={{ flexGrow: 1, padding: 0, overflow: 'auto' }}> {/* 调整了内边距 */}
-      <Grid container spacing={3} justifyContent="center" sx={{ maxWidth: '1000px', margin: 'auto' }}> {/* 调整了间距 */}
+      <Grid container spacing={4} justifyContent="center" sx={{ maxWidth: '1000px', margin: 'auto' }}> {/* 调整了间距 */}
         {features.map((feature, index) => (
           <Grid item xs={12} md={4} key={index} >
             <Card elevation={0} sx={{ display: 'flex', flexDirection: 'column', display: { xs: 'none', md: 'block' } }}> {/* 始终使用列布局 */}

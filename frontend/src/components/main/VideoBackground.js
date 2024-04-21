@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import '../styles/globals.css';
+import '../../styles/globals.css';
 
 export default function VideoBackground() {
   return (
@@ -10,7 +10,7 @@ export default function VideoBackground() {
       <Box
         position="relative"
         width="100%"
-        height="85vh" // Set the height to viewport height to make it full screen
+        height="100vh" // Set the height to viewport height to make it full screen
         m={0}
         p={0}
         display="flex" // Use flexbox for positioning

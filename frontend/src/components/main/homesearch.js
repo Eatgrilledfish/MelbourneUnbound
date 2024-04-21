@@ -14,7 +14,6 @@ import Slide from '@mui/material/Slide';
 import { useRouter } from 'next/navigation'; 
 
 
-
 const pages = ['Recreation', 'Planning', 'Travel', 'Coming soon'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -188,7 +187,6 @@ function ResponsiveAppBar(props) {
                     color: 'rgb(32, 20, 69)',
                     padding: '10px 60px',
                     fontSize: '1rem',
-
                   }}
                 >
                   {page}
