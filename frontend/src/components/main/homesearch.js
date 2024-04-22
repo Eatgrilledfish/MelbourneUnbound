@@ -87,7 +87,7 @@ function ResponsiveAppBar(props) {
   const router = useRouter();  // Use the navigate function
 
   const handleNavigation = (path) => () => {
-    router.push(`/${path}`);  // Use navigate instead of router.push
+      router.push(`/${path}`);  // Otherwise, navigate to the respective page
   };
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -109,7 +109,7 @@ function ResponsiveAppBar(props) {
             <Typography
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: 'none', md: 'flex' },

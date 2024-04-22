@@ -29,10 +29,10 @@ export default function Home() {
         <SearchBar />
       </Box>
       <VideoBackground />
-      <Box mt={10} mb={10}>
+      <Box mt={10} >
       <HomeContent />
       </Box>
-      <Box
+      <Box 
         sx={{
           height: '2px', // or '1px' for a thin line
           bgcolor: '#F6F4EF', // use any color from the theme or a custom color
@@ -40,7 +40,7 @@ export default function Home() {
         }}
       />
       <Box >
-      <Footer />
+      <Footer  />
       </Box>
       {/* 这里是主页的其他内容 */}
     </div>
