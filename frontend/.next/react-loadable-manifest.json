@@ -1,0 +1,11 @@
+{
+  "app/Travel/page.jsx -> ./MapboxMap": {
+    "id": 1040,
+    "files": [
+      "static/css/9e2eab05b2274925.css",
+      "static/chunks/c36f3faa.75babe77991d724a.js",
+      "static/chunks/dc8d3fdd.0c04e79411d3b57d.js",
+      "static/chunks/783.e55352ffd9c6364a.js"
+    ]
+  }
+}
