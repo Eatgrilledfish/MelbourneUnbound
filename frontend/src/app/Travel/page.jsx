@@ -62,7 +62,7 @@ const Home = () => {
           <button onClick={handleSearchClick}>Enter</button>
         </div>
       </div>
-      <div style={{ width: '100%', flexGrow: 1 }}>
+      <div style={{ width: '100%' }}>
         <Map
           style={{ width: '100%', height: '100%' }}
           geoJsonUrl="footpath-steepness.geojson"
