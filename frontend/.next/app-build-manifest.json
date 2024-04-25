@@ -1,38 +1,82 @@
 {
   "pages": {
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_styles_globals_css.css",
-      "static/chunks/app/page.js"
+    "/_not-found/page": [
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/chunks/app/_not-found/page-27690c8b8f3cc876.js"
     ],
     "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/layout.js"
-    ],
-    "/Recreation/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_styles_globals_css.css",
-      "static/chunks/app/Recreation/page.js"
-    ],
-    "/Theatres/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_styles_globals_css.css",
-      "static/chunks/app/Theatres/page.js"
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/chunks/app/layout-921f3900800dd4a7.js"
     ],
     "/Parks/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_styles_globals_css.css",
-      "static/chunks/app/Parks/page.js"
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/css/2a425466d9ca2084.css",
+      "static/chunks/633-bdd8c182edefcd58.js",
+      "static/chunks/70-7ceaf9f5cf22ba93.js",
+      "static/chunks/app/Parks/page-6e3d0992a29c462c.js"
+    ],
+    "/Recreation/page": [
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/css/2a425466d9ca2084.css",
+      "static/chunks/633-bdd8c182edefcd58.js",
+      "static/chunks/70-7ceaf9f5cf22ba93.js",
+      "static/chunks/827-da8645a702ea9c83.js",
+      "static/chunks/app/Recreation/page-df2010af4ccafeb3.js"
+    ],
+    "/Eaterydrink/page": [
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/css/2a425466d9ca2084.css",
+      "static/chunks/633-bdd8c182edefcd58.js",
+      "static/chunks/70-7ceaf9f5cf22ba93.js",
+      "static/chunks/app/Eaterydrink/page-3d4c62fe38731d94.js"
     ],
     "/Travel/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/Travel/page.js"
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/chunks/89374596-c6fffa8b2c9770ae.js",
+      "static/chunks/633-bdd8c182edefcd58.js",
+      "static/chunks/767-fa7c98565d9bbdce.js",
+      "static/chunks/app/Travel/page-41e6e7ac44957f68.js"
+    ],
+    "/Theatres/page": [
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/css/2a425466d9ca2084.css",
+      "static/chunks/633-bdd8c182edefcd58.js",
+      "static/chunks/70-7ceaf9f5cf22ba93.js",
+      "static/chunks/app/Theatres/page-7e02a8d6904f55e2.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/css/2a425466d9ca2084.css",
+      "static/chunks/ca377847-5062d5041b14f89a.js",
+      "static/chunks/633-bdd8c182edefcd58.js",
+      "static/chunks/70-7ceaf9f5cf22ba93.js",
+      "static/chunks/827-da8645a702ea9c83.js",
+      "static/chunks/902-a8b7e59576119aec.js",
+      "static/chunks/app/page-5790a44c203d044f.js"
     ]
   }
 }
