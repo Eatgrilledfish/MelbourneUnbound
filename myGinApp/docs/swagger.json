@@ -5,7 +5,7 @@
     },
     "basePath": "/api/v1",
     "paths": {
-        "/map/helloworld": {
+        "/recreation/easterydrink": {
             "get": {
                 "description": "do ping",
                 "consumes": [

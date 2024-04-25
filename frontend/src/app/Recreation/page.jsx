@@ -12,6 +12,9 @@ import FirstComponent from './FirstComponent';
 import SecondComponent from './SecondComponent';
 
 
+
+
+
 import Box from '@mui/material/Box';
 const theme = createTheme({
     palette: {
@@ -23,6 +26,8 @@ const theme = createTheme({
 });
 
 export default function Home() {
+
+
     const [stage, setStage] = useState(1);
     const resetStage = () => {
         setStage(0);
@@ -47,7 +52,7 @@ export default function Home() {
                     <FirstComponent onProceed={goToNextStage} />
                 </Fade>
                 <Fade in={stage === 2} timeout={1000} unmountOnExit>
-                    <SecondComponent />
+                    <SecondComponent/>
                 </Fade>
                 <Box mt={10} mb={10}>
 

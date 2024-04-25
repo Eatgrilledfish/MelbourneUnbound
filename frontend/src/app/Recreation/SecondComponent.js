@@ -1,10 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {Button, Box, Grid, Card, CardContent, Typography, CardMedia } from '@mui/material';
+import { useRouter } from 'next/navigation';
+
 
 const MotionGrid = motion(Grid); 
 
 const SecondComponent = React.forwardRef((props, ref) => {
+  const router = useRouter();
+
+  const handleNavigate = () => {
+      router.push('/Eaterydrink');
+  };
+
   const cardVariantsLeft = {
     hidden: {
       opacity: 0,
@@ -61,7 +69,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
               sx={{ borderRadius: 4 }}
             />
             <CardContent>
-              <Button variant="outlined"sx={{ color: '#fff', backgroundColor: '#00695c', '&:hover': { backgroundColor: '#004d40' } }}>EATERY & DRINK SPORTS</Button>
+              <Button onClick={handleNavigate} variant="outlined"sx={{ color: '#fff', backgroundColor: '#00695c', '&:hover': { backgroundColor: '#004d40' } }}>EATERY & DRINK SPORTS</Button>
             </CardContent>
           </Card>
           <Card elevation={0} sx={{ maxWidth: 300 }}>

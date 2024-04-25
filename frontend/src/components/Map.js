@@ -60,7 +60,7 @@ const Map = ({ geoJsonUrl, origin, destination,searchTrigger }) => {
       zoom: 14,
     });
 
-    // 加载GeoJSON并创建多边形
+    // loading GeoJSON create multi shape
     if (geoJsonUrl) {
       fetch(geoJsonUrl)
         .then(response => response.json())
@@ -90,7 +90,7 @@ const Map = ({ geoJsonUrl, origin, destination,searchTrigger }) => {
     setMap(newMap);
   };
 
-  // 搜索路线
+  // search route
   const searchRoute = () => {
     const directionsService = new google.maps.DirectionsService();
     const geocoder = new google.maps.Geocoder();

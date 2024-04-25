@@ -3,7 +3,7 @@ import * as React from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Box, Card, Container, CardContent, useTheme, CardActionArea, CardMedia, Typography, Button, useMediaQuery } from '@mui/material';
 import '../../styles/globals.css';
-import BarChart from './Barchart'
+import BarChart from './BarChart'
 import PieChart from './PieChart'
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -416,10 +416,11 @@ export default function Home() {
       </Box>
       {/* 下方的文本 */}
       <Grid item xs={12} container spacing={3} sx={{ maxWidth: '1000px', margin: 'auto' }}> {/* 使用容器型Grid项 */}
-        <Grid item xs={12} md={6} sx={{ textAlign: 'center', color: 'rgb(32, 20, 69)', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', display: 'flex', }}>
+      {/* background: '#7ce0d8' */}
+        <Grid item xs={12} md={6} sx={{ textAlign: 'center', color: 'rgb(32, 20, 69)', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', display: 'flex',}}>
           {/* 文本内容 */}
           <motion.div
-          initial={{ x: '-100vw', opacity: 0 }}  // 初始状态，从右侧200px的地方开始，不可见
+          initial={{ x: '-20vw', opacity: 0 }}  // 初始状态，从右侧200px的地方开始，不可见
           animate={inView4 ? { x: 0, opacity: 1 } : {}}   // 动画结束状态，移动到原位置并变为可见
           transition={{ duration: 1.5, type: 'spring', stiffness: 50 }}  // 使用spring动画，弹性系数100
         >
