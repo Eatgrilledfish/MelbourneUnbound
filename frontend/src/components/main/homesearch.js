@@ -14,7 +14,7 @@ import Slide from '@mui/material/Slide';
 import { useRouter } from 'next/navigation'; 
 
 
-const pages = ['Recreation', 'Planning', 'Travel', 'Coming soon'];
+const pages = ['Recreation', 'Travel'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function useEnhancedTrigger(options) {
@@ -119,7 +119,7 @@ function ResponsiveAppBar(props) {
               <Box component="img" src="logo.gif" alt="LOGO" sx={{ height: 80, mb: 1 }} />
             </Typography>
             {/* 小屏幕显示菜单栏 */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },justifyContent: 'flex-end' }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -174,7 +174,7 @@ function ResponsiveAppBar(props) {
               <Box component="img" src="logo.gif" alt="LOGO" sx={{ height: 80, mb: 1 }} />
             </Typography>
             {/* 大屏幕显示菜单栏 */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent: 'flex-end' }}>
               {pages.map((page) => (
                 <Button
                   key={page}
