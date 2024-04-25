@@ -44,6 +44,12 @@ func main() {
 	router.GET("/eaterydrink", func(c *gin.Context) {
 		easterydrink(c, db)
 	})
+	router.GET("/parks", func(c *gin.Context) {
+		parksHandler(c, db)
+	})
+	router.GET("/venues", func(c *gin.Context) {
+		VenuesHandler(c, db)
+	})
 
 	router.Run() // 默认在localhost:8080
 }

@@ -130,6 +130,13 @@ function ResponsiveAppBar(props) {
                 aria-haspopup="true"
                 onClick={handleOpenNavMenu}
                 color="inherit"
+                sx={{
+                  '&:hover': {
+                    backgroundColor: 'orange',  // Changes background to orange on hover
+                    textDecoration: 'underline'
+                  }
+                }}
+                
               >
                 <MenuIcon />
               </IconButton>
@@ -149,6 +156,7 @@ function ResponsiveAppBar(props) {
                 onClose={handleCloseNavMenu}
                 sx={{
                   display: { xs: 'block', md: 'none' },
+                  
                 }}
               >
                 {pages.map((page) => (
@@ -157,6 +165,10 @@ function ResponsiveAppBar(props) {
                       sx={{
                         fontFamily: 'sans-serif',
                         color: 'rgb(32, 20, 69)',
+                        '&:hover': {
+                          backgroundColor: 'orange',  // Changes background to orange on hover
+                          textDecoration: 'underline'
+                        }
                       }}>{page}</Typography>
                   </MenuItem>
                 ))}
@@ -190,6 +202,10 @@ function ResponsiveAppBar(props) {
                     color: 'rgb(32, 20, 69)',
                     padding: '10px 60px',
                     fontSize: '1rem',
+                    '&:hover': {
+                      backgroundColor: 'orange',  // Changes background to orange on hover
+                      textDecoration: 'underline'
+                    }
                   }}
                 >
                   {page}

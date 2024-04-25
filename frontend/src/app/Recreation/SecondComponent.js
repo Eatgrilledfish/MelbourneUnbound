@@ -130,7 +130,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
               sx={{ borderRadius: 4 }}
             />
             <CardContent>
-             <Button variant="outlined" sx={{ color: '#fff', backgroundColor: '#00695c', '&:hover': { backgroundColor: '#004d40' } }}>EXPLORE NATURE IN PARKS</Button>
+             <Button onClick={handleNavigateParks} variant="outlined" sx={{ color: '#fff', backgroundColor: '#00695c', '&:hover': { backgroundColor: '#004d40' } }}>EXPLORE NATURE IN PARKS</Button>
             </CardContent>
           </Card>
         </MotionGrid>
