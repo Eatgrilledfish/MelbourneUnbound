@@ -116,7 +116,7 @@ function ResponsiveAppBar(props) {
                 fontFamily: 'sans-serif',
               }}
             >
-              <Box component="img" src="logo.gif" alt="LOGO" sx={{ height: 80, mb: 1 }} />
+              <Box component="img" src="NewLogo.png" alt="LOGO" sx={{ height: 80, mb: 1 }} />
             </Typography>
             {/* 小屏幕显示菜单栏 */}
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },justifyContent: 'flex-end' }}>
@@ -163,7 +163,7 @@ function ResponsiveAppBar(props) {
             <Typography
               noWrap
               component="a"
-              href="#app-bar-with-responsive-menu"
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: 'flex', md: 'none' },
@@ -171,7 +171,7 @@ function ResponsiveAppBar(props) {
 
               }}
             >
-              <Box component="img" src="logo.gif" alt="LOGO" sx={{ height: 80, mb: 1 }} />
+              <Box component="img" src="NewLogo.png" alt="LOGO" sx={{ height: 80, mb: 1 }} />
             </Typography>
             {/* 大屏幕显示菜单栏 */}
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent: 'flex-end' }}>

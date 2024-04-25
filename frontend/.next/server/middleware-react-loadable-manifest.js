@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"app/Travel/page.jsx -> ./MapboxMap\":{\"id\":\"app/Travel/page.jsx -> ./MapboxMap\",\"files\":[\"static/css/css-node_modules_mapbox_mapbox-gl-directions_dist_mapbox-gl-directions_css.css\",\"static/chunks/_app-pages-browser_src_app_Travel_MapboxMap_js.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST="{}"

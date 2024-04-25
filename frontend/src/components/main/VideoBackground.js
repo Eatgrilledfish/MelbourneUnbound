@@ -31,6 +31,15 @@ export default function VideoBackground() {
           Your browser does not support the video tag.
         </video>
         {/* 大屏幕显示 */}
+         {/* Semi-transparent overlay */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          right={0}
+          bottom={0}
+          bgcolor="rgba(0, 0, 0, 0.4)"  // Adjust opacity here
+        />
         <Box
           position="absolute"
           p={3}
@@ -39,16 +48,16 @@ export default function VideoBackground() {
             fontFamily: 'sans-serif',
             // Center the text box
             top: '40%',
-            left: '50%',
+            left: '40%',
             transform: 'translate(-50%, -50%)', // This ensures precise centering
             display: { xs: 'none', md: 'block' } // 大屏幕显示
           }}
         >
-          <Typography variant="h3" component="h1">
-            Guide To Accessible Adventures And Ways To Get around Melbourne!
+          <Typography variant="h3" component="h1"sx={{fontSize:'72px'}}>
+            Live Limitless
           </Typography>
-          <Typography variant="subtitle1" my={2}>
-            Explore Melbourne's Accessible Wonders And Find Perfect Ways To Explore This City With Ease 
+          <Typography variant="subtitle1" my={2}sx={{fontSize:'20px',mr:"100px",fontWeight:'bold'}}>
+            Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
           {/* <Button variant="contained" color="primary">
             TAKE THE QUIZ
@@ -75,10 +84,10 @@ export default function VideoBackground() {
           }}
         >
           <Typography variant="h3" component="h1" sx={{ fontSize: '1.5rem'}}>
-            Guide To Accessible Melbourne!
+            Live Limitless
           </Typography>
           <Typography variant="subtitle1" my={2} sx={{ fontSize: '1rem'}}>
-            Explore Melbourne's Accessible Wonders And Find Perfect Ways To Explore This City With Ease 
+            Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
           {/* <Button variant="contained" color="primary" sx={{ my: 1 }}>
             TAKE THE 
