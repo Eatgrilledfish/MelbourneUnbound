@@ -13,7 +13,7 @@ export default function MainContent() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('http://localhost:8080/parks');
+      const res = await fetch('https://melbourneunbound.com/api/parks');
       if (!res.ok) {
         console.error("Failed to fetch parks:", res.status, res.statusText);
         return [];

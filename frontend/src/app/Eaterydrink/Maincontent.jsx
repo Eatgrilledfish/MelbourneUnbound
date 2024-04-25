@@ -13,7 +13,7 @@ export default function MainContent() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('http://localhost:8080/top10eateries');
+      const res = await fetch('https://melbourneunbound.com/api/top10eateries');
       if (!res.ok) {
         console.error("Failed to fetch eateries:", res.status, res.statusText);
         return [];
@@ -33,7 +33,7 @@ export default function MainContent() {
 
   const fetchSearchData = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/eaterydrink?${searchMode}=${searchTerm}`);
+      const response = await fetch(`https://melbourneunbound.com/api/eaterydrink?${searchMode}=${searchTerm}`);
       const data = await response.json();
       setSearch(data);
     } catch (error) {

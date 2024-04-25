@@ -1,10 +1,10 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/Parks/page": "app/Parks/page.js",
-  "/Recreation/page": "app/Recreation/page.js",
   "/Eaterydrink/page": "app/Eaterydrink/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/Travel/page": "app/Travel/page.js",
   "/Theatres/page": "app/Theatres/page.js",
+  "/Recreation/page": "app/Recreation/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js"
 }

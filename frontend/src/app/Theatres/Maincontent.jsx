@@ -13,7 +13,7 @@ export default function MainContent() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('http://localhost:8080/venues');
+      const res = await fetch('https://melbourneunbound.com/api/venues');
       if (!res.ok) {
         console.error("Failed to fetch venues:", res.status, res.statusText);
         return [];
@@ -34,7 +34,7 @@ export default function MainContent() {
   const fetchSearchData = async () => {
     try {
       setLoading(true); // Set loading to true at the start of fetch
-      const response = await fetch(`http://localhost:8080/venues?${searchMode}=${searchTerm}`);
+      const response = await fetch(`https://melbourneunbound.com/api/venues?${searchMode}=${searchTerm}`);
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }

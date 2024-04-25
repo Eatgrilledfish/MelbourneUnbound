@@ -22,18 +22,7 @@
       "static/css/2a425466d9ca2084.css",
       "static/chunks/633-bdd8c182edefcd58.js",
       "static/chunks/70-7ceaf9f5cf22ba93.js",
-      "static/chunks/app/Parks/page-6e3d0992a29c462c.js"
-    ],
-    "/Recreation/page": [
-      "static/chunks/webpack-99ae9029f4ae4a4b.js",
-      "static/chunks/fd9d1056-ded38baf03f48746.js",
-      "static/chunks/23-65b062ba61587edf.js",
-      "static/chunks/main-app-d858a4297222f7a1.js",
-      "static/css/2a425466d9ca2084.css",
-      "static/chunks/633-bdd8c182edefcd58.js",
-      "static/chunks/70-7ceaf9f5cf22ba93.js",
-      "static/chunks/827-da8645a702ea9c83.js",
-      "static/chunks/app/Recreation/page-df2010af4ccafeb3.js"
+      "static/chunks/app/Parks/page-97a9a19fcd4d0db0.js"
     ],
     "/Eaterydrink/page": [
       "static/chunks/webpack-99ae9029f4ae4a4b.js",
@@ -43,7 +32,7 @@
       "static/css/2a425466d9ca2084.css",
       "static/chunks/633-bdd8c182edefcd58.js",
       "static/chunks/70-7ceaf9f5cf22ba93.js",
-      "static/chunks/app/Eaterydrink/page-3d4c62fe38731d94.js"
+      "static/chunks/app/Eaterydrink/page-4361438eacdf8f72.js"
     ],
     "/Travel/page": [
       "static/chunks/webpack-99ae9029f4ae4a4b.js",
@@ -63,7 +52,18 @@
       "static/css/2a425466d9ca2084.css",
       "static/chunks/633-bdd8c182edefcd58.js",
       "static/chunks/70-7ceaf9f5cf22ba93.js",
-      "static/chunks/app/Theatres/page-7e02a8d6904f55e2.js"
+      "static/chunks/app/Theatres/page-096c74b11c45d599.js"
+    ],
+    "/Recreation/page": [
+      "static/chunks/webpack-99ae9029f4ae4a4b.js",
+      "static/chunks/fd9d1056-ded38baf03f48746.js",
+      "static/chunks/23-65b062ba61587edf.js",
+      "static/chunks/main-app-d858a4297222f7a1.js",
+      "static/css/2a425466d9ca2084.css",
+      "static/chunks/633-bdd8c182edefcd58.js",
+      "static/chunks/70-7ceaf9f5cf22ba93.js",
+      "static/chunks/827-da8645a702ea9c83.js",
+      "static/chunks/app/Recreation/page-df2010af4ccafeb3.js"
     ],
     "/page": [
       "static/chunks/webpack-99ae9029f4ae4a4b.js",
