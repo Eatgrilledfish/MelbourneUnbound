@@ -72,7 +72,7 @@ const Home = () => {
           searchTrigger={searchTrigger}
         />
       </div>
-      <Box mt={20}><Footer/></Box>
+      <Box mt={30}><Footer/></Box>
       
     </div>
     
