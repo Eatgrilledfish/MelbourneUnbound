@@ -14,7 +14,7 @@ import Slide from '@mui/material/Slide';
 import { useRouter } from 'next/navigation'; 
 
 
-const pages = ['Recreation', 'Travel'];
+const pages = ['Home','Recreation', 'Travel'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function useEnhancedTrigger(options) {
@@ -87,6 +87,9 @@ function ResponsiveAppBar(props) {
   const router = useRouter();  // Use the navigate function
 
   const handleNavigation = (path) => () => {
+    if (path === 'Home'){
+      router.push(`/`); 
+    } else
       router.push(`/${path}`);  // Otherwise, navigate to the respective page
   };
   const [anchorElNav, setAnchorElNav] = React.useState(null);

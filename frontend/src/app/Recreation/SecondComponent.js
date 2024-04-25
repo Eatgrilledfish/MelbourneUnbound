@@ -9,8 +9,20 @@ const MotionGrid = motion(Grid);
 const SecondComponent = React.forwardRef((props, ref) => {
   const router = useRouter();
 
-  const handleNavigate = () => {
+  const handleNavigateEateryDrink = () => {
       router.push('/Eaterydrink');
+  };
+
+  const handleNavigateRetail = () => {
+      router.push('/Retail');
+  };
+
+  const handleNavigateTheatres = () => {
+      router.push('/Theatres');
+  };
+
+  const handleNavigateParks = () => {
+      router.push('/Parks');
   };
 
   const cardVariantsLeft = {
@@ -69,7 +81,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
               sx={{ borderRadius: 4 }}
             />
             <CardContent>
-              <Button onClick={handleNavigate} variant="outlined"sx={{ color: '#fff', backgroundColor: '#00695c', '&:hover': { backgroundColor: '#004d40' } }}>EATERY & DRINK SPORTS</Button>
+              <Button onClick={handleNavigateEateryDrink} variant="outlined"sx={{ color: '#fff', backgroundColor: '#00695c', '&:hover': { backgroundColor: '#004d40' } }}>EATERY & DRINK SPORTS</Button>
             </CardContent>
           </Card>
           <Card elevation={0} sx={{ maxWidth: 300 }}>
@@ -106,7 +118,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
               sx={{ borderRadius: 4 }}
             />
             <CardContent>
-              <Button variant="outlined" sx={{ color: '#fff', backgroundColor: '#00695c', '&:hover': { backgroundColor: '#004d40' } }}>ACCESSIBLE THEEATREES</Button>
+              <Button onClick={handleNavigateTheatres} variant="outlined" sx={{ color: '#fff', backgroundColor: '#00695c', '&:hover': { backgroundColor: '#004d40' } }}>ACCESSIBLE THEEATREES</Button>
             </CardContent>
           </Card>
           <Card elevation={0} sx={{ maxWidth: 300 }}>
