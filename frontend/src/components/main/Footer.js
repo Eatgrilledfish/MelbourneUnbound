@@ -32,15 +32,15 @@ function Footer() {
         <Grid container spacing={10} justifyContent="space-between">
           <Grid item xs={6} md={6}>
             <Typography variant="h6" sx={{ lineHeight: '3' }}>Recreation</Typography>
-            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('eateries')}>Eateries</Typography>
-            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('theatres')}>Theatres</Typography>
-            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('retail-stores')}>Retail Stores</Typography>
-            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('parks')}>Parks</Typography>
+            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('Eaterydrink')}>Eateries</Typography>
+            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('Theatres')}>Theatres</Typography>
+            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('Recreation')}>Retail Stores</Typography>
+            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('Parks')}>Parks</Typography>
           </Grid>
           <Grid item xs={6} md={6}>
             <Typography variant="h6" sx={{ lineHeight: '3' }}>Travel</Typography>
-            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('trams')}>Trams</Typography>
-            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('train')}>Train</Typography>
+            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('Travel')}>Trams</Typography>
+            <Typography variant="body2" sx={{ lineHeight: '2', cursor: 'pointer' }} onClick={handleNavigation('Travel')}>Train</Typography>
           </Grid>
         </Grid>
       </Grid>
