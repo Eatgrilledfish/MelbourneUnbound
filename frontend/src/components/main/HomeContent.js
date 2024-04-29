@@ -292,8 +292,8 @@ export default function Home() {
 
           {/* Orange Box with Image */}
           <Box sx={{
-            width: '35%',
-            height: '85%',
+            width: '40%',
+            height: '100%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -301,7 +301,7 @@ export default function Home() {
             position: 'relative',
           }}>
             <img src="/orange box.png" alt="Orange Box" style={{ width: '100%', height: '100%', objectFit: 'contain', position: 'absolute' }} />
-            <Typography variant="h6" sx={{ color: 'black', textAlign: 'center', position: 'relative', zIndex: 1,pl: 4, pr: 5 }}>
+            <Typography variant="h6" sx={{ color: 'black', textAlign: 'center', position: 'relative', zIndex: 1,pl: 6, pr: 7}}>
               I spend a lot of my time looking down … which is not the best way to see a city,
             </Typography>
           </Box>

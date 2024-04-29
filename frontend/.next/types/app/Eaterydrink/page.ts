@@ -1,4 +1,4 @@
-// File: /Users/jianqiao/myproject/MelbourneUnbound/frontend/src/app/Eaterydrink/page.jsx
+// File: C:\Users\16068\MelbourneUnbound\frontend\src\app\Eaterydrink\page.jsx
 import * as entry from '../../../../src/app/Eaterydrink/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
