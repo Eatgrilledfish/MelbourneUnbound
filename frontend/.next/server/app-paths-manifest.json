@@ -1,7 +1,20 @@
 {
+<<<<<<< HEAD
   "/Recreation/page": "app/Recreation/page.js",
   "/Eaterydrink/page": "app/Eaterydrink/page.js",
   "/page": "app/page.js",
   "/Theatres/page": "app/Theatres/page.js",
   "/Parks/page": "app/Parks/page.js"
+=======
+  "/_not-found/page": "app/_not-found/page.js",
+  "/Parks/page": "app/Parks/page.js",
+  "/Recreation/page": "app/Recreation/page.js",
+  "/Retail/page": "app/Retail/page.js",
+  "/Eaterydrink/page": "app/Eaterydrink/page.js",
+  "/Theatres/page": "app/Theatres/page.js",
+  "/page": "app/page.js",
+  "/Travel copy/page": "app/Travel copy/page.js",
+  "/Travel/page": "app/Travel/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+>>>>>>> 2c85f48298156df65efaf5b0b618418325e494fe
 }

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import Map from './Map';
+import Map from '../Travel/Map';
 import SearchBar from '../../components/main/homesearch'; // 调整路径以符合您的文件结构
 import Footer from '../../components/main/Footer';
 import { Box } from '@mui/material';
@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     if (!window.google) {
       const script = document.createElement('script');
-      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyA4bcHQArQWH2Qxb47goCAhbstZX0WkUZk&libraries=places";
+      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDjQXyYlP5QOFLFJ58xocind5smlnaC3mA&libraries=places";
       script.async = true;
       document.head.appendChild(script);
       script.onload = () => {

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // File: C:\Users\16068\MelbourneUnbound\frontend\src\app\Theatres\page.jsx
+=======
+// File: /Users/jianqiao/myproject/MelbourneUnbound/frontend/src/app/Theatres/page.jsx
+>>>>>>> 2c85f48298156df65efaf5b0b618418325e494fe
 import * as entry from '../../../../src/app/Theatres/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
