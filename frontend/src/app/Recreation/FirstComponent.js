@@ -1,6 +1,6 @@
 // FirstComponent.js
 import React from 'react';
-import { Box, IconButton } from '@mui/material';
+import { Box, IconButton,Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
@@ -23,12 +23,16 @@ const FirstComponent = React.forwardRef(({ onProceed }, ref) => {
         duration: 0.3,
         yoyo: Infinity
       }
+      
     }
+    
   };
 
   return (
     <Box
+    
       position="relative"
+     
       display="flex" // Use flexbox to center children
       alignItems="center" // Align items vertically in the center
       justifyContent="center" // Align items horizontally in the center
@@ -38,13 +42,28 @@ const FirstComponent = React.forwardRef(({ onProceed }, ref) => {
       {/* Container for the image and the icon button */}
       <Box position="absolute" textAlign="center">
         <motion.img
-          src="/arttext.png" // Replace with your image path
+          src="/rewind.jpg" // Replace with your image path
           alt="Descriptive Alt Text" // Replace with a meaningful image description
           variants={imageVariants}
           initial='hidden'
           animate="visible"
           style={{ maxWidth: '100%', height: 'auto' }}
         />
+        <Typography
+          style={{
+            position: 'absolute',
+            top: '50%', // 中心位置
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            fontSize: '5rem', // 大字号
+            fontWeight: 'bold',
+            fontStyle: 'italic',
+            color: 'orange',
+            textShadow: '10px 10px black' // 黑色边缘阴影
+          }}
+        >
+          Ready to Unwind?
+        </Typography>
         <IconButton
           onClick={onProceed}
           variants={variantButton}
@@ -53,9 +72,9 @@ const FirstComponent = React.forwardRef(({ onProceed }, ref) => {
           style={{
             position: 'absolute',
             left: '50%',
-            bottom: '20px',
+            bottom: '200px',
             transform: 'translateX(-50%)',
-            color: 'black', // Adjust the color based on your image
+            color: 'white', // Adjust the color based on your image
           }}
         >
           <MotionIconButton 
