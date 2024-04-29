@@ -8,7 +8,7 @@ import PieChart from './PieChart'
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation'; 
-
+import { orange } from '@mui/material/colors';
 
 
 export default function Home() {
@@ -21,6 +21,10 @@ export default function Home() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 1 });
 
   const router = useRouter();
+
+
+
+  
 
   const fadeInVariants = {
     hidden: { opacity: 0 },
@@ -72,7 +76,7 @@ export default function Home() {
   return (
     <Box sx={{ flexGrow: 1, padding: 0, overflow: 'auto' }}> {/* 调整了内边距 */}
       {/* Heading and orange line */}
-      <Box sx={{ textAlign: 'center', my: 4 }}>
+      <Box  sx={{ textAlign: 'center', my: 4 }}>
         <Typography variant="h4" component="h2" >
           OUR SERVICES
         </Typography>
@@ -313,153 +317,87 @@ export default function Home() {
 
 
       {/* we fell you图片和文字 */}
-      <Grid item xs={12} container spacing={3} sx={{mt:9}} > {/* 使用容器型Grid项 */}
-
-        <Grid item xs={6} md={6} component="section" sx={{
-          display: { xs: 'block', md: 'block' },
-          py: 5,
+      <Box
+        sx={{
+          backgroundColor: 'black',
           textAlign: 'center',
-          px: 0,
-          color: 'white',
-          pl: 28,
-          width: '100%', // Fill the width of the parent without creating overflow
-          backgroundColor: 'black' // Set background color to black
-        }} >
-          <Box ref={ref3} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
-            <Typography variant="h4" component="h1" sx={{ color: 'white' , fontSize:'4rem',fontFamily:'Orbitron'}}>
-              We Feel You
-            </Typography>   
-          </Box>
-        </Grid>
-        <Grid item xs={6} md={6} component="section"
+          py: theme.spacing(7) // This adds some padding around the text. Adjust the number to increase or decrease the padding.
+        }}
+      >
+        <Typography
+          variant="h4"
+          component="h1"
           sx={{
-            display: { xs: 'block', md: 'block' },
-            py: 10,
-            textAlign: 'left',
-            px: 0,
-            pl: 15,
-            backgroundColor: 'black',
-            mx: 0, // Ensure there are no horizontal margins
-            width: '100%', // Fill the width of the parent without creating overflow
-          }} >
+            color: 'white',
+            fontWeight: 'bold',
+            fontStyle: 'italic',
+            // If you want a specific font, add it here and ensure it's loaded in your project
+            // fontFamily: 'Your Font Family',
+            '& span': {
+              color: "orange", // Use the secondary color from the theme or provide a custom one
+            }
+          }}
+        >
+          WE <span>FEEL</span> YOU
+        </Typography>
+      </Box>
+
+      {/* Wheelchair in CBD */}
+    
+      <Box
+        sx={{
+          width: '100vw',
+          height: 'your-desired-height', // e.g. '500px'
+          overflow: 'hidden',
+          display: 'flex', // 使用flex布局
+          justifyContent: 'center', // 水平居中
+          alignItems: 'center', // 垂直居中（如果需要）
+          '& img': {
+            width: { xs: '80%', sm: '90%' }, // 100% on extra small screens, 90% on small screens and up
+            height: { xs: 'your-small-screen-height', sm: '1500px' }, // e.g. '300px' on extra small screens
+          }
+        }}
+        >
+        <img src="we feel you group.png" alt="Full Width Image" />
+      </Box>
+
+
+
+      
+      
+      
+      {/* Our Mission */}
+      <Box sx={{ textAlign: 'center', my: 4 }}>
+      <Typography variant="h4" component="h2">
+        OUR MISSION
+      </Typography>
+      <Box sx={{ width: '200px', height: '4px', bgcolor: 'orange', margin: '8px auto 0', mt: 3 }} />
+      <Grid container spacing={2} alignItems="center">
+        {/* 对于小屏幕隐藏图片, 大屏幕显示 */}
+        <Grid item xs={false} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
           <motion.img
-            src="/wefellyou1.jpeg" // Replace with your image path
-            alt="An image description"
-            width={600}  // Adjust as necessary
-            height={250} // Adjust as necessary
-            ref={ref3}
+            src="mission arrow.png"
+            alt="Service Description"
+            style={{ width: '50%', margin: '0 auto', display: 'block' }}
+            ref={ref2}
             variants={fadeInVariants}
             initial="hidden"
-            animate={inView3 ? "visible" : "hidden"}
-            transition={{ duration: 1.5,delay: 0.4 }}
+            animate={inView2 ? "visible" : "hidden"}
+            transition={{ duration: 1.5, delay: 0.4 }}
           />
         </Grid>
-      </Grid>
-
-
-
-      {/* 中间分隔栏 */}
-      {/* 大屏幕显示 */}
-      <Box>
-      <Grid
-        component="section"
-        sx={{
-          display: { xs: 'none', md: 'block' },
-          py: 5,
-          backgroundColor: '#F6F4EF',
-          textAlign: 'left',
-          px: 0,
-          color: 'rgb(32, 20, 69)',
-          pl: 28,
-          mx: 0, // Ensure there are no horizontal margins
-          width: '100%', // Fill the width of the parent without creating overflow
-        }}
-      >
-        <Typography variant="h5" gutterBottom >
-          Charting Accessibility
-        </Typography>
-        <Typography variant="h5">
-          <b>See the Breakdown of Wheelchair-Friendly in Melbourne's CBD</b>
-        </Typography>
-      </Grid>
-      {/* 小屏幕显示 */}
-      <Grid
-        component="section"
-        sx={{
-          display: { xs: 'block', md: 'none' },
-          py: 5,
-          backgroundColor: '#F6F4EF',
-          textAlign: 'left',
-          px: 0,
-          color: 'rgb(32, 20, 69)',
-          pl: 0,
-          mx: 0, // Ensure there are no horizontal margins
-          width: '100%', // Fill the width of the parent without creating overflow
-        }}
-      >
-        <Typography variant="h6" gutterBottom >
-          Charting Accessibility
-        </Typography>
-        <Typography variant="h6">
-          <b>See the Breakdown of Wheelchair-Friendly in Melbourne's CBD</b>
-        </Typography>
-      </Grid>
-      </Box>
-      {/* 下方的文本 */}
-      <Grid item xs={12} container spacing={3} sx={{ maxWidth: '1000px', margin: 'auto' }}> {/* 使用容器型Grid项 */}
-      {/* background: '#7ce0d8' */}
-        <Grid item xs={12} md={6} sx={{ textAlign: 'center', color: 'rgb(32, 20, 69)', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', display: 'flex',}}>
-          {/* 文本内容 */}
-          <motion.div
-          initial={{ x: '-20vw', opacity: 0 }}  // 初始状态，从右侧200px的地方开始，不可见
-          animate={inView4 ? { x: 0, opacity: 1 } : {}}   // 动画结束状态，移动到原位置并变为可见
-          transition={{ duration: 1.5, type: 'spring', stiffness: 50 }}  // 使用spring动画，弹性系数100
-        >
-          <Typography variant="h8">
-            Explore the distribution of restaurants based on their accessibility ratings in the CBD. This bar chart illustrates the number of restaurants falling into different accessibility categories
+        {/* 文本在小屏幕上占满整个宽度, 大屏幕占剩余部分 */}
+        <Grid item xs={12} md={6}>
+          <Typography variant="h5" sx={{ textAlign: { xs: 'center'} ,mt:3}}>
+            We are dedicated to empowering wheelchair users in Melbourne, championing accessibility throughout city life, and fostering inclusivity and independence for all.
           </Typography>
-          </motion.div>
-        </Grid>
-        <Grid item xs={12} md={6} >
-          {/* 图片内容 */}
-          <div ref={ref4}>
-            {inView4 ? <BarChart /> : <div>Loading...</div>}
-          </div>
         </Grid>
       </Grid>
-      {/* 饼图区域 */}
-      <Grid item xs={12} container spacing={10} sx={{ maxWidth: '1000px', margin: 'auto' }}> {/* 使用容器型Grid项 */}
-      <Grid item xs={12} md={6}  >
-          {/* 图片内容 */}
-          <div ref={ref5}>
-            {inView5 ? <PieChart /> : <div>Loading...</div>}
-          </div>
-        </Grid>
-        <Grid item xs={12} md={6} sx={{ textAlign: 'center', color: 'rgb(32, 20, 69)', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', display: 'flex', }}>
-          {/* 文本内容 */}
-          <motion.div
-          initial={{ x: '100vw', opacity: 0 }}  // 初始状态，从右侧200px的地方开始，不可见
-          animate={inView5 ? { x: 0, opacity: 1 } : {}}   // 动画结束状态，移动到原位置并变为可见
-          transition={{ duration: 1.5, type: 'spring', stiffness: 50 }}  // 使用spring动画，弹性系数100
-        >
-          <Typography variant="h8"> {/* variant应为h6等有效值，h8不是有效值 */}
-            Ride the Wave: Visualizing Accessible Transport Trends in Melbourne's CBD!
-          </Typography>
-        </motion.div>
-        </Grid>
-      </Grid>
-      {/* 最后一行 */}
-      <Box pt={10} pb={10} display="flex" flexDirection="column" justifyContent="center" alignItems="center" height="30vh" sx={{backgroundColor:'#F6F4EF'}}> {/* 调整height根据需要 */}
-      <img
-        src="/misson.png"
-        alt="mission"
-        width={280}
-        height={50}
-      />
-      <Typography variant='h6' sx={{color: 'rgb(32, 20, 69)', mt:10, pl:20,pr:20,textAlign: 'center'}}>
-        We are dedicated to empowering wheelchair users in Melbourne, championing accessibility throughout city life, and fostering inclusivity and independence for all.
-      </Typography>
-      </Box>
+    </Box>
+     
+      
+      
+      
     </Box>
     
   );

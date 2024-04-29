@@ -4,7 +4,12 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import '../../styles/globals.css';
 
+
 export default function VideoBackground() {
+
+ 
+  
+
   return (
     // 大屏幕显示
       <Box
@@ -59,12 +64,9 @@ export default function VideoBackground() {
           <Typography variant="subtitle1" my={2}sx={{fontSize:'20px',mr:"100px",fontWeight:'bold'}}>
             Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
-          {/* <Button variant="contained" color="primary">
-            TAKE THE QUIZ
+          <Button variant="contained" sx={{ bgcolor: 'orange', color: 'black' }}>
+            Go to Our Services
           </Button>
-          <Button variant="outlined" color="secondary" sx={{ ml: 2 }}>
-            SHOP NOW
-          </Button> */}
         </Box>
         {/* 小屏幕显示 */}
         <Box
@@ -89,12 +91,9 @@ export default function VideoBackground() {
           <Typography variant="subtitle1" my={2} sx={{ fontSize: '1rem'}}>
             Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
-          {/* <Button variant="contained" color="primary" sx={{ my: 1 }}>
-            TAKE THE 
+          <Button variant="contained" sx={{ bgcolor: 'orange', color: 'black' }} >
+            Go to Our Services
           </Button>
-          <Button variant="outlined" color="secondary" sx={{ my: 1,ml: 0 }}>
-            SHOP NOW
-          </Button> */}
         </Box>
       </Box>
 
