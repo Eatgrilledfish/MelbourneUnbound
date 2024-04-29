@@ -1,12 +1,14 @@
-// FirstComponent.js
 import React from 'react';
-import { Box, IconButton,Typography } from '@mui/material';
+import { Box, IconButton, Typography, useTheme, useMediaQuery } from '@mui/material';
 import { motion } from 'framer-motion';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
-const MotionIconButton = motion(ArrowDownwardIcon);
+const MotionIconButton = motion(IconButton); // Changed to IconButton for motion effects
 
 const FirstComponent = React.forwardRef(({ onProceed }, ref) => {
+  const theme = useTheme();
+  const matchesSM = useMediaQuery(theme.breakpoints.down('sm'));
+
   const imageVariants = {
     hidden: { opacity: 0, scale: 0.8 },
     visible: {
@@ -22,73 +24,64 @@ const FirstComponent = React.forwardRef(({ onProceed }, ref) => {
       transition: {
         duration: 0.3,
         yoyo: Infinity
-      }
-      
-    }
-    
+      } 
+    } 
   };
+
+  const fontSize = matchesSM ? '3rem' : '5rem'; // Responsive font size
+  const iconSize = matchesSM ? 'default' : 'large'; // Responsive icon size
+  const bottomPosition = matchesSM ? '100px' : '200px'; // Responsive icon position
 
   return (
     <Box
-    
       position="relative"
-     
-      display="flex" // Use flexbox to center children
-      alignItems="center" // Align items vertically in the center
-      justifyContent="center" // Align items horizontally in the center
-      height="100vh" // Use the full viewport height
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      minHeight="100vh" // minHeight for better small screen support
       ref={ref}
-    >
-      {/* Container for the image and the icon button */}
-      <Box position="absolute" textAlign="center">
+      marginBottom={theme.spacing(15)}
+      >
+      <Box position="absolute" textAlign="center" width="100%"> {/* Set width to 100% */}
         <motion.img
-          src="/rewind.jpg" // Replace with your image path
-          alt="Descriptive Alt Text" // Replace with a meaningful image description
+          src="/rewind.jpg"
+          alt="Descriptive Alt Text"
           variants={imageVariants}
           initial='hidden'
           animate="visible"
-          style={{ maxWidth: '100%', height: 'auto' }}
+          style={{ width: '100%', height: 'auto'}} // Set width to 100%
         />
         <Typography
-          style={{
+          variant="h2" // Use MUI variant for better responsive text
+          sx={{
             position: 'absolute',
-            top: '50%', // 中心位置
+            top: '50%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
-            fontSize: '5rem', // 大字号
+            fontSize: fontSize,
             fontWeight: 'bold',
             fontStyle: 'italic',
             color: 'orange',
-            textShadow: '10px 10px black' // 黑色边缘阴影
+            textShadow: '10px 10px black',
+            padding: theme.spacing(1) // Add padding for smaller screens
           }}
         >
           Ready to Unwind?
         </Typography>
-        <IconButton
+        <MotionIconButton
           onClick={onProceed}
           variants={variantButton}
           whileHover="hover"
-          whileTap="tap"
           style={{
             position: 'absolute',
             left: '50%',
-            bottom: '200px',
+            bottom: bottomPosition,
             transform: 'translateX(-50%)',
-            color: 'white', // Adjust the color based on your image
+            color: 'white',
           }}
         >
-          <MotionIconButton 
-            variants={variantButton}
-            whileHover="hover"
-            whileTap="tap"
-            fontSize="large" 
-            style={{
-              // Inline CSS for focus state
-              outline: 'none', // Remove default
-              boxShadow: '0px' // Add custom yellow glow
-            }}
-            />
-        </IconButton>
+          <ArrowDownwardIcon fontSize={iconSize} />
+        </MotionIconButton>
       </Box>
     </Box>
   );

@@ -22,10 +22,10 @@ function Footer() {
     <Box sx={{
       width: '100%',
       color: 'rgb(32, 20, 69)',
-      bgcolor: 'background.paper',
+      bgcolor: 'grey.200',
       padding: 3,
       fontFamily: 'sans-serif',
-      maxWidth: '1200px',
+      maxWidth: '96.5%',
       margin: 'auto'
     }}>
     <Grid container spacing={10} justifyContent="space-between">

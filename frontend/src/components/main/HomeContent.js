@@ -144,9 +144,17 @@ export default function Home() {
                 <Typography variant="caption" sx={{ mb: 2 }}>
                   {feature.title}
                 </Typography>
-                <Button variant="contained" color="primary" sx={{ backgroundColor: 'orange', color: 'white' }}>
-                  Learn More
-                </Button>
+                <Box sx={{ display: 'flex', justifyContent: 'center',p: 2, width: '100%' }}> 
+                  <Button 
+                    variant="contained" 
+                    color="primary" 
+                    sx={{ backgroundColor: 'orange', color: 'black', width: '50%' }}
+                    onClick={() => router.push(feature.path)}
+                  >
+                    {feature.buttonText}
+                  </Button>
+                  
+                </Box>
               </CardContent>
             </Card>
             </motion.div>
@@ -161,7 +169,7 @@ export default function Home() {
       <Grid item xs={12} container spacing={3} > {/* 使用容器型Grid项 */}
         <Grid item xs={6} md={6} component="section"
           sx={{
-            display: { xs: 'block', md: 'block' },
+            display: { xs: 'none', md: 'block' },
             py: 5,
             backgroundColor: 'rgba(95,190,122,255)',
             textAlign: 'left',
@@ -186,7 +194,7 @@ export default function Home() {
        
         <Grid item xs={6} md={6} component="section"
           sx={{
-            display: { xs: 'block', md: 'block' },
+            display: { xs: 'none', md: 'block' },
             py: 5,
             backgroundColor: 'rgba(95,190,122,255)',
             textAlign: 'left',
@@ -196,7 +204,7 @@ export default function Home() {
             mx: 0, // Ensure there are no horizontal margins
             width: '100%', // Fill the width of the parent without creating overflow
           }} >
-          <Box ref={ref1} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+          <Box ref={ref1} sx={{ display: { xs: 'none', md: 'block' }, flexDirection: 'column', justifyContent: 'center', height: '100%' ,mt:'70px'}}>
             <motion.div
               variants={fadeInVariants}
               initial="hidden"
@@ -240,9 +248,11 @@ export default function Home() {
           </Box>
         </Grid>
       </Grid>
+      {/* small screen*/}     
+      
 
       {/* we hear you*/}
-      <Grid container spacing={3}sx={{mt:10}}>
+      <Grid container spacing={3}sx={{mt:20,}}>
         {/* Left image with increased space */}
         
 
@@ -321,11 +331,12 @@ export default function Home() {
         sx={{
           backgroundColor: 'black',
           textAlign: 'center',
-          py: theme.spacing(7) // This adds some padding around the text. Adjust the number to increase or decrease the padding.
+          mt:20,
+          py: theme.spacing(15) // This adds some padding around the text. Adjust the number to increase or decrease the padding.
         }}
       >
         <Typography
-          variant="h4"
+          variant="h2"
           component="h1"
           sx={{
             color: 'white',
@@ -352,6 +363,7 @@ export default function Home() {
           display: 'flex', // 使用flex布局
           justifyContent: 'center', // 水平居中
           alignItems: 'center', // 垂直居中（如果需要）
+          mt:10,
           '& img': {
             width: { xs: '80%', sm: '90%' }, // 100% on extra small screens, 90% on small screens and up
             height: { xs: 'your-small-screen-height', sm: '1500px' }, // e.g. '300px' on extra small screens
@@ -367,7 +379,7 @@ export default function Home() {
       
       
       {/* Our Mission */}
-      <Box sx={{ textAlign: 'center', my: 4 }}>
+      <Box sx={{ textAlign: 'center', my: 4 ,mt:20,}}>
       <Typography variant="h4" component="h2">
         OUR MISSION
       </Typography>
@@ -388,7 +400,7 @@ export default function Home() {
         </Grid>
         {/* 文本在小屏幕上占满整个宽度, 大屏幕占剩余部分 */}
         <Grid item xs={12} md={6}>
-          <Typography variant="h5" sx={{ textAlign: { xs: 'center'} ,mt:3}}>
+          <Typography variant="h5" sx={{ textAlign: { xs: 'center'} ,mt:3,md:5}}>
             We are dedicated to empowering wheelchair users in Melbourne, championing accessibility throughout city life, and fostering inclusivity and independence for all.
           </Typography>
         </Grid>

@@ -65,7 +65,7 @@ export default function VideoBackground() {
             Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
           <Button variant="contained" sx={{ bgcolor: 'orange', color: 'black' }}>
-            Go to Our Services
+            Get Started
           </Button>
         </Box>
         {/* 小屏幕显示 */}
@@ -92,7 +92,7 @@ export default function VideoBackground() {
             Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
           <Button variant="contained" sx={{ bgcolor: 'orange', color: 'black' }} >
-            Go to Our Services
+            Get Started
           </Button>
         </Box>
       </Box>
