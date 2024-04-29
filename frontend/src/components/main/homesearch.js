@@ -105,8 +105,8 @@ function ResponsiveAppBar(props) {
 
   return (
     <HideOnScroll {...props}>
-      <AppBar position="fixed" sx={{ backgroundColor: 'white', color: 'black' }} elevation={0}>
-        <Container maxWidth="xl">
+      <AppBar position="fixed" sx={{ backgroundColor: 'grey.200', color: 'black' }} elevation={0}>
+        <Container maxWidth="100%">
           <Toolbar disableGutters>
             {/* 大屏幕显示logo */}
             <Typography
@@ -189,7 +189,7 @@ function ResponsiveAppBar(props) {
               <Box component="img" src="NewLogo.png" alt="LOGO" sx={{ height: 80, mb: 1 }} />
             </Typography>
             {/* 大屏幕显示菜单栏 */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },justifyContent: 'flex-end' }}>
+            <Box sx={{ flexGrow: 1, bgcolor:'grey.200',display: { xs: 'none', md: 'flex' },justifyContent: 'flex-end' }}>
               {pages.map((page) => (
                 <Button
                   key={page}
@@ -199,6 +199,7 @@ function ResponsiveAppBar(props) {
                     color: 'black',
                     display: 'block',
                     fontFamily: 'sans-serif',
+                    
                     color: 'rgb(32, 20, 69)',
                     padding: '10px 60px',
                     fontSize: '1rem',
