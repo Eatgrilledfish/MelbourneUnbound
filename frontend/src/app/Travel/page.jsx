@@ -1,41 +1,44 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import Map from './Map';
-import SearchBar from '../../components/main/homesearch'; // 调整路径以符合您的文件结构
-import Footer from '../../components/main/Footer';
+import React, { useState } from 'react';
+import axios from 'axios';
 import { Box } from '@mui/material';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import { debounce } from 'lodash';
+import SearchBar from '../../components/main/homesearch'; // Adjust path to fit your file structure
+import Footer from '../../components/main/Footer';
 
 const Home = () => {
-  const [origin, setOrigin] = useState('');
-  const [destination, setDestination] = useState('');
-  const [searchTrigger, setSearchTrigger] = useState(0);
-  const [travelMode, setTravelMode] = useState(null); // Initialize to null
-  const [apiLoaded, setApiLoaded] = useState(false); // Track API load status
+  const [startAddress, setStartAddress] = useState('');
+  const [destiAddress, setDestiAddress] = useState('');
+  const [addressesStart, setAddressesStart] = useState([]);
+  const [addressesDesti, setAddressesDesti] = useState([]);
 
-  // Dynamically load the Google Maps API
-  useEffect(() => {
-    if (!window.google) {
-      const script = document.createElement('script');
-      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyA4bcHQArQWH2Qxb47goCAhbstZX0WkUZk&libraries=places";
-      script.async = true;
-      document.head.appendChild(script);
-      script.onload = () => {
-        setApiLoaded(true);
-        setTravelMode(google.maps.TravelMode.WALKING); // Set travel mode after API is loaded
-      };
+  const fetchAddressesStart = debounce((searchText) => {
+    if (searchText.trim() !== "") {
+      axios.get(`http://localhost:8080/addresses?search=${encodeURIComponent(searchText)}`)
+        .then(response => setAddressesStart(response.data || []))
+        .catch(error => {
+          console.error('Error fetching start addresses:', error);
+          setAddressesStart([]);
+        });
     } else {
-      setApiLoaded(true);
-      setTravelMode(google.maps.TravelMode.WALKING);
+      setAddressesStart([]);
     }
-  }, []);
+  }, 300);
 
-  const handleSearchClick = () => {
-    setSearchTrigger(prev => prev + 1);
-  };
-
-  if (!apiLoaded) {
-    return <div>Loading...</div>; // Optionally render a loading state
-  }
+  const fetchAddressesDesti = debounce((searchText) => {
+    if (searchText.trim() !== "") {
+      axios.get(`http://localhost:8080/addresses?search=${encodeURIComponent(searchText)}`)
+        .then(response => setAddressesDesti(response.data || []))
+        .catch(error => {
+          console.error('Error fetching destination addresses:', error);
+          setAddressesDesti([]);
+        });
+    } else {
+      setAddressesDesti([]);
+    }
+  }, 300);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh' }}>
@@ -43,41 +46,32 @@ const Home = () => {
       <div>
         <h1>Explore Melbourne CBD</h1>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
-          <input
-            type="text"
-            value={origin}
-            onChange={e => setOrigin(e.target.value)}
-            placeholder="Enter origin"
+          <Autocomplete
+            disablePortal
+            options={addressesStart}
+            onInputChange={(event, newInputValue) => fetchAddressesStart(newInputValue)}
+            onChange={(event, newValue) => setStartAddress(newValue)}
+            isOptionEqualToValue={(option, value) => option === value}
+            getOptionLabel={(option) => option.toString()}
+            sx={{ width: 300 }}
+            renderInput={(params) => <TextField {...params} label="Start Address" variant="outlined" />}
           />
-          <input
-            type="text"
-            value={destination}
-            onChange={e => setDestination(e.target.value)}
-            placeholder="Enter destination"
+          <Autocomplete
+            disablePortal
+            options={addressesDesti}
+            onInputChange={(event, newInputValue) => fetchAddressesDesti(newInputValue)}
+            onChange={(event, newValue) => setDestiAddress(newValue)}
+            isOptionEqualToValue={(option, value) => option === value}
+            getOptionLabel={(option) => option.toString()}
+            sx={{ width: 300 }}
+            renderInput={(params) => <TextField {...params} label="Destination Address" variant="outlined" />}
           />
-          <select value={travelMode} onChange={e => setTravelMode(google.maps.TravelMode[e.target.value])}>
-            <option value="WALKING">Walking</option>
-            <option value="TRANSIT">Public Transit</option>
-          </select>
-          <button onClick={handleSearchClick}>Enter</button>
+          <button onClick={() => console.log('Search Clicked')}>Enter</button>
         </div>
       </div>
-      <div style={{ width: '100%' }}>
-        <Map
-          style={{ width: '100%', height: '100%' }}
-          geoJsonUrl="footpath-steepness.geojson"
-          origin={origin}
-          destination={destination}
-          travelMode={travelMode}
-          searchTrigger={searchTrigger}
-        />
-      </div>
-      <Box mt={30}><Footer/></Box>
-      
+      <Box mt={30}><Footer /></Box>
     </div>
-    
   );
-  
 };
 
 export default Home;
