@@ -107,7 +107,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
                 sx={{ borderRadius: 10 , objectFit: 'cover'}}
               />
               <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button variant="outlined" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Shops</Button>
+              <Button onClick={handleNavigateRetail} variant="outlined" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Shops</Button>
               </CardContent>
             </Card>
             </MotionGrid>

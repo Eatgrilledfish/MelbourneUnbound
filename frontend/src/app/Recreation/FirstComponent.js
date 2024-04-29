@@ -24,7 +24,9 @@ const FirstComponent = React.forwardRef(({ onProceed }, ref) => {
       transition: {
         duration: 0.3,
         yoyo: Infinity
-      } 
+      },
+      transformOrigin: 'center center',
+      transform: 'translate(-50%, -50%)'
     } 
   };
 

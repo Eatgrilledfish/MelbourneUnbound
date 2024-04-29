@@ -1,5 +1,12 @@
 {
-  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/Parks/page": "app/Parks/page.js",
   "/Recreation/page": "app/Recreation/page.js",
-  "/Eaterydrink/page": "app/Eaterydrink/page.js"
+  "/Retail/page": "app/Retail/page.js",
+  "/Eaterydrink/page": "app/Eaterydrink/page.js",
+  "/Theatres/page": "app/Theatres/page.js",
+  "/page": "app/page.js",
+  "/Travel copy/page": "app/Travel copy/page.js",
+  "/Travel/page": "app/Travel/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

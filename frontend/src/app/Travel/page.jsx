@@ -1,6 +1,7 @@
 "use client";
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import axios from 'axios';
+import Map from '../Travel/Map';
 import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -13,10 +14,35 @@ const Home = () => {
   const [destiAddress, setDestiAddress] = useState('');
   const [addressesStart, setAddressesStart] = useState([]);
   const [addressesDesti, setAddressesDesti] = useState([]);
+  const [origin, setOrigin] = useState(null);
+  const [destination, setDestination] = useState(null);
+  const [searchTrigger, setSearchTrigger] = useState(false);
+  const [travelMode, setTravelMode] = useState(null); // Initialize to null
+  const [apiLoaded, setApiLoaded] = useState(false); // Track API load status
+
+
+  useEffect(() => {
+    if (!window.google) {
+      const script = document.createElement('script');
+      script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDjQXyYlP5QOFLFJ58xocind5smlnaC3mA&libraries=places";
+      script.async = true;
+      document.head.appendChild(script);
+      script.onload = () => {
+        setApiLoaded(true);
+        setTravelMode(google.maps.TravelMode.WALKING); // Set travel mode after API is loaded
+      };
+    } else {
+      setApiLoaded(true);
+      setTravelMode(google.maps.TravelMode.WALKING);
+    }
+  }, []);
+
+
+
 
   const fetchAddressesStart = debounce((searchText) => {
     if (searchText.trim() !== "") {
-      axios.get(`http://localhost:8080/addresses?search=${encodeURIComponent(searchText)}`)
+      axios.get(`https://melbourneunbound.com/api/addresses?search=${encodeURIComponent(searchText)}`)
         .then(response => setAddressesStart(response.data || []))
         .catch(error => {
           console.error('Error fetching start addresses:', error);
@@ -29,7 +55,7 @@ const Home = () => {
 
   const fetchAddressesDesti = debounce((searchText) => {
     if (searchText.trim() !== "") {
-      axios.get(`http://localhost:8080/addresses?search=${encodeURIComponent(searchText)}`)
+      axios.get(`https://melbourneunbound.com/api/addresses?search=${encodeURIComponent(searchText)}`)
         .then(response => setAddressesDesti(response.data || []))
         .catch(error => {
           console.error('Error fetching destination addresses:', error);
@@ -39,6 +65,14 @@ const Home = () => {
       setAddressesDesti([]);
     }
   }, 300);
+
+  const handleSearch = () => {
+    if (startAddress && destiAddress) {
+      setOrigin(startAddress);
+      setDestination(destiAddress);
+      setSearchTrigger(!searchTrigger); // Toggle to trigger re-render
+    }
+  };
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height: '100vh' }}>
@@ -66,8 +100,22 @@ const Home = () => {
             sx={{ width: 300 }}
             renderInput={(params) => <TextField {...params} label="Destination Address" variant="outlined" />}
           />
-          <button onClick={() => console.log('Search Clicked')}>Enter</button>
+                    <select value={travelMode} onChange={e => setTravelMode(google.maps.TravelMode[e.target.value])}>
+            <option value="WALKING">Walking</option>
+            <option value="TRANSIT">Public Transit</option>
+          </select>
+          <button onClick={handleSearch}>Enter</button>
         </div>
+      </div>
+      <div style={{ width: '100%' }}>
+        <Map
+          style={{ width: '100%', height: '100%' }}
+          geoJsonUrl="footpath-steepness.geojson"
+          origin={origin}
+          destination={destination}
+          travelMode={travelMode}
+          searchTrigger={searchTrigger}
+        />
       </div>
       <Box mt={30}><Footer /></Box>
     </div>
