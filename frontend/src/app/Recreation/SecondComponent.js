@@ -59,18 +59,37 @@ const SecondComponent = React.forwardRef((props, ref) => {
   };
   return (
     <Box ref={ref} sx={{ pt: 3, overflow: 'auto' }}>
-      <Typography variant="h4" style={{ fontStyle: 'italic', fontWeight: 'normal', textAlign: 'left', marginBottom: '8px' ,zIndex: 1,marginLeft:'350px'}}>
-        Pick your poison
-      </Typography>
-      <Typography variant="h4" style={{ fontWeight: '800', textAlign: 'left', marginBottom: '8px' ,marginLeft:'350px'}}> {/* extrabold */}
-        Food | Retail | Theatres | Parks
-      </Typography>
-      <Typography variant="h5" style={{ fontWeight: 'bold', fontStyle: 'italic', textAlign: 'left', marginBottom: '20px',marginLeft:'350px' }}> {/* smaller, bold and italic */}
-        We’ve got your needs covered!
-      </Typography>
-      <Typography variant="h6" style={{ textAlign: 'left', marginBottom: '20px' ,marginLeft:'350px', paddingRight: '300px'  }}>
-        This weekend, choose how you want to make memories and browse through our top 10 cherry picked selections just for your needs. Select one of the categories below to get started.
-      </Typography>
+      <Box sx={{ display: { xs: 'none', md: 'block' } ,mt:5}}>
+        <Typography variant="h4" style={{ fontStyle: 'italic', fontWeight: 'normal', textAlign: 'left', marginBottom: '8px' ,zIndex: 1,marginLeft:'350px'}}>
+          Pick your poison
+        </Typography>
+        <Typography variant="h4" style={{ fontWeight: '800', textAlign: 'left', marginBottom: '8px' ,marginLeft:'350px'}}> {/* extrabold */}
+          Food | Retail | Theatres | Parks
+        </Typography>
+        <Typography variant="h5" style={{ fontWeight: 'bold', fontStyle: 'italic', textAlign: 'left', marginBottom: '20px',marginLeft:'350px' }}> {/* smaller, bold and italic */}
+          We’ve got your needs covered!
+        </Typography>
+        <Typography variant="h6" style={{ textAlign: 'left', marginBottom: '20px' ,marginLeft:'350px', paddingRight: '300px'  }}>
+          This weekend, choose how you want to make memories and browse through our top 10 cherry picked selections just for your needs. Select one of the categories below to get started.
+        </Typography>
+      </Box>
+        
+      <Box sx={{ display: { xs: 'block', md: 'none' },mt:5 }}>
+         <Typography variant="h4" style={{ fontStyle: 'italic', fontWeight: 'normal', textAlign: 'left', marginBottom: '8px', zIndex: 1, marginLeft: { xs: '10px', md: '350px' } }}>
+          Pick your poison
+        </Typography>
+        <Typography variant="h4" style={{ fontWeight: '800', textAlign: 'left', marginBottom: '8px', marginLeft: { xs: '10px', md: '350px' } }}> {/* extrabold */}
+          Food | Retail | Theatres | Parks
+        </Typography>
+        <Typography variant="h5" style={{ fontWeight: 'bold', fontStyle: 'italic', textAlign: 'left', marginBottom: '20px', marginLeft: { xs: '10px', md: '350px' } }}> {/* smaller, bold and italic */}
+          We’ve got your needs covered!
+        </Typography>
+        <Typography variant="h6" style={{ textAlign: 'left', marginBottom: '20px', marginLeft: { xs: '10px', md: '350px' }, paddingRight: { xs: '10px', md: '300px' } }}>
+          This weekend, choose how you want to make memories and browse through our top 10 cherry picked selections just for your needs. Select one of the categories below to get started.
+        </Typography>
+      </Box>
+       
+
       <Grid container spacing={4} justifyContent="center" sx={{ maxWidth: '1000px', margin: 'auto', width: '100%' }}>
         <MotionGrid
             component={motion.div}
