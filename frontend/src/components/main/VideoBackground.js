@@ -3,12 +3,17 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import '../../styles/globals.css';
+import { useRouter } from 'next/navigation'; 
 
 
 export default function VideoBackground() {
+  const router = useRouter();
+
 
  
-  
+  const handleNavigation = (path) => () => {
+    router.push(`/Recreation`); 
+  };
 
   return (
     // 大屏幕显示
@@ -64,7 +69,7 @@ export default function VideoBackground() {
           <Typography variant="subtitle1" my={2}sx={{fontSize:'20px',mr:"100px",fontWeight:'bold'}}>
             Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
-          <Button variant="contained" sx={{ bgcolor: 'orange', color: 'black' }}>
+          <Button onClick={handleNavigation('/Recreation')} variant="contained" sx={{ bgcolor: 'orange', color: 'black' }}>
             Get Started
           </Button>
         </Box>

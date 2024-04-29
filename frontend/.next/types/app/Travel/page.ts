@@ -1,5 +1,15 @@
+<<<<<<< HEAD
+<<<<<<<< HEAD:frontend/.next/types/app/Travel/page.ts
 // File: C:\Users\16068\MelbourneUnbound\frontend\src\app\Travel\page.jsx
 import * as entry from '../../../../src/app/Travel/page.js'
+========
+// File: /Users/jianqiao/myproject/MelbourneUnbound/frontend/src/app/Retail/page.jsx
+import * as entry from '../../../../src/app/Retail/page.js'
+>>>>>>>> 25052b476aac4c1f0a6b4ff53b15cbbe227862a5:frontend/.next/types/app/Retail/page.ts
+=======
+// File: /Users/jianqiao/myproject/MelbourneUnbound/frontend/src/app/Travel/page.jsx
+import * as entry from '../../../../src/app/Travel/page.js'
+>>>>>>> 25052b476aac4c1f0a6b4ff53b15cbbe227862a5
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
 type TEntry = typeof import('../../../../src/app/Travel/page.js')
