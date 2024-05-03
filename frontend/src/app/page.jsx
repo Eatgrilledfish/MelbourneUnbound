@@ -7,19 +7,11 @@ import SearchBar from '../components/main/homesearch'; // 调整路径以符合�
 import VideoBackground from '../components/main/VideoBackground';
 import HomeContent from '../components/main/HomeContent';
 import Footer from '../components/main/Footer';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';  // 用于应用基础 CSS 样式
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import theme from '../styles/them';
 
 
 import Box from '@mui/material/Box';
-const theme = createTheme({
-  palette: {
-    text: {
-      primary: 'rgb(32, 20, 69)',
-      secondary: 'rgb(32, 20, 69)'
-    }
-  }
-});
 
 export default function Home() {
   return (
@@ -27,9 +19,9 @@ export default function Home() {
     <div>
       <Box mb={2}> {/* mb是margin-bottom的缩写 */}
         <SearchBar />
-      </Box>
+      </Box >
       <VideoBackground />
-      <Box mt={10} >
+      <Box sx={{color:"primary"}} mt={10}  >
       <HomeContent />
       </Box>
       <Box 

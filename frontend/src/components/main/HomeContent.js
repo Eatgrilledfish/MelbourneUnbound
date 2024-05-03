@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { orange } from '@mui/material/colors';
 
 
+
 export default function Home() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.3 });
   const [ref6, inView6] = useInView({ triggerOnce: true, threshold: 0.3 });
@@ -166,10 +167,9 @@ export default function Home() {
 
 
       {/* 绿色图片和文字 */}
-      <Grid item xs={12} container spacing={3} > {/* 使用容器型Grid项 */}
-        <Grid item xs={6} md={6} component="section"
+      <Box
           sx={{
-            display: { xs: 'none', md: 'block' },
+            display: { xs: 'flex', md: 'flex' },
             py: 5,
             backgroundColor: 'rgba(95,190,122,255)',
             textAlign: 'left',
@@ -179,6 +179,11 @@ export default function Home() {
             mx: 0, // Ensure there are no horizontal margins
             width: '100%', // Fill the width of the parent without creating overflow
           }} >
+                <Box
+      sx={{
+        width: { xs: '100%', md: '380px' },
+        height: { xs: 'auto', md: '355px' }
+      }}>
           <motion.img
             src="/weseeyou.jpeg" // Replace with your image path
             alt="An image description"
@@ -190,21 +195,9 @@ export default function Home() {
             animate={inView1 ? "visible" : "hidden"}
             transition={{ duration: 1.5 }}
           />
-        </Grid>
-
-        <Grid item xs={6} md={6} component="section"
-          sx={{
-            display: { xs: 'none', md: 'block' },
-            py: 5,
-            backgroundColor: 'rgba(95,190,122,255)',
-            textAlign: 'left',
-            px: 0,
-            color: 'rgb(32, 20, 69)',
-            pl: 15,
-            mx: 0, // Ensure there are no horizontal margins
-            width: '100%', // Fill the width of the parent without creating overflow
-          }} >
-          <Box ref={ref1} sx={{ display: { xs: 'none', md: 'block' }, flexDirection: 'column', justifyContent: 'center', height: '100%', mt: '70px' }}>
+          </Box>
+ {/* 文本 */}
+          <Box ref={ref1} sx={{ ml: { xs:6, md: 16, lg: 30 }, display: { xs: 'flex', md: 'flex' }, flexDirection: 'column', justifyContent: 'center', height: '100%', mt: '70px',flex: 1 }}>
             <motion.div
               variants={fadeInVariants}
               initial="hidden"
@@ -245,9 +238,8 @@ export default function Home() {
                 Need Physical Assistance
               </Typography>
             </motion.div>
+            </Box>
           </Box>
-        </Grid>
-      </Grid>
       {/* small screen*/}
 
 

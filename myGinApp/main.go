@@ -2,8 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"encoding/json"
-	"io/ioutil"
 	"net/http"
 
 	"github.com/gin-contrib/cors"
@@ -11,17 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 	_ "github.com/lib/pq"
 )
-
-type Top10Eatery struct {
-	FormatAddress                string  `json:"format_address"`
-	FormatName                   string  `json:"format_name"`
-	GoogleRating                 float32 `json:"google_rating"`
-	Website                      string  `json:"website"`
-	AccessibilityRating          float32 `json:"accessibility_rating"`
-	AccessibilityTypeDescription string  `json:"accessibility_type_description"`
-	Photo                        string  `json:"photo"`
-	RatingsTotal                 int     `json:"ratings_total"`
-}
 
 func main() {
 	router := gin.Default()
@@ -40,7 +27,9 @@ func main() {
 	defer db.Close() // 确保在程序结束时关闭数据库连接
 
 	// 添加API路由
-	router.GET("/top10eateries", getEateriesHandler)
+	router.GET("/top10eateries", func(c *gin.Context) {
+		EateryHandler(c, db)
+	})
 	router.GET("/eaterydrink", func(c *gin.Context) {
 		easterydrink(c, db)
 	})
@@ -57,36 +46,13 @@ func main() {
 	router.Run() // 默认在localhost:8080
 }
 
-func getEateriesHandler(c *gin.Context) {
-	eateries, err := readEateries("top10_eatery.json")
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
-		return
-	}
-	c.JSON(http.StatusOK, eateries)
-}
-
-func readEateries(filePath string) ([]Top10Eatery, error) {
-	file, err := ioutil.ReadFile(filePath)
-	if err != nil {
-		return nil, err
-	}
-
-	var eateries []Top10Eatery
-	err = json.Unmarshal(file, &eateries)
-	if err != nil {
-		return nil, err
-	}
-	return eateries, nil
-}
-
 func easterydrink(c *gin.Context, db *sql.DB) {
 	// 获取查询参数
 	name := c.Query("name")
 	address := c.Query("address")
 
 	// 构建查询语句和参数列表
-	query := "SELECT id, format_address, format_name, google_rating, website, accessibility_rating, accessibility_type_description, photo FROM public.eatery_drink_api_data WHERE photo IS NOT NULL"
+	query := "SELECT id, format_address, format_name, google_rating, website, accessibility_rating, accessibility_type_description, photo,  5 * ((google_rating / 5.0 * 0.3) + (accessibility_rating / 3.0 * 0.7)) AS final_score FROM public.eatery_drink_api_data WHERE photo IS NOT NULL"
 	var args []interface{}
 	if name != "" {
 		query += " AND format_name ILIKE '%' || $1 || '%'"
@@ -111,9 +77,10 @@ func easterydrink(c *gin.Context, db *sql.DB) {
 	var accessibilityRating float32
 	var accessibilityTypeDescription string
 	var photo string
+	var final_score float32
 
 	// 执行查询
-	err := db.QueryRow(query, args...).Scan(&id, &formatAddress, &formatName, &googleRating, &website, &accessibilityRating, &accessibilityTypeDescription, &photo)
+	err := db.QueryRow(query, args...).Scan(&id, &formatAddress, &formatName, &googleRating, &website, &accessibilityRating, &accessibilityTypeDescription, &photo, &final_score)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			// 如果没有找到记录，返回没有找到的信息
@@ -135,5 +102,6 @@ func easterydrink(c *gin.Context, db *sql.DB) {
 		"accessibility_rating":           accessibilityRating,
 		"accessibility_type_description": accessibilityTypeDescription,
 		"photo":                          photo,
+		"final_score":                    final_score,
 	})
 }
