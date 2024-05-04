@@ -101,6 +101,8 @@ export default function MainContent() {
                   <CardMedia
                     component="img"
                     style={{
+                      height: '200px',
+                      width: '100%',  // 设置图片宽度为100%
                       borderRadius: '20px'
                     }}
                     height="140"
@@ -117,6 +119,9 @@ export default function MainContent() {
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {parks.street_address}
+                  </Typography>
+                  <Typography variant="h5" color="rgba(0, 0, 0, 0.5)" sx={{ fontStyle: 'italic', fontWeight: 400 }}>
+                    300 wheelchair users say: {parks.final_score.toFixed(2)}/5
                   </Typography>
                   <Button sx={{ mt: 2 ,backgroundColor: 'orange', color: 'black',fontStyle:'italic',mb:2}} variant="contained" color="primary" href={parks.website} target="_blank" rel="noopener noreferrer">
                     Visit Site
@@ -169,7 +174,7 @@ export default function MainContent() {
       </Box>
 
       {searchresult.id > 0 && (
-        <Box sx={{ mt: 5,ml:15,mb:10 }}> 
+        <Box sx={{ mt: 5,ml:20,mb:10 }}> 
           <Typography variant="h4" gutterBottom>
             <Grid container spacing={5} justifyContent="center">
               <Grid item sx={{ ml: 10 }} xs={12} container alignItems="center" justifyContent="center">
@@ -197,6 +202,9 @@ export default function MainContent() {
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       {searchresult.format_address}
+                    </Typography>
+                    <Typography variant="h5" color="rgba(0, 0, 0, 0.5)" sx={{ fontStyle: 'italic', fontWeight: 400 }}>
+                      300 wheelchair users say: {searchresult.final_score.toFixed(2)}/5
                     </Typography>
                     <Button sx={{ mt: 2, backgroundColor: 'orange', color: 'black',fontStyle:'italic'}} variant="contained" color="primary" href={searchresult.website} target="_blank" rel="noopener noreferrer">
                       Visit Site
