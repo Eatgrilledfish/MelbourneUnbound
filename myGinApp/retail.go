@@ -27,7 +27,7 @@ func RetailHandler(c *gin.Context, db *sql.DB) {
 
 	log.Printf("Received parameters - Name: '%s', Address: '%s'\n", name, address)
 
-	baseQuery := "SELECT id, format_name, format_address, google_rating, website, accessibility_rating, accessibility_type_description, photo FROM public.venues"
+	baseQuery := "SELECT id, format_name, format_address, google_rating, website, accessibility_rating, accessibility_type_description, photo, 5 * ((google_rating / 5.0 * 0.3) + (accessibility_rating / 3.0 * 0.7)) AS final_score FROM public.venues"
 	var args []interface{}
 	var conditions []string
 
@@ -43,7 +43,7 @@ func RetailHandler(c *gin.Context, db *sql.DB) {
 	if len(conditions) > 0 {
 		baseQuery += " WHERE " + strings.Join(conditions, " AND ")
 	} else {
-		baseQuery += " ORDER BY google_rating DESC LIMIT 10"
+		baseQuery += " ORDER BY final_score DESC LIMIT 10"
 	}
 
 	log.Printf("Executing query: %s with arguments: %v\n", baseQuery, args)
