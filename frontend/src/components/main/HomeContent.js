@@ -5,7 +5,7 @@ import { Box, Card, Container, CardContent, useTheme, CardActionArea, CardMedia,
 import '../../styles/globals.css';
 import BarChart from './BarChart'
 import PieChart from './PieChart'
-import { motion } from 'framer-motion';
+import { motion, px } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/navigation';
 import { orange } from '@mui/material/colors';
@@ -20,6 +20,8 @@ export default function Home() {
   const [ref3, inView3] = useInView({ triggerOnce: true, threshold: 0.6 });
   const [ref4, inView4] = useInView({ triggerOnce: true, threshold: 0.6 });
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.6 });
+  const [ref7, inView7] = useInView({ triggerOnce: true, threshold: 0.6 });
+  const [ref8, inView8] = useInView({ triggerOnce: true, threshold: 0.6 });
 
   const router = useRouter();
 
@@ -169,26 +171,29 @@ export default function Home() {
       {/* 绿色图片和文字 */}
       <Box
           sx={{
-            display: { xs: 'flex', md: 'flex' },
+            display: { xs: 'none', md: 'flex' },
             py: 5,
             backgroundColor: 'rgba(95,190,122,255)',
             textAlign: 'left',
             px: 0,
             color: 'rgb(32, 20, 69)',
-            pl: 40,
+            
             mx: 0, // Ensure there are no horizontal margins
             width: '100%', // Fill the width of the parent without creating overflow
           }} >
                 <Box
       sx={{
         width: { xs: '100%', md: '380px' },
-        height: { xs: 'auto', md: '355px' }
+        height: { xs: 'auto', md: '355px' },
+        display: { xs: 'none', md: 'flex' },
+        ml:'400px'
       }}>
           <motion.img
             src="/weseeyou.jpeg" // Replace with your image path
             alt="An image description"
             width={380}  // Adjust as necessary
             height={355} // Adjust as necessary
+            
             ref={ref1}
             variants={fadeInVariants}
             initial="hidden"
@@ -197,7 +202,7 @@ export default function Home() {
           />
           </Box>
  {/* 文本 */}
-          <Box ref={ref1} sx={{ ml: { xs:6, md: 16, lg: 30 }, display: { xs: 'flex', md: 'flex' }, flexDirection: 'column', justifyContent: 'center', height: '100%', mt: '70px',flex: 1 }}>
+          <Box ref={ref1} sx={{ ml: { xs:6, md: 16, lg: 30 }, display: { xs: 'none', md: 'flex' }, flexDirection: 'column', justifyContent: 'center', height: '100%', mt: '70px',flex: 1 }}>
             <motion.div
               variants={fadeInVariants}
               initial="hidden"
@@ -241,15 +246,90 @@ export default function Home() {
             </Box>
           </Box>
       {/* small screen*/}
-
+      <Box sx={{
+              display: { xs: 'flex', md: 'none' },
+              py: 5,
+              backgroundColor: 'rgba(95,190,122,255)',
+              textAlign: 'center',
+              px: 0,
+              color: 'rgb(32, 20, 69)',
+              
+              mx: 0, // Ensure there are no horizontal margins
+              width: '100%', // Fill the width of the parent without creating overflow
+            }}
+         >
+          <Box
+            sx={{
+              width: { xs: 'auto' },
+              height: { xs: 'auto' },
+              display: { xs: 'flex', md: 'none' },
+              
+            }}>
+                <motion.img
+                  src="/weseeyou.jpeg" // Replace with your image path
+                  alt="An image description"
+                  width={200}  // Adjust as necessary
+                  height={200} // Adjust as necessary
+                  
+                  ref={ref7}
+                  variants={fadeInVariants}
+                  initial="hidden"
+                  animate={inView7 ? "visible" : "hidden"}
+                  transition={{ duration: 1.5 }}
+                />
+          </Box>
+          <Box ref={ref7} sx={{ display: { xs: 'flex', md: 'none' }, flexDirection: 'column', justifyContent: 'center', height: '100%',flex: 1 }}>
+            <motion.div
+              variants={fadeInVariants}
+              initial="hidden"
+              animate={inView7 ? "visible" : "hidden"}
+              transition={{ duration: 1.5 }}
+            >
+              <Typography variant="h4" sx={{ fontWeight: 'bold' }} gutterBottom>
+                136K
+              </Typography>
+            </motion.div>
+            <motion.div
+              variants={fadeInVariants}
+              initial="hidden"
+              animate={inView7 ? "visible" : "hidden"}
+              transition={{ duration: 1.5, delay: 0.4 }}
+            >
+              <Typography variant="subtitle1" sx={{ mb: 5, fontStyle: 'italic' }} gutterBottom>
+                CBD Dwellers
+              </Typography>
+            </motion.div>
+            <motion.div
+              variants={fadeInVariants}
+              initial="hidden"
+              animate={inView7 ? "visible" : "hidden"}
+              transition={{ duration: 1.5, delay: 0.6 }}
+            >
+              <Typography variant="h4" sx={{ fontWeight: 'bold' }} gutterBottom>
+                35%
+              </Typography>
+            </motion.div>
+            <motion.div
+              variants={fadeInVariants}
+              initial="hidden"
+              animate={inView7 ? "visible" : "hidden"}
+              transition={{ duration: 1.5, delay: 0.8 }}
+            >
+              <Typography variant="subtitle1" sx={{ fontStyle: 'italic' }} gutterBottom>
+                Need Physical Assistance
+              </Typography>
+            </motion.div>
+            
+          </Box>
+      </Box>
 
       {/* we hear you*/}
-      <Grid container spacing={3} sx={{ mt: 20, }}>
+      <Grid container spacing={3} sx={{ mt: 10, }}>
         {/* Left image with increased space */}
 
 
         {/* Central container for colored boxes, shifted right */}
-        <Grid item xs={12} md={7} sx={{ position: 'relative', height: '500px', py: 5, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', ml: 10 }}>
+        <Grid item xs={12} md={7} sx={{ position: 'relative', height: '500px', py: 5, display: {xs:'none',md:'flex'}, alignItems: 'center', justifyContent: 'flex-end', ml: 10 }}>
           {/* Green Box with Image */}
           <Box sx={{
             width: '35%',
@@ -274,7 +354,13 @@ export default function Home() {
                 position: 'absolute'
               }}
             />
-            <Typography variant="h6" sx={{ color: 'black', textAlign: 'center', position: 'relative', zIndex: 1, pl: 5, pr: 3 }}>
+            <Typography variant="h6" sx={{ color: 'black', textAlign: 'center', position: 'relative', zIndex: 1, pl: 5, pr: 3 ,fontSize: {
+                xs: '0.75rem',   // 小屏幕，字体更小
+                sm: '0.875rem',  // 中等屏幕，稍大一些
+                md: '1rem',      // 大屏幕，正常h6大小
+                lg: '1.125rem',  // 更大屏幕，字体更大
+                xl: '1.25rem'    // 最大屏幕，字体最大
+              }}}>
               .. rely on the kindness of strangers to tell me if this is the bus I want or not
             </Typography>
           </Box>
@@ -338,7 +424,7 @@ export default function Home() {
           </Box>
         </Grid>
         <Grid item xs={12} md={4} sx={{
-          display: 'flex',       // Enable flexbox
+          display: {xs:'none',md:'flex'},       // Enable flexbox
           flexDirection: 'column', // Stack children vertically
           ml: 5,
           py: 5
@@ -355,6 +441,123 @@ export default function Home() {
 
         </Grid>
       </Grid>
+      {/* we hear you:small screen */}
+      <Grid container spacing={1} sx={{ mt: 5 }}>
+        <Grid item xs={12}  sx={{
+            display: { xs: 'flex', md: 'none' }, // Always display
+            flexDirection: 'column',
+            alignItems: 'center'
+      
+          }}>
+            <Typography variant="h4" sx={{ color: 'black', textAlign: 'left', position: 'relative', fontStyle: 'italic' }}>WE HEAR YOU</Typography>
+          
+        </Grid>
+        {/* Left image placeholder for small screens */}
+        <Grid item xs={12} sx={{ display: { xs: 'flex', md: 'none' }, justifyContent: 'center',mt:7}}>
+          {/* Placeholder for potentially a slider or single image */}
+        </Grid>
+
+        {/* Responsive Central container for colored boxes */}
+        <Grid item xs={12} sx={{ flexDirection: 'column',position: 'relative',  display: { xs: 'flex', md: 'none' }, alignItems: 'center', justifyContent: { xs: 'center', md: 'flex-end' } }}>
+          {/* Green Box with Image */}
+          <Box sx={{
+            width: '90%', // Adjusted width for small screen
+            height: '300px', // Adjusted height for small screen
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            
+            position: 'relative',
+            mb: 3 // Margin bottom for spacing between boxes  
+          }}>
+            <motion.img
+              ref={ref8}
+              src="/green box.png"
+              alt="Green Box"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: inView8 ? 1 : 0 }}
+              transition={{ duration: 1 }}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                position: 'absolute'
+              }}
+            />
+            <Typography variant="h6" sx={{ color: 'black', textAlign: 'center',alignItems: 'center',justifyContent:'center', position: 'relative', zIndex: 1, pl: 15, pr: 12,fontSize: {
+              xs: '0.75rem',   // 小屏幕，字体更小
+            }
+            }}>
+              .. rely on the kindness of strangers to tell me if this is the bus I want or not
+            </Typography>
+          </Box>
+
+          {/* Grey Box with Image */}
+          <Box sx={{
+            width: '90%', // Adjusted width for small screen
+            height: '300px', // Adjusted height for small screen
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            position: 'relative',
+            mb: 10 // Margin bottom for spacing between boxes
+          }}>
+            <motion.img
+              ref={ref8}
+              src="/grey box.png"
+              alt="Grey Box"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: inView8 ? 1 : 0 }}
+              transition={{ duration: 1 }}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                position: 'absolute'
+              }}
+            />
+            <Typography variant="h6" sx={{ color: 'black', textAlign: 'center',alignItems: 'center',justifyContent:'center', position: 'relative', zIndex: 1, pl: 15, pr: 12,fontSize: {
+              xs: '0.75rem',   // 小屏幕，字体更小
+            } }}>
+              One day I'd love to not have to think about accessibility
+            </Typography>
+          </Box>
+
+          {/* Orange Box with Image */}
+          <Box sx={{
+            width: '90%', // Adjusted width for small screen
+            height: '300px', // Adjusted height for small screen
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            
+            position: 'relative',
+          }}>
+            <motion.img
+              ref={ref8}
+              src="/orange box.png"
+              alt="Orange Box"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: inView8 ? 1 : 0 }}
+              transition={{ duration: 1 }}
+              style={{
+                width: 'auto',
+                height: '400px',
+                objectFit: 'contain',
+                position: 'absolute'
+              }}
+            />
+            <Typography variant="h6" sx={{ color: 'black', textAlign: 'center',alignItems: 'center',justifyContent:'center', position: 'relative', zIndex: 1, pl: 15, pr: 15,fontSize: {
+              xs: '0.75rem',   // 小屏幕，字体更小
+            } }}>
+              I spend a lot of my time looking down … which is not the best way to see a city,
+            </Typography>
+          </Box>
+        </Grid>
+
+        
+      </Grid>
+
 
 
 

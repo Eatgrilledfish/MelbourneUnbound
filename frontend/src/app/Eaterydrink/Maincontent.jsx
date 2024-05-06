@@ -3,6 +3,7 @@ import { Card, CardMedia, CardContent, Typography, Grid, Paper, Button, Box } fr
 import StarRating from './star';
 
 const BASE_IMAGE_URL = 'image/';
+const A_IMAGE_URL = 'accessible.png';
 
 export default function MainContent() {
   const [eateries, setEateries] = useState([]);
@@ -56,16 +57,25 @@ export default function MainContent() {
   }
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center" minHeight="100vh">
-      <Box sx={{ backgroundImage: `url(lights.jpg)`, // Set image background
-        backgroundSize: 'cover', // Cover the entire background area
-        width: '100%',borderRadius:'30px' }}>
+    <Box display="flex" flexDirection="column" alignItems="center" minHeight="100vh" position="relative">
+      <Box sx={{ width: '100%', backgroundColor: 'orange', height: '170vh' }} />
+      <Box sx={{ width: '100%', backgroundColor: 'white', height: '100px' }} />
+      <Box sx={{ width: '100%', backgroundImage: `url(lights.jpg)`, backgroundSize: 'cover', height: '200vh' }}>
         
-      
+      <Box position="absolute" top={0} left={0} width="100%" minHeight="100vh" display="flex" flexDirection="column" alignItems="center">
+         {/* 添加图片 */}
+        <Box component="img" src={`${A_IMAGE_URL}`} sx={{
+          position: 'absolute',
+          left: 130,
+          top: '45%', 
+          transform: 'translateY(-50%)', // 垂直居中
+          maxWidth: '100%', // 确保图片不超过容器宽度
+          height: '300vh'
+        }} />
         <Grid item xs={8} md={8} sx={{ 
               display: 'flex',       // Enable flexbox
               flexDirection: 'column', // Stack children vertically
-              bgcolor:'white',ml:25,mt:10,mb:10,
+              ml:30,mb:10,
               borderRadius:'30px'
               }} container spacing={5} justifyContent="center">
                 <Grid container sx={{ justifyContent: 'flex' }}>
@@ -73,26 +83,27 @@ export default function MainContent() {
             <Grid item xs={8} md={12} sx={{ 
                 display: 'flex',       // Enable flexbox
                 flexDirection: 'column', // Stack children vertically
-                bgcolor:'orange',borderTopLeftRadius:'30px',borderTopRightRadius:'30px'
+                alignItems: 'flex-end',
                 
                 }}> 
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'left', position: 'relative' ,ml:18,mb:5,fontStyle:'italic',mt:10}}>
+                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,fontStyle:'italic',mt:10}}>
                     The Best
                   </Typography>
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'left', position: 'relative' ,ml:18,mb:5,fontStyle:'italic'}}>
+                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,fontStyle:'italic'}}>
                     among
                   </Typography>
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'left', position: 'relative' ,ml:18,mb:5,fontStyle:'italic'}}>
+                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,fontStyle:'italic'}}>
                     The Best
                   </Typography>
-                  <Typography variant="h5" sx={{ color: 'black', textAlign: 'left', position: 'relative' ,fontStyle:'italic',ml:18,mb:5,}}>
+                  <Typography variant="h5" sx={{ color: 'black', textAlign: 'right', position: 'relative' ,fontStyle:'italic',mr:18,mb:8,}}>
                     Top 10 Eateries
                   </Typography>
 
             </Grid>
           </Grid>
-          {eateries.map((eatery, index) => (
-            <Grid item sx={{}} spacing={4} key={index} xs={12} sm={12} md={12} lg={12} container alignItems="center" justifyContent="center">
+          <Box sx={{bgcolor:'white',ml:8,width:'1000px',borderRadius:'30px' ,mb:10}} >
+            {eateries.map((eatery, index) => (
+            <Grid item sx={{mt:1}} spacing={4} key={index} xs={12} sm={12} md={12} lg={12} container alignItems="center" justifyContent="center">
              
               {/* 设置卡片在左边 */}
               <Grid item xs={3}sx={{ml:10}}>
@@ -139,8 +150,11 @@ export default function MainContent() {
               </Grid>
             </Grid>
           ))}
+          </Box>
+          
         </Grid>
         </Box>
+      </Box>  
       {/* search */}
       <Box sx={{ bgcolor: 'grey.200', width: '100vw', m: 0, p: 0 ,mt:10}}>
         <Box sx={{mb:10}}>
