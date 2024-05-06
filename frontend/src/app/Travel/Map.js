@@ -62,6 +62,12 @@ const Map = ({ origin, destination, searchTrigger, travelMode }) => {
     });
 
     newMap.setOptions({ styles: mapStyles });
+    const transitLayer = new window.google.maps.TransitLayer();
+    transitLayer.setMap(newMap);
+    const kmlLayer = new google.maps.KmlLayer({
+      url: `${window.location.origin}/accesible-tram-stop.kml`,  // 使用根相对路径
+      map: newMap
+    });
     setMap(newMap);
     directionsRenderer.current = new window.google.maps.DirectionsRenderer();
     directionsRenderer.current.setMap(newMap);
