@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-// File: C:\Users\16068\MelbourneUnbound\frontend\src\app\Parks\page.jsx
-=======
 // File: /Users/jianqiao/myproject/MelbourneUnbound/frontend/src/app/Parks/page.jsx
->>>>>>> 74de5dfe717a0c893a584c52cab25c5f5595e4b2
 import * as entry from '../../../../src/app/Parks/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
