@@ -1,13 +1,16 @@
 "use client";
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
-import Map from '../Travel/Map';
+import Map from './Map';
 import { Box } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { debounce } from 'lodash';
 import SearchBar from '../../components/main/homesearch'; // Adjust path to fit your file structure
 import Footer from '../../components/main/Footer';
+import { AspectRatio } from './AspectRatio';
+import TableauViz from  './TableauViz';
+
 
 const Home = () => {
   const [startAddress, setStartAddress] = useState('');
@@ -37,6 +40,7 @@ const Home = () => {
     }
   }, []);
 
+  
 
 
 
@@ -116,8 +120,21 @@ const Home = () => {
           travelMode={travelMode}
           searchTrigger={searchTrigger}
         />
+        
       </div>
+      <div>
+      <h1>Dashboard</h1>
+      <AspectRatio ratio={16 / 9} className="w-full mt-4">
+        <iframe
+          src="https://public.tableau.com/views/AccessibleWashroomsAnalysis/NearestWashrooms?:language=en-US&:display_count=n&:origin=viz_share_link"
+          frameBorder="0"
+          className="h-full w-full overflow-hidden rounded-lg border bg-muted"
+          
+        />
+      </AspectRatio>
+    </div>
       <Box mt={30}><Footer /></Box>
+
     </div>
   );
 };

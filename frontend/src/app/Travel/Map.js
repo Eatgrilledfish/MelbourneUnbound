@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 
 const Map = ({ origin, destination, searchTrigger, travelMode }) => {
+
   const mapRef = useRef(null);
   const [map, setMap] = useState(null);
   const [apiLoaded, setApiLoaded] = useState(false);  // 控制API加载的状态
