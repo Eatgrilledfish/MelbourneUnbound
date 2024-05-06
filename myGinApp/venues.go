@@ -22,6 +22,7 @@ type Venue struct {
 	AccessibilityTypeDescription string  `json:"accessibility_type_description"`
 	Latitude                     float64 `json:"latitude"`
 	Longitude                    float64 `json:"longitude"`
+	Final_score                  float64 `json:"final_score"`
 }
 
 func VenuesHandler(c *gin.Context, db *sql.DB) {
@@ -32,7 +33,7 @@ func VenuesHandler(c *gin.Context, db *sql.DB) {
 	// Debug: Print received parameters
 	log.Printf("Received name: %s, address: %s\n", name, address)
 
-	baseQuery := "SELECT id, venue_name, google_rating, website, street_address, img, accessibility_rating, accessibility_type, accessibility_type_description, latitude, longitude FROM public.venues_1"
+	baseQuery := "SELECT id, venue_name, google_rating, website, street_address, img, accessibility_rating, accessibility_type, accessibility_type_description, latitude, longitude, 5 * ((google_rating / 5.0 * 0.3) + (accessibility_rating / 3.0 * 0.7)) AS final_score FROM public.venues_1"
 	var args []interface{}
 	var conditions []string
 
@@ -48,7 +49,7 @@ func VenuesHandler(c *gin.Context, db *sql.DB) {
 	if len(conditions) > 0 {
 		baseQuery += " WHERE " + strings.Join(conditions, " AND ")
 	} else {
-		baseQuery += " ORDER BY accessibility_rating DESC LIMIT 10"
+		baseQuery += " ORDER BY final_score DESC LIMIT 10"
 	}
 
 	// Debug: Print the final query and arguments
@@ -65,7 +66,7 @@ func VenuesHandler(c *gin.Context, db *sql.DB) {
 	venues := []Venue{}
 	for rows.Next() {
 		var v Venue
-		if err := rows.Scan(&v.Id, &v.VenueName, &v.GoogleRating, &v.Website, &v.StreetAddress, &v.Img, &v.AccessibilityRating, &v.AccessibilityType, &v.AccessibilityTypeDescription, &v.Latitude, &v.Longitude); err != nil {
+		if err := rows.Scan(&v.Id, &v.VenueName, &v.GoogleRating, &v.Website, &v.StreetAddress, &v.Img, &v.AccessibilityRating, &v.AccessibilityType, &v.AccessibilityTypeDescription, &v.Latitude, &v.Longitude, &v.Final_score); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 			return
 		}
