@@ -2,6 +2,7 @@
   "/_not-found/page": "app/_not-found/page.js",
   "/Recreation/page": "app/Recreation/page.js",
   "/Eaterydrink/page": "app/Eaterydrink/page.js",
+<<<<<<< HEAD
   "/Parks/page": "app/Parks/page.js",
   "/Retail/page": "app/Retail/page.js",
   "/Travel/page": "app/Travel/page.js",
@@ -9,4 +10,19 @@
   "/tablue/page": "app/tablue/page.js",
   "/Theatres/page": "app/Theatres/page.js",
   "/page": "app/page.js"
+=======
+<<<<<<< HEAD
+  "/Parks/page": "app/Parks/page.js",
+  "/Theatres/page": "app/Theatres/page.js",
+  "/Retail/page": "app/Retail/page.js",
+  "/page": "app/page.js"
+=======
+  "/Retail/page": "app/Retail/page.js",
+  "/Theatres/page": "app/Theatres/page.js",
+  "/Travel/page": "app/Travel/page.js",
+  "/Parks/page": "app/Parks/page.js",
+  "/page": "app/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
+>>>>>>> 74de5dfe717a0c893a584c52cab25c5f5595e4b2
+>>>>>>> 5f308425db4ea8d48ff0d3e538c1ff2652b2af63
 }
