@@ -176,16 +176,18 @@ const Home = () => {
 
       </div>
       <div>
-        {/* <h1>Dashboard</h1>
+        <h1>Dashboard</h1>
         <AspectRatio ratio={16 / 9} className="w-full mt-4">
           <iframe
-            src="https://public.tableau.com/views/AccessibleWashroomsAnalysis/NearestWashrooms?:language=en-US&:display_count=n&:origin=viz_share_link"
+            src="https://public.tableau.com/views/AccessibleWashroomsAnalysis/NearestWashrooms"
             frameBorder="0"
             className="h-full w-full overflow-hidden rounded-lg border bg-muted"
 
           />
-        </AspectRatio> */}
+        </AspectRatio>
       </div>
+{/*       
+      <TableauViz /> */}
       <Box mt={30}><Footer /></Box>
 
     </div>

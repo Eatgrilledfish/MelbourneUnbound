@@ -43,6 +43,7 @@ func main() {
 		getAddresses(c, db)
 	})
 	router.POST("/process-text", RequestChatGPT)
+	router.GET("/test-tts", TestTextToSpeech)
 
 	router.Run() // 默认在localhost:8080
 }

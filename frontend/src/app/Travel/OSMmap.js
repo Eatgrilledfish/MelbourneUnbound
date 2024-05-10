@@ -3,7 +3,8 @@ import axios from 'axios';
 import Chart from 'chart.js/auto';
 import RoutePanel from './RoutePanel'; // 确保路径正确
 import DownloadButton from './DownloadButton';
-import { Container, Grid, Box,Button } from '@mui/material';
+import AudioPlayer from './AudioPlayer';
+import { Container, Grid, Box,Button,Typography } from '@mui/material';
 
 const Map = ({ origin, destination, searchTrigger }) => {
   const mapRef = useRef(null);
@@ -15,6 +16,7 @@ const Map = ({ origin, destination, searchTrigger }) => {
   const [routeData, setRouteData] = useState(null);
   const [originMarker, setOriginMarker] = useState(null);
   const [destinationMarker, setDestinationMarker] = useState(null);
+  const [optimizedData, setOptimizedData] = useState(null);
   const [apiResponse, setApiResponse] = React.useState('');
 
   // 与后端交互
@@ -58,20 +60,7 @@ const Map = ({ origin, destination, searchTrigger }) => {
         extras: relevantExtras
       };
     });
-
-    console.log('this is  optimizedData:', optimizedData);
-
-  
-    axios.post('http://localhost:8080/process-text', { optimizedData })
-      .then(response => {
-        // Handle success
-        console.log('Response received:', response.data); // You might want to set this in stat
-        setApiResponse(response.data.chat_response);
-      })
-      .catch(error => {
-        // Handle error
-        console.error('There was an error!', error);
-      });
+    setOptimizedData(optimizedData);
   };
 
   // 监听清除路径和地图
@@ -444,10 +433,10 @@ const Map = ({ origin, destination, searchTrigger }) => {
         )}
       </Grid>
     </Container>
-    <Button variant="contained" color="primary" onClick={handleSendRouteData}>
-                  Send Route Data
-                </Button>
-                {apiResponse && <div>{apiResponse}</div>}
+    <div>
+    <Typography>More over! Click here to get the AI Generated Voice Guide!</Typography>
+    <AudioPlayer routeData={routeData} />
+    </div>
     </>
   );
 };
