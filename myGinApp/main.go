@@ -42,6 +42,7 @@ func main() {
 	router.GET("/addresses", func(c *gin.Context) {
 		getAddresses(c, db)
 	})
+	router.POST("/process-text", RequestChatGPT)
 
 	router.Run() // 默认在localhost:8080
 }

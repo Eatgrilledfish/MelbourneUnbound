@@ -1,0 +1,1766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Melbourne Wheelchair Accessible Tram Stops (Super Stops)</name>
+    <description><![CDATA[All Super Stops have a raised platform to allow easy access for wheelchair users to the new low floor trams.<br>Compiled by AQA Victoria<br>www.aqavic.org.au]]></description>
+    <Style id="icon-22-nodesc-normal">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-22-nodesc-highlight">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/22-blue-dot.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-22-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-22-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-22-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-503-DB4436-normal">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-503-DB4436-highlight">
+      <IconStyle>
+        <color>ff3644db</color>
+        <scale>1.1</scale>
+        <Icon>
+          <href>https://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1.1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-503-DB4436">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-503-DB4436-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-503-DB4436-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Folder>
+      <name>Untitled layer</name>
+      <Placemark>
+        <name>101 Collins St (Melbourne 3000)</name>
+        <description><![CDATA[Tram Stop: 7<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>31: Hoddle St - Victoria Harbour Docklands<br>48: North Balwyn - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.970372,-37.81439,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Albert Rd & Aughtie Dr (Albert Park 3206)]]></name>
+        <description><![CDATA[Tram Stop: 131<br><br>Tram Route:<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.961097,-37.840497,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Albert Rd & Clarendon St (Albert Park 3206)]]></name>
+        <description><![CDATA[Tram Stop: 130<br><br>Tram Route:<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.963059,-37.839165,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Albert St & Nicholson St (East Melbourne 3002)]]></name>
+        <description><![CDATA[Tram Stop: 10<br><br>Tram Routes:<br>35: City Circle (Free Tourist Tram)<br>86: Bundoora RMIT - Waterfront City Docklands<br>95: City Spener St - Melbourne Museum<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.972931,-37.80942,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Alfred Hospital & Commercial Rd (Prahran 3181)]]></name>
+        <description><![CDATA[Tram Stop: 26<br><br>Tram Route:<br>72: Melb. University - Camberwell]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.981784,-37.845285,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Arts Centre / St.Kilda Rd (Southbank 3000)</name>
+        <description><![CDATA[Tram Stop: 14<br><br>Tram Routes:<br>01: East Coburg - South Melbourne Beach<br><br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>06: Melb. University - Glen Iris<br>08: Moreland - Toorak<br>16: Melb. University - Kew via St.Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie<br>72: Melb. University - Camberwell]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.969463,-37.821839,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Balwyn Rd & Doncaster Rd (Balwyn North 3104)]]></name>
+        <description><![CDATA[Tram Stop: 51<br><br>Tram Routes:<br>24: North Balwyn - City (LaTrobe St West End)<br>48: North Balkwyn - Victoria Harbour Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.084648,-37.794709,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Bourke St & Elizabeth St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 5<br><br>Tram Routes:<br>86: Bundoora RMIT - Waterfront City Docklands<br>95: City Spener St - Melbourne Museum<br>96: East Brunswick - St. Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.962905,-37.814325,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Bourke St & Harbour Esp (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D3<br><br>Tram Routes:<br>35: City Circle (Free Service)<br>70: Wattle Park - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.946368,-37.818618,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Bourke St & Queens St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 4<br><br>Tram Routes:<br>86: Bundoora RMIT - Waterfront City Docklands<br>95: City Spener St - Melbourne Museum<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.960222,-37.815143,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Bourke St & Russell St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 9<br><br>Tram Routes:<br>86: Bundoora RMIT - Waterfront City Docklands<br>95: City Spener St - Melbourne Museum<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.968909,-37.812624,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Bourke St & Spencer St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 1<br><br>Tram Routes:<br>86: Bundoora RMIT - Waterfront City Docklands<br>95: City Spener St - Melbourne Museum<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.953466,-37.816962,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Bourke St & Swanston St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 6<br><br>Tram Routes:<br>86: Bundoora RMIT - Waterfront City Docklands<br>95: City Spener St - Melbourne Museum<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.965457,-37.813582,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Bourke St & Williams St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 3<br><br>Tram Routes:<br>86: Bundoora RMIT - Waterfront City Docklands<br>95: City Spener St - Melbourne Museum<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.95799,-37.815796,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Benwerrin Cres (Burwood East 3151)]]></name>
+        <description><![CDATA[Tram Stop: 68<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.141558,-37.851307,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Blackburn Rd (Burwood East 3151)]]></name>
+        <description><![CDATA[Tram Stop: 70<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.151562,-37.85261,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Deakin University (Burwood 3125)]]></name>
+        <description><![CDATA[Tram Stop: 63<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.114609,-37.849957,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Elgar Rd (Burwood 3125)]]></name>
+        <description><![CDATA[Tram Stop: 62<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.108535,-37.849428,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Hanover Rd (Vermont South 3133)]]></name>
+        <description><![CDATA[Tram Stop: 75<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.182112,-37.856417,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Keats St (Burwood East 3151)]]></name>
+        <description><![CDATA[Tram Stop: 69<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.145965,-37.851878,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Lakeside Dr (Burwood East 3151)]]></name>
+        <description><![CDATA[Tram Stop: 72<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.165004,-37.854447,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Old Burwood Rd (Burwood East 3151)]]></name>
+        <description><![CDATA[Tram Stop: 67<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.137887,-37.851583,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Presbyterian Ladies College (Burwood 3125)]]></name>
+        <description><![CDATA[Tram Stop: 61<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.105274,-37.850066,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Sevenoaks Rd (Burwood East 3151)]]></name>
+        <description><![CDATA[Tram Stop: 71<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.158531,-37.8536,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Somers St (Burwood 3125)]]></name>
+        <description><![CDATA[Tram Stop: 59<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.098689,-37.850795,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Sprinvale Rd (Burwood East 3151)]]></name>
+        <description><![CDATA[Tram Stop: 73<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.169148,-37.854878,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Stanley Rd (Vermont South 3133)]]></name>
+        <description><![CDATA[Tram Stop: 74<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.174564,-37.855492,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Starling St (Burwood 3125)]]></name>
+        <description><![CDATA[Tram Stop: 65<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.125907,-37.85129,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Burwood Hwy & Station St (Burwood 3125)]]></name>
+        <description><![CDATA[Tram Stop: 64<br><br>Tram Route:<br>75: Vermont South - Spencer St City]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.119522,-37.850581,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Casino /MCEC/Clarendon St (Southbank 3006)</name>
+        <description><![CDATA[Tram Stop: 124A<br><br>Tram Routes:<br>96: East Brunswick - St.Kilda Beach<br>109: Box Hill - Pt.Melbourne<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.956431,-37.823765,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Cecil St & Park Rd (Kew 3101)]]></name>
+        <description><![CDATA[Tram Stop: 25<br><br>Tram Route:<br>01: East Coburg - South Melbourne Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.958739,-37.836065,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Central Pier & Harbour Esp (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D2<br><br>Tram Routes:<br>30: St.Vincents Plaza - Etihad Stadium Docklands<br>35: City Circle (Free Tourist Tram)<br>70: Waterfront City Docklands - Wattle Park<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.944983,-37.815709,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Collins St & Batman Hill Dr (Docklands 3000)]]></name>
+        <description><![CDATA[Tram Stop: D15<br><br>Tram Routes:<br>11: West Preston - Victorian Harbour Docklands<br>31: Hoddle St - Victorian Harbour Docklands<br>48: North Balwyn - Victorian Harbour Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.950377,-37.820061,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Collins St & Elizabeth St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 5<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>31: Hoddle St - Victoria Harbour Docklands<br>48: North Balwyn - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.963871,-37.816281,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Collins St & Harbour Esp (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D16<br><br>Tram Routes:<br>11: West Preston - Victorian Harbour Docklands<br>31: Hoddle St - Victorian Harbour Docklands<br>48: North Balwyn - Victorian Harbour Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.947057,-37.821024,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Collins St & Melbourne Town Hall (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 6<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>31: Hoddle St - Victoria Harbour Docklands<br>48: North Balwyn - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.966369,-37.815567,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Collins St & Merchant St (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D17<br><br>Tram Routes:<br>11: West Preston - Victorian Harbour Docklands<br>31: Hoddle St - Victorian Harbour Docklands<br>48: North Balwyn - Victorian Harbour Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.944645,-37.821464,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Collins St & Parliament (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 8<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>31: Hoddle St - Victoria Harbour Docklands<br>48: North Balwyn - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.973643,-37.813424,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Collins St & Southern Cross Station (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D14<br><br>Tram Routes:<br>11: West Preston - Victorian Harbour Docklands<br>31: Hoddle St - Victorian Harbour Docklands<br>48: North Balwyn - Victorian Harbour Docklands<br>75: Vermont South - City (Spencer St)]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.953964,-37.819186,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Collins St & Spencer St (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: 1<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>31: Hoddle St - Victoria Harbour Docklands<br>48: North Balwyn - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.954272,-37.819044,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Chapel St (Windsor 3181)]]></name>
+        <description><![CDATA[Tram Stop: 32<br><br>Tram Routes:<br>05: Melb. University - Malvern<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.992304,-37.857595,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Closeburn Ave (Prahran 3181)]]></name>
+        <description><![CDATA[Tram Stop: 36<br><br>Tram Routes:<br>05: Melb. University - Malvern<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.004281,-37.859366,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Glenferrie Rd (Caulfield North 3161)]]></name>
+        <description><![CDATA[Tram Stop: 52<br><br>Tram Route:<br>16: Melb. University - Kew via St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.027299,-37.866121,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Hawthorn Rd (Armadale 3143)]]></name>
+        <description><![CDATA[Tram Stop: 48<br><br>Tram Route:<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.025872,-37.865599,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Kooyong Rd (Armadale 3143)]]></name>
+        <description><![CDATA[Tram Stop: 42<br><br>Tram Route:<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.019506,-37.862699,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Lansdowne Rd (St Kilda East 3183)]]></name>
+        <description><![CDATA[Tram Stop: 37<br><br>Tram Routes:<br>05: Melb. University - Malvern<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.007148,-37.859785,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Orrong Rd (St Kilda East 3183)]]></name>
+        <description><![CDATA[Tram Stop: 38<br><br>Tram Routes:<br>05: Melb. University - Malvern<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.01063,-37.860276,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & The Avenue (Windsor 3181)]]></name>
+        <description><![CDATA[Tram Stop: 34<br><br>Tram Routes:<br>05: Melb. University - Malvern<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.997356,-37.858476,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Wattletree Rd (Caulfield North 3161)]]></name>
+        <description><![CDATA[Tram Stop: 40<br><br>Tram Routes:<br>05: Melb. University - Malvern<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.015263,-37.860905,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Dandenong Rd & Williams Rd (St Kilda East 3183)]]></name>
+        <description><![CDATA[Tram Stop: 35<br><br>Tram Routes:<br>05: Melb. University - Malvern<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.001354,-37.859036,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Docklands Dr & New Quay Prom (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D10<br><br>Tram Routes:<br>35: City Circle (Free Tourist Tram)<br>70: Waterfront City Docklands - Wattle Park<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.94082,-37.813622,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Docklands Dr & Waterfront City (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D11<br><br>Tram Routes:<br>35: City Circle (Free Tourist Tram)<br>70: Waterfront City Docklands - Wattle Park<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.938866,-37.814424,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Docklands Park & Harbour Esp (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D4<br><br>Tram Routes:<br>35: City Circle (Free Tourist Tram)<br>70: Waterfront City Docklands - Wattle Park]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.947702,-37.821951,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Elizabeth St & Haymarket (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 9<br><br>Tram Routes:<br>19: North Coburg - City Elizabeth St<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.957544,-37.801977,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Fitzroy St / Jacka Bvd (St Kilda 3182)</name>
+        <description><![CDATA[Tram Stop: 135<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>(No. 3 Tram DOES NOT service this stop while operating on weekdays)<br>03a: Melb. University - East Malvern via St.Kilda (Weekends)<br><br>16: Melb. University - Kew via St.Kilda Beach<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.973297,-37.862179,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Fitzroy St & Park St (St Kilda 3182)]]></name>
+        <description><![CDATA[Tram Stop: 134<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>(No. 3 Tram DOES NOT service this stop while operating on weekdays)<br>03a: Melb. University - East Malvern via St.Kilda (Weekends)<br><br>16: Melb. University - Kew via St.Kilda Beach<br>96: East Brunswick - St.Kilda Beach<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.974863,-37.861304,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Flemington Rd & Murphy St (North Melbourne 3051)]]></name>
+        <description><![CDATA[Tram Stop: 15<br><br>Tram Routes:<br>55: West Coburg - Domain Interchange<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.952238,-37.797465,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Flemington Rd & Royal Childrens Hosp (Parkville 3052)]]></name>
+        <description><![CDATA[Tram Stop: 19<br><br>Tram Routes:<br>55: West Coburg - Domain Interchange<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.949507,-37.795202,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Flinders St & Elizabeth St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 4<br><br>Tram Routes:<br>35: City Circle (Free Service)<br>70: Wattle Park - Waterfront City Docklands<br>75: Vermont South - City (Spenser St)]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.964886,-37.818244,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Flinders St & Market St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 3<br><br>Tram Routes:<br>35: City Circle (Free Service)<br>70: Wattle Park - Waterfront City Docklands<br>75: Vermont South - City (Spenser St)]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.960842,-37.819417,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Flinders St & Melbourne Aquarium (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 2<br><br>Tram Routes:<br>35: City Circle (Free Service)<br>70: Wattle Park - Waterfront City Docklands<br>75: Vermont South - City (Spenser St)]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.958121,-37.820202,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Flinders St & Spencer St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 1<br><br>Tram Routes:<br>35: City Circle (Free Service)<br>70: Wattle Park - Waterfront City Docklands<br>75: Vermont South - City (Spenser St)]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.955309,-37.821107,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Flinders St & Swanston St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 5<br><br>Tram Routes:<br>35: City Circle (Free Service)<br>70: Wattle Park - Waterfront City Docklands<br>75: Vermont South - City (Spenser St)]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.967282,-37.81752,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Flinders St Station / Federation Square (Melbourne 3000)</name>
+        <description><![CDATA[Tram Stop: 13<br><br>Tram Routes:<br>01: East Coburg - South Melbourne Beach<br><br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>06: Melb. University - Glen Iris<br>08: Moreland - Toorak<br>16: Melb. University - Kew via St. Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie<br>72: Melb. University - Camberwell]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.967856,-37.818335,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Footscray Station & Leeds St (Footscray 3011)]]></name>
+        <description><![CDATA[Tram Stop: 64<br><br>Tram Route:<br>82: Moonee Ponds - Footscray]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.900371,-37.801569,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Georges Rd & Arthurton Rd (Northcote 3070)]]></name>
+        <description><![CDATA[Tram Stop: 229<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>112: West Preston - St. Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.991298,-37.76884,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Georges Rd & Bird Ave (Thornbury 3071)]]></name>
+        <description><![CDATA[Tram Stop: 31<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>112: West Preston - St. Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.992583,-37.762793,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Georges Rd & Gladstone Ave (Northcote 3070)]]></name>
+        <description><![CDATA[Tram Stop: 30<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>112: West Preston - St. Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.992024,-37.765638,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Georges Rd & Hutton St (Thornbury 3071)]]></name>
+        <description><![CDATA[Tram Stop: 33<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>112: West Preston - St. Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.99416,-37.755466,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Georges Rd & Normanby Ave (Thornbury 3071)]]></name>
+        <description><![CDATA[Tram Stop: 32<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>112: West Preston - St. Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.993222,-37.758958,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Georges Rd & Sumner Ave (Northcote 3070)]]></name>
+        <description><![CDATA[Tram Stop: 28<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>112: West Preston - St. Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.990749,-37.771881,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Georges Rd & Westbourne Gr
+(Northcote 3070)]]></name>
+        <description><![CDATA[Tram Stop: 27<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>112: West Preston - St. Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.990246,-37.774186,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Harold St & Danks St (Middle Park 3206)]]></name>
+        <description><![CDATA[Tram Stop: 137<br><br>Tram Route:<br>112: West Preston - St. Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.958692,-37.851014,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Bridge Rd & Church St (Hawthorn 3122)]]></name>
+        <description><![CDATA[Tram Stop: 23<br><br>Tram Routes:<br>48: North Balwyn - Victoria Harbour Docklands<br>75: City (Spenser St) - Vermont South]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.016162,-37.819958,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Koornang Rd & Truganini Rd (Carnegie 3163)]]></name>
+        <description><![CDATA[Tram Stop: 68<br><br>Tram Route:<br>67: Melb. University - Carnegie]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.055845,-37.893916,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / Albert Park Station (South Melbourne 3205)</name>
+        <description><![CDATA[Tram Stop: 128<br><br>Tram Route:<br>96: East Brunswick - St. Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.958737,-37.840371,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / Beacons Cove (Port Melbourne 3207)</name>
+        <description><![CDATA[Tram Stop: 129<br><br>Tram Route:<br>109: Box Hill - Pt. Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.93269,-37.840995,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / City Rd (Southbank 3006)</name>
+        <description><![CDATA[Tram Stop: 126<br><br>Tram Route:<br>96: East Brunswick - St. Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.954371,-37.829823,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / Graham St (Port Melbourne 3207)</name>
+        <description><![CDATA[Tram Stop: 128<br><br>Tram Route:<br>109: Box Hill - Pt. Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.937017,-37.837209,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / Middle Park Station (Middle Park 3206)</name>
+        <description><![CDATA[Tram Stop: 130<br><br>Tram Route:<br>96: East Brunswick - St. Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.96544,-37.849653,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / Montague St (South Melbourne 3205)</name>
+        <description><![CDATA[Tram Stop: 126<br><br>Tram Route:<br>109: Box Hill - Pt. Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.948749,-37.830142,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / North Port Station (Port Melbourne 3207)</name>
+        <description><![CDATA[Tram Stop: 127<br><br>Tram Route:<br>109: Box Hill - Pt. Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.943854,-37.833081,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / Southbank Tram Depot (Southbank 3006)</name>
+        <description><![CDATA[Tram Stop: 125A<br><br>Tram Route:<br>109: Box Hill - Pt. Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.953874,-37.827503,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / St Kilda Station (St Kilda 3182)</name>
+        <description><![CDATA[Tram Stop: 132<br><br>Tram Route:<br>96: East Brunswick - St. Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.977492,-37.859509,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / South Melbourne Station (South Melbourne 3205)</name>
+        <description><![CDATA[Tram Stop: 127<br><br>Tram Route:<br>96: East Brunswick - St. Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.955606,-37.833537,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Light Rail / Wright St (Middle Park 3206)</name>
+        <description><![CDATA[Tram Stop: 129<br><br>Tram Route:<br>96: East Brunswick - St. Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.961513,-37.845193,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Malvern Rd & High St (Glen Iris 3146)]]></name>
+        <description><![CDATA[Tram Stop: 53<br><br>Tram Route:<br>06: Melbourne University - Glen Iris]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.057158,-37.860013,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Matthews Ave & Marshall Rd (Airport West 3042)]]></name>
+        <description><![CDATA[Tram Stop: 59<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.890486,-37.713763,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Matthews Ave & Cameron St (Airport West 3042)]]></name>
+        <description><![CDATA[Tram Stop: 55<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.890158,-37.72977,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Matthews Ave & Fullarton Rd (Airport West 3042)]]></name>
+        <description><![CDATA[Tram Stop: 54<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.889804,-37.732205,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Matthews Ave & Hawker St (Airport West 3042)]]></name>
+        <description><![CDATA[Tram Stop: 57<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.891395,-37.722878,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Matthews Ave & Keilor Rd (Niddrie 3042)]]></name>
+        <description><![CDATA[Tram Stop: 53<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.889264,-37.735897,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Matthews Ave & Marshall Rd (Airport West 3042)]]></name>
+        <description><![CDATA[Tram Stop: 58<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.892008,-37.718198,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Melbourne Park / AAMI Park (Melbourne 3000)</name>
+        <description><![CDATA[Tram Stop: 7D<br><br>Tram Route:<br>70: Waterfront City Docklands - Wattle Park]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.986849,-37.823852,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Melbourne Park / MCG & Hisense Arena (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 7C<br><br>Tram Route:<br>70: Waterfront City Docklands - Wattle Park]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.983104,-37.822269,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Melbourne Park / Rod Laver Arena (Melbourne 3000)</name>
+        <description><![CDATA[Tram Stop: 7B<br><br>Tram Route:<br>70: Waterfront City Docklands - Wattle Park]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.978731,-37.819495,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Melbourne Park / William Barak Bridge (Melbourne 3000)</name>
+        <description><![CDATA[Tram Stop: 7A<br><br>Tram Route:<br>70: Waterfront City Docklands - Wattle Park]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.976359,-37.818227,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Mt Alexander Rd & Leake St (Essendon 3040)]]></name>
+        <description><![CDATA[Tram Stop: 45<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.911405,-37.746318,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Mt Alexander Rd & Shamrock St (Essendon 3040)]]></name>
+        <description><![CDATA[Tram Stop: 42<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.915733,-37.752473,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Mt Alexander Rd & Thistle St (Essendon 3040)]]></name>
+        <description><![CDATA[Tram Stop: 43<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.914164,-37.750344,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Mt Alexander Rd & Thorn St (Essendon 3040)]]></name>
+        <description><![CDATA[Tram Stop: 44<br><br>Tram Route:<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.91273,-37.748069,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Nepean Hwy & Hawthorn Rd (Brighton East 3187)]]></name>
+        <description><![CDATA[Tram Stop: 68<br><br>Tram Route:<br>64: Melb. University - East Brighton]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.016859,-37.914209,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Parliament Railway St & Macarthur St (East Melbourne 3002)]]></name>
+        <description><![CDATA[Tram Stop: 10<br><br>Tram Routes:<br>11 - West Preston - Victoria Harbour Docklands<br>31 - Hoddle St - Victoria Harbour Docklands<br>48 - North Balwyn - Victoria Harbour Docklands<br>109 - Box Hill - Port Melbourne<br>112 - West Preston - St Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.974284,-37.812504,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Peel St & Queen Victoria Market (West Melbourne 3003)]]></name>
+        <description><![CDATA[Tram Stop: 9<br><br>Tram Route:<br>55: West Coburg - Domain Interchange]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.95574,-37.807247,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Peel St & Queensberry St (North Melbourne 3051)]]></name>
+        <description><![CDATA[Tram Stop: 11<br><br>Tram Route:<br>55: West Coburg - Domain Interchange]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.956313,-37.803929,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Peel St & Victoria St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 10<br><br>Tram Route:<br>55: West Coburg - Domain Interchange]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.956012,-37.805757,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Boldrewood Pde (Reservoir 3073)]]></name>
+        <description><![CDATA[Tram Stop: 55<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.023059,-37.725397,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Browning St (Kingsbury 3083)]]></name>
+        <description><![CDATA[Tram Stop: 58<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.036647,-37.720091,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Bundoora Park (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 61<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.046053,-37.712784,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Bundoora Secondary College (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 67<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.059638,-37.695615,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Greenhills Rd (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 68<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.062761,-37.691985,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Grenwood Dr (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 63<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.051776,-37.707672,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Grimshaw St (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 65<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.058236,-37.699929,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & La Trobe University (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 60<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.043189,-37.716877,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Loddon Ave (Reservoir 3073)]]></name>
+        <description><![CDATA[Tram Stop: 56<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.027117,-37.724335,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Metro Fire Brigade (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 62<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.049186,-37.710532,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Mount Cooper Dr (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 64<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.05569,-37.703893,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Preston General Cemetery (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 59<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.039448,-37.719094,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Reservior High School (Reservoir 3073)]]></name>
+        <description><![CDATA[Tram Stop: 57<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.029892,-37.722882,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Settlement Rd (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 66<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.058962,-37.697909,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Plenty Rd & Tauton Dr (Bundoora 3083)]]></name>
+        <description><![CDATA[Tram Stop: 69<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.066445,-37.688426,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Queen Victoria Market & Elizabeth St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 7<br><br>Tram Route:<br>19: North Coburg - City Elizabeth St<br>57: West Maribyrnong - City Elizabeth St<br>59: Airport West - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.959663,-37.806595,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Queens Pde & Michael St (Fitzroy North 3068)]]></name>
+        <description><![CDATA[Tram Stop: 24<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.990441,-37.788868,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Queens Pde & Smith St (Fitzroy North 3068)]]></name>
+        <description><![CDATA[Tram Stop: 22<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.985921,-37.790672,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Queens Pde & Wellington St (Clifton Hill 3068)]]></name>
+        <description><![CDATA[Tram Stop: 23<br><br>Tram Route:<br>86: Bundoora RMIT - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.988276,-37.789693,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Racecource Rd & Stubbs St (Kensington 3031)]]></name>
+        <description><![CDATA[Tram Stop: 23<br><br>Tram Route:<br>57: West Maribyrnong - City Elizabeth St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.936044,-37.78884,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[River St & Gordon St (Maribyrnong 3032)]]></name>
+        <description><![CDATA[Tram Stop: 54<br><br>Tram Route:<br>82: Moonee Ponds - Footscray]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.891566,-37.780147,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[River St & Maribyrnong College (Maidstone 3012)]]></name>
+        <description><![CDATA[Tram Stop: 53<br><br>Tram Route:<br>82: Moonee Ponds - Footscray]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.887898,-37.779656,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[River St & Rosamond Rd (Maidstone 3012)]]></name>
+        <description><![CDATA[Tram Stop: 52<br><br>Tram Route:<br>82: Moonee Ponds - Footscray]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.884936,-37.779004,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Riversdale Rd & Elgar Rd (Burwood 3125)]]></name>
+        <description><![CDATA[Tram Stop: 61<br><br>Tram Route:<br>70: Waterfront City Docklands - Wattle Park]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.111175,-37.837601,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Rosamond Rd & Williamson Rd (Maribyrnong 3032)]]></name>
+        <description><![CDATA[Tram Stop: 51<br><br>Tram Route:<br>82: Moonee Ponds - Footscray]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.885598,-37.775783,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Royal Park / Macarthur Rd (Parkville 3052)</name>
+        <description><![CDATA[Tram Stop: 23<br><br>Tram Route:<br>55: West Coburg - Domain Interchange]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.949764,-37.791586,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Royal Park / Melbourne Zoo (Parkville 3052)</name>
+        <description><![CDATA[Tram Stop: 25<br><br>Tram Route:<br>55: West Coburg - Domain Interchange]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.94928,-37.782484,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Royal Park / State Netball Hockey Centre (Parkville 3052)</name>
+        <description><![CDATA[Tram Stop: 24<br><br>Tram Route:<br>55: West Coburg - Domain Interchange]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.948814,-37.784591,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Royal Park Station (Parkville 3052)</name>
+        <description><![CDATA[Tram Stop: 26<br><br>Tram Route:<br>55: West Coburg - Domain Interchange]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.951162,-37.781098,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[South Wharf & Wurundjeri Way (Docklands 3008)]]></name>
+        <description><![CDATA[Tram Stop: D5<br><br>Tram Routes:<br>35: City Circle (Free Service)<br>70: Wattle Park - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.950994,-37.821939,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Spring St & Bourke St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: 9<br><br>Tram Routes:<br>86: Bundoora RMIT - Waterfront City Docklands<br>95: City Spener St - Melbourne Museum<br>96: East Brunswick - St Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.973114,-37.811311,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Spring St & Flinders St (East Melbourne 3002)]]></name>
+        <description><![CDATA[Tram Stop: 8<br><br>Tram Routes:<br>35: City Circle (Free Tourist Tram)<br>75: Vermont South - City Spencer St]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.974992,-37.815272,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Kilda Rd & Commercial Rd (Alfred Hospital) (St Kilda 3004)]]></name>
+        <description><![CDATA[Tram Stop: 25<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>06: Melb. University - Glen Iris<br>16: Melb. University - Kew via St.Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie<br>72: Melb. University - Camberwell]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.978574,-37.844542,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Kilda Rd & Carlisle St (St Kilda 3182)]]></name>
+        <description><![CDATA[Tram Stop: 35<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br>DOES NOT SERVICE THIS ROUTE ON WEEKENDS (Weekends)<br><br>67: Melb. University - Carnegie]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.986973,-37.867733,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Kilda Rd & Inkerman St (St Kilda 3182)]]></name>
+        <description><![CDATA[Tram Stop: 34<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br>DOES NOT SERVICE THIS ROUTE ON WEEKENDS (Weekends)<br><br>67: Melb. University - Carnegie]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.985697,-37.864408,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Kilda Rd & Alma Rd (St Kilda 3182)]]></name>
+        <description><![CDATA[Tram Stop: 32<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br>DOES NOT SERVICE THIS ROUTE ON WEEKENDS (Weekends)<br><br>67: Melb. University - Carnegie]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.98428,-37.860371,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Kilda Rd & Barkly St (St Kilda 3182)]]></name>
+        <description><![CDATA[Tram Stop: 31<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br>DOES NOT SERVICE THIS ROUTE ON WEEKENDS (Weekends)<br><br>67: Melb. University - Carnegie]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.983262,-37.85777,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Kilda Rd & High St (Melbourne 3004)]]></name>
+        <description><![CDATA[Tram Stop: 27<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>06: Melb. University - Glen Iris<br>16: Melb. University - Kew via St.Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.980687,-37.850106,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[St Kilda Rd & Union St (Melbourne 3004)]]></name>
+        <description><![CDATA[Tram Stop: 29<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>16: Melb. University - Kew via St.Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.981777,-37.853284,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Swan St & Eastern Dr (Melbourne 3004)]]></name>
+        <description><![CDATA[Tram Stop: 18<br><br>Tram Route:<br>70: Waterfront City Docklands - Wattle Park]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.019996,-37.826608,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Swanston St & Queensberry St (Carlton 3053)]]></name>
+        <description><![CDATA[Tram Stop: 4<br><br>Tram Routes:<br>01: East Coburg - South Melbourne Beach<br><br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>06: Melb. University - Glen Iris<br>08: Moreland - Toorak<br>16: Melb. University - Kew via St Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie<br>72: Melb. University - Camberwell]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.963276,-37.804707,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Swanston St / Lincoln Square (Carlton 3053)</name>
+        <description><![CDATA[Tram Stop: 3<br><br>Tram Routes:<br>01: East Coburg - South Melbourne Beach<br><br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>06: Melb. University - Glen Iris<br>08: Moreland - Toorak<br>16: Melb. University - Kew via St Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie<br>72: Melb. University - Camberwell]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.963635,-37.802445,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Swanston St / Melbourne University (Parkville 3052)</name>
+        <description><![CDATA[Tram Stop: 1<br><br>Tram Routes:<br>01: East Coburg - South Melbourne Beach<br><br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>06: Melb. University - Glen Iris<br>08: Moreland - Toorak<br>16: Melb. University - Kew via St Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie<br>72: Melb. University - Camberwell]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.9646,-37.796793,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Swanston St / Melbourne Central Station (Melbourne 3000)</name>
+        <description><![CDATA[Tram Stop: 8<br><br>Tram Routes:<br>01: East Coburg - South Melbourne Beach<br><br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St Kilda (Weekends)<br><br>05: Melb. University - Malvern<br>06: Melb. University - Glen Iris<br>08: Moreland - Toorak<br>16: Melb. University - Kew via St Kilda Beach<br>64: Melb. University - East Brighton<br>67: Melb. University - Carnegie<br>72: Melb. University - Camberwell]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.963861,-37.809594,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>The Espanade (St Kilda 3182)</name>
+        <description><![CDATA[Tram Stop: 136<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>03a: Melb. Uni. - East Malvern via St.Kilda (Weekends)<br>DOES NOT SERVICE THIS ROUTE ON WEEKENDS (Weekends)<br><br>03a: Melb. Uni. - East Malvern via St Kilda (Weekends)<br><br>16: Melb. University - Kew via St.Kilda Beach<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.973515,-37.865191,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[The Esplanade & Luna Park (St Kilda 3182)]]></name>
+        <description><![CDATA[Tram Stop: 138<br><br>Tram Routes:<br>03: Melb. University - East Malvern (Weekdays)<br>(No. 3 Tram DOES NOT service this stop while operating on weekdays)<br>03a: Melb. University - East Malvern via St.Kilda (Weekends)<br><br>16: Melb. University - Kew via St.Kilda Beach<br>79: North Richmond - St.Kilda Beach<br>96: East Brunswick - St.Kilda Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.978233,-37.866973,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Vic Police Centre & Flinders St (Melbourne 3000)]]></name>
+        <description><![CDATA[Tram Stop: D6<br><br>Tram Routes:<br>35: City Circle (Free Tourist Tram)<br>70: Wattle Park - Waterfront City Docklands]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.953518,-37.821564,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria Ave & Beaconsfield Pde (Albert Park 3206)]]></name>
+        <description><![CDATA[Tram Stop: 31<br><br>Tram Route:<br>01: East Coburg - South Melbourne Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.94851,-37.847454,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria Ave & Bridport St (Albert Park 3206)]]></name>
+        <description><![CDATA[Tram Stop: 29<br><br>Tram Route:<br>01: East Coburg - South Melbourne Beach]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.953591,-37.841357,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria Pde & Hoddle St (Richmond 3121)]]></name>
+        <description><![CDATA[Tram Stop: 18<br><br>Tram Routes:<br>24: North Balwyn - City (LaTrobe St West End)<br>31: Hoddle St - Victoria Harbour Docklands<br>42: Box Hill - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.990805,-37.809796,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria Pde & Lansdowne St (East Melbourne 3002)]]></name>
+        <description><![CDATA[Tram Stop: 13<br><br>Tram Routes:<br>24: North Balwyn - City (LaTrobe St West End)<br>31: Hoddle St - Victoria Harbour Docklands<br>42: Box Hill - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.978289,-37.808513,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria Pde & Smith St (East Melbourne 3002)]]></name>
+        <description><![CDATA[Tram Stop: 15<br><br>Tram Routes:<br>24: North Balwyn - City (LaTrobe St West End)<br>31: Hoddle St - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.982347,-37.808907,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria Pde & St.Vincents Plaza (East Melbourne 3002)]]></name>
+        <description><![CDATA[Tram Stop: 12<br><br>Tram Routes:<br>11: West Preston - Victoria Harbour Docklands<br>24: North Balwyn - City (LaTrobe St West End)<br>30: St.Vincents Plaza - Etihad Stadium<br>31: Hoddle St - Victoria Harbour Docklands<br>42: Box Hill - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne<br>112: West Preston - St.Kilda]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.976508,-37.808281,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria Pde & Wellington St (Collingwood 3066)]]></name>
+        <description><![CDATA[Tram Stop: 16<br><br>Tram Routes:<br>24: North Balwyn - City (LaTrobe St West End)<br>31: Hoddle St - Victoria Harbour Docklands<br>42: Box Hill - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            144.986173,-37.809388,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria St & Burnley St (Abbotsford 3067)]]></name>
+        <description><![CDATA[Tram Stop: 24<br><br>Tram Routes:<br>24: North Balwyn - City (LaTrobe St West End)<br>42: Box Hill - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.009632,-37.811479,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Victoria St & River Bvd (Abbotsford 3067)]]></name>
+        <description><![CDATA[Tram Stop: 25<br><br>Tram Routes:<br>24: North Balwyn - City (LaTrobe St West End)<br>42: Box Hill - Victoria Harbour Docklands<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.012922,-37.811836,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Whitehorse Rd & Box Hill Central (Box Hill 3128)]]></name>
+        <description><![CDATA[Tram Stop: 58<br><br>Tram Route:<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.122293,-37.818089,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Whitehorse Rd & Elgar Rd (Mont Albert 3127)]]></name>
+        <description><![CDATA[Tram Stop: 56<br><br>Tram Route:<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.114815,-37.816988,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Whitehorse Rd & Hood St (Mont Albert 3127)]]></name>
+        <description><![CDATA[Tram Stop: 55<br><br>Tram Route:<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.109414,-37.816219,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Whitehorse Rd & Inglisby Rd (Mont Albert 3127)]]></name>
+        <description><![CDATA[Tram Stop: 54<br><br>Tram Route:<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.102653,-37.815453,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name><![CDATA[Whitehorse Rd & Nelson Rd (Box Hill 3128)]]></name>
+        <description><![CDATA[Tram Stop: 57<br><br>Tram Route:<br>109: Box Hill - Port Melbourne]]></description>
+        <styleUrl>#icon-503-DB4436</styleUrl>
+        <Point>
+          <coordinates>
+            145.118954,-37.817418,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Placemark 168</name>
+        <styleUrl>#icon-22-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            144.84581,-37.602264,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>

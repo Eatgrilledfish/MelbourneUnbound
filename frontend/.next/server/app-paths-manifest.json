@@ -1,13 +1,3 @@
 {
-<<<<<<< HEAD
-  "/page": "app/page.js",
-  "/Travel/page": "app/Travel/page.js",
-  "/Recreation/page": "app/Recreation/page.js"
-=======
-  "/Recreation/page": "app/Recreation/page.js",
-  "/Travel/page": "app/Travel/page.js",
-  "/Retail/page": "app/Retail/page.js",
-  "/Parks/page": "app/Parks/page.js",
-  "/Theatres/page": "app/Theatres/page.js"
->>>>>>> 8eda6cc57bb52942d6c6c6f1b7789016eb345788
+  "/Travel/page": "app/Travel/page.js"
 }
