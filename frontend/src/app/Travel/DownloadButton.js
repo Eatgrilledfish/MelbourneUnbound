@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@mui/material';
 
 // Helper function to format route data
-const formatRouteData = (routeData) => {
+const formatRouteData =  React.memo(({ routeData }) => {
   if (!routeData || routeData.features.length === 0) {
     return 'No route data available.';
   }
@@ -14,9 +14,9 @@ const formatRouteData = (routeData) => {
   });
 
   return routeText;
-};
+});
 
-const DownloadButton = ({ routeData }) => {
+const DownloadButton = React.memo(({ routeData }) => {
   console.log("DownloadButton loaded", routeData);  // 这应该在你的控制台输出
   const handleDownload = () => {
     const formattedText = formatRouteData(routeData);
@@ -34,6 +34,6 @@ const DownloadButton = ({ routeData }) => {
       Download Route
     </Button>
   );
-};
+});
 
 export default DownloadButton;

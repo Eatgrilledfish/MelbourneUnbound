@@ -1,19 +1,18 @@
 import React, { useState, useEffect,useRef } from 'react';
 
-const AudioPlayer = ( routeData ) => {
+const AudioPlayer = ({ routeData }) => {
   const [audioSrc, setAudioSrc] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const audioRef = useRef(null);
-  
   const [optimizedData, setOptimizedData] = useState(null);
 
   // 与后端交互
   const handleSendRouteData = () => {
     console.log("Route Data:", routeData); // Debug: log the route data
 
-    if (routeData && routeData.routeData && routeData.routeData.features) {
-    const { features } = routeData.routeData;
+    if (routeData && routeData.features) {
+    const { features } = routeData;
     const optimizedData = features.map(feature => {
       const { properties, geometry } = feature;
       const { segments, extras } = properties;
@@ -57,7 +56,7 @@ const AudioPlayer = ( routeData ) => {
   };
 
   useEffect(() => {
-    if (routeData) {
+    if (routeData && routeData.features) {
         handleSendRouteData();
     }
   }, [routeData]);

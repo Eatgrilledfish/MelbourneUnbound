@@ -175,7 +175,7 @@ const Home = () => {
       
 
       </div>
-      <div>
+      {/* <div>
         <h1>Dashboard</h1>
         <AspectRatio ratio={16 / 9} className="w-full mt-4">
           <iframe
@@ -185,9 +185,9 @@ const Home = () => {
 
           />
         </AspectRatio>
-      </div>
-{/*       
-      <TableauViz /> */}
+      </div> */}
+
+      {/* <TableauViz /> */}
       <Box mt={30}><Footer /></Box>
 
     </div>

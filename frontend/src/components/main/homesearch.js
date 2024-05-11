@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState,useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,11 +12,15 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
-import { useRouter } from 'next/navigation'; 
+import { usePathname,useRouter } from 'next/navigation'; 
 
 
-const pages = ['Home','Recreation', 'Travel'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+  { name: 'Home', path: '/' },
+  { name: 'Recreation', path: '/Recreation' },
+  { name: 'Travel', path: '/Travel' }
+];
+
 
 function useEnhancedTrigger(options) {
   const trigger = useScrollTrigger(options);
@@ -28,31 +33,31 @@ function useEnhancedTrigger(options) {
     }
     const handleScroll = () => {
       const currentScroll = window.pageYOffset; // 获取当前滚动位置
-      console.log('Current Scroll:', currentScroll); // 调试当前滚动位置
-      console.log('Last Scroll:', lastScroll); // 调试上一次滚动位置
+      // console.log('Current Scroll:', currentScroll); // 调试当前滚动位置
+      // console.log('Last Scroll:', lastScroll); // 调试上一次滚动位置
 
       if (lastScroll > currentScroll) {
-        console.log('Scrolling Up - Showing AppBar'); // 向上滚动时的调试输出
+        // console.log('Scrolling Up - Showing AppBar'); // 向上滚动时的调试输出
         setHide(false); // 向上滚动时显示AppBar
       } else if (lastScroll < currentScroll) {
-        console.log('Scrolling Down - Hiding AppBar'); // 向下滚动时的调试输出
+        // console.log('Scrolling Down - Hiding AppBar'); // 向下滚动时的调试输出
         setHide(true); // 向下滚动时隐藏AppBar
       }
       setLastScroll(currentScroll);
     };
 
     window.addEventListener('scroll', handleScroll);
-    console.log('Scroll Event Listener Added'); // 添加监听时的调试输出
+    // console.log('Scroll Event Listener Added'); // 添加监听时的调试输出
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      console.log('Scroll Event Listener Removed'); // 移除监听时的调试输出
+      // console.log('Scroll Event Listener Removed'); // 移除监听时的调试输出
     };
   }, [lastScroll]); // 注意这里使用 lastScroll 作为依赖
 
-  console.log('Hide State:', hide); // 调试隐藏状态
-  console.log('Trigger State:', trigger); // 调试useScrollTrigger返回的状态
-  console.log('final result', hide && trigger);
+  // console.log('Hide State:', hide); // 调试隐藏状态
+  // console.log('Trigger State:', trigger); // 调试useScrollTrigger返回的状态
+  // console.log('final result', hide && trigger);
   return hide && trigger;
 
 }
@@ -84,14 +89,23 @@ function HideOnScroll(props) {
 }
 
 function ResponsiveAppBar(props) {
+  const pathname = usePathname()
+  const [activePage, setActivePage] = useState('Home');  // 默认活动页面为'Home'
   const router = useRouter();  // Use the navigate function
+  
+  
 
   const handleNavigation = (path) => () => {
-    if (path === 'Home'){
-      router.push(`/`); 
-    } else
-      router.push(`/${path}`);  // Otherwise, navigate to the respective page
-  };
+
+
+    if (path === 'Home') {
+        router.push(`/`);
+    } else {
+        router.push(`/${path}`); // Navigate to the respective page
+    }
+};
+
+  
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
@@ -101,6 +115,7 @@ function ResponsiveAppBar(props) {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
+  const [hoveredItem, setHoveredItem] = useState(null);
 
 
   return (
@@ -119,10 +134,11 @@ function ResponsiveAppBar(props) {
                 fontFamily: 'sans-serif',
               }}
             >
-              <Box component="img" src="NewLogo.png" alt="LOGO" sx={{ height: 80, mb: 1 }} />
+              <Box component="img" src="NewLogo.png" alt="LOGO" sx={{ height: 90}} />
             </Typography>
             {/* 小屏幕显示菜单栏 */}
-            <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },justifyContent: 'flex-end' }}>
+            <Box  sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' },justifyContent: 'flex-end', 
+            }}>
               <IconButton
                 size="large"
                 aria-label="account of current user"
@@ -131,6 +147,7 @@ function ResponsiveAppBar(props) {
                 onClick={handleOpenNavMenu}
                 color="inherit"
                 sx={{
+                  
                   '&:hover': {
                     backgroundColor: 'orange',  // Changes background to orange on hover
                     textDecoration: 'underline'
@@ -159,17 +176,25 @@ function ResponsiveAppBar(props) {
                   
                 }}
               >
-                {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleNavigation(page)}>
+                  {pages.map((page) => (
+                    <MenuItem
+                      key={page.name}
+                      onClick={handleNavigation(page.name)}
+                      onMouseEnter={() => setHoveredItem(page.name)}
+                      onMouseLeave={() => setHoveredItem(null)}
+                      sx={{
+                        backgroundColor: pathname === page.path && !hoveredItem ? 'orange' : 'transparent', 
+                        '&:hover': {
+                          backgroundColor: 'orange',
+                          textDecoration: 'underline'
+                        }
+                    
+                  }}>
                     <Typography textAlign="center"
                       sx={{
                         fontFamily: 'sans-serif',
                         color: 'rgb(32, 20, 69)',
-                        '&:hover': {
-                          backgroundColor: 'orange',  // Changes background to orange on hover
-                          textDecoration: 'underline'
-                        }
-                      }}>{page}</Typography>
+                      }}>{page.name}</Typography>
                   </MenuItem>
                 ))}
               </Menu>
@@ -186,14 +211,14 @@ function ResponsiveAppBar(props) {
 
               }}
             >
-              <Box component="img" src="NewLogo.png" alt="LOGO" sx={{ height: 80, mb: 1 }} />
+              <Box component="img" src="NewLogo.png" alt="LOGO" sx={{ height: 90 }} />
             </Typography>
             {/* 大屏幕显示菜单栏 */}
             <Box sx={{ flexGrow: 1, bgcolor:'grey.200',display: { xs: 'none', md: 'flex' },justifyContent: 'flex-end' }}>
               {pages.map((page) => (
                 <Button
-                  key={page}
-                  onClick={handleNavigation(page)}
+                  key={page.name}
+                  onClick={handleNavigation(page.name)}
                   sx={{
                     my: 2,
                     color: 'black',
@@ -203,13 +228,19 @@ function ResponsiveAppBar(props) {
                     color: 'rgb(32, 20, 69)',
                     padding: '10px 60px',
                     fontSize: '1rem',
+                    backgroundColor: pathname === page.path ? 'orange' : 'transparent',
                     '&:hover': {
                       backgroundColor: 'orange',  // Changes background to orange on hover
                       textDecoration: 'underline'
+                    },
+                    '&:not(:hover)': {
+                      '.MuiBox-root:hover &': {  // 当任何按钮悬停时，当前按钮未悬停
+                        backgroundColor: pathname === page.path ? 'transparent' : 'transparent'
+                      }
                     }
                   }}
                 >
-                  {page}
+                  {page.name}
                 </Button>
               ))}
             </Box>

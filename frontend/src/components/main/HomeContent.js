@@ -22,6 +22,7 @@ export default function Home() {
   const [ref5, inView5] = useInView({ triggerOnce: true, threshold: 0.6 });
   const [ref7, inView7] = useInView({ triggerOnce: true, threshold: 0.6 });
   const [ref8, inView8] = useInView({ triggerOnce: true, threshold: 0.6 });
+  const [ref9, inView9] = useInView({ triggerOnce: true, threshold: 0.6 });
 
   const router = useRouter();
 
@@ -635,9 +636,11 @@ export default function Home() {
           </Grid>
           {/* 文本在小屏幕上占满整个宽度, 大屏幕占剩余部分 */}
           <Grid item xs={12} md={6}>
+            <motion.div ref={ref9}  variants={fadeInVariants} initial="hidden"  transition={{ duration: 1.5, delay: 0.4 }} animate={inView9 ? "visible" : "hidden"}>
             <Typography variant="h5" sx={{ textAlign: { xs: 'center' }, mt: 3, md: 5 }}>
               We are dedicated to empowering wheelchair users in Melbourne, championing accessibility throughout city life, and fostering inclusivity and independence for all.
             </Typography>
+            </motion.div>
           </Grid>
         </Grid>
       </Box>

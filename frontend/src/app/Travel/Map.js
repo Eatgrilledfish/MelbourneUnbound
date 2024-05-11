@@ -3,7 +3,8 @@ import axios from 'axios';
 import Chart from 'chart.js/auto';
 import RoutePanel from './RoutePanel'; // 确保路径正确
 import DownloadButton from './DownloadButton';
-import { Container, Grid, Box } from '@mui/material';
+import AudioPlayer from './AudioPlayer';
+import { Container, Grid, Box, Typography } from '@mui/material';
 
 const Map = ({ originInput,searchTrigger }) => {
   const mapRef = useRef(null);
@@ -461,6 +462,10 @@ const Map = ({ originInput,searchTrigger }) => {
         )}
       </Grid>
     </Container>
+    <div>
+    <Typography>More over! Click here to get the AI Generated Voice Guide!</Typography>
+    <AudioPlayer routeData={routeData} />
+    </div>
     </>
   );
 };
