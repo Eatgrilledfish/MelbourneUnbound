@@ -2,11 +2,13 @@
 "use client";
 
 import '../../styles/globals.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Fade } from '@mui/material';
 import SearchBar from '../../components/main/homesearch'; // 调整路径以符合您的文件结构
 import Footer from '../../components/main/Footer';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { motion, onAnimationComplete } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import CssBaseline from '@mui/material/CssBaseline';  // 用于应用基础 CSS 样式
 import FirstComponent from './FirstComponent';
 import SecondComponent from './SecondComponent';
@@ -26,34 +28,65 @@ const theme = createTheme({
 });
 
 export default function Home() {
-
-
-    const [stage, setStage] = useState(1);
-    const resetStage = () => {
-        setStage(0);
-    };
+    const [opacity, setOpacity] = useState(1);
+    const [isVisible, setIsVisible] = useState(true);
+    const firstComponentRef = useRef(null);
+    const { ref, inView } = useInView({
+        threshold: 0.5, // SecondComponent 至少一半进入视口时触发
+        triggerOnce: true
+    });
     useEffect(() => {
-        const timer = setTimeout(() => {
-          setStage(1);
-        }, 100);
-        return () => clearTimeout(timer);
-      }, []);
+        const maxScrollValue = firstComponentRef.current ? firstComponentRef.current.offsetHeight : 0; // 获取 FirstComponent 的高度
+        const handleScroll = () => {
+            const scrollY = window.scrollY; // Current scroll position
+            const newOpacity = 1 - scrollY / maxScrollValue;
+            setOpacity(newOpacity < 0 ? 0 : newOpacity);
+        };
 
-    const goToNextStage = () => {
-        setStage((prevStage) => prevStage + 1);
-    };
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [firstComponentRef.current]); // 依赖项中包括 FirstComponent 的引用
+
+    useEffect(() => {
+        if (inView) {
+            setIsVisible(false); // 当 SecondComponent 进入视口时，设置 FirstComponent 为不可见
+        }
+    }, [inView]);
+
+
+    // useEffect(() => {
+    //     setFirstComponentInView(!inView);
+    //   }, [inView]);
+
+    // const fadeInVariants = {
+    //     initial: { opacity: 0 },
+    //     animate: { opacity: 1 },
+    //     exit: { opacity: 0 }
+    // };
+
     return (
         <ThemeProvider theme={theme}>
             <div>
                 <Box mb={8}> {/* mb是margin-bottom的缩写 */}
-                    <SearchBar/>
+                    <SearchBar />
                 </Box>
-                <Fade in={stage === 1} timeout={1000} unmountOnExit>
-                    <FirstComponent onProceed={goToNextStage} />
-                </Fade>
-                <Fade in={stage === 2} timeout={1000} unmountOnExit>
-                    <SecondComponent/>
-                </Fade>
+                {isVisible && (
+                <motion.div
+                    ref={firstComponentRef}
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: opacity }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    <FirstComponent />
+                </motion.div>
+            )}
+            <Box ref={ref}>
+                <SecondComponent />
+            </Box>
                 <Box mt={10} mb={10}>
 
                 </Box>
