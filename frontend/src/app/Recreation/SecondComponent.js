@@ -38,7 +38,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
         type: "spring",
         stiffness: 80,
         damping: 25,
-        duration: 2,
+        duration: 1.5,
       }
     }
   };
@@ -54,7 +54,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
         type: "spring",
         stiffness: 80,
         damping: 25,
-        duration: 2,
+        duration: 1.5,
       }
     }
   };
