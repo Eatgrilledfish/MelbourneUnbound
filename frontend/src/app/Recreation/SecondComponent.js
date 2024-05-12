@@ -35,16 +35,9 @@ const SecondComponent = React.forwardRef((props, ref) => {
       opacity: 1,
       x: 0,
       transition: {
-<<<<<<< HEAD
-        type: "spring",
-        stiffness: 80,
-        damping: 25,
-        duration: 1.5,
-=======
         type: "tween",
         ease:"easeOut",
         duration: 3,
->>>>>>> 2cae928dd7125dcc9100e42e4bc7c8248dfecc2b
       }
     }
   };

@@ -1,11 +1,27 @@
 import { useEffect, useState } from 'react';
 import { Card, CardMedia, CardContent, Typography, Grid, Paper, Button, Box } from '@mui/material';
 import StarRating from './star';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 const BASE_IMAGE_URL = 'image/';
 const A_IMAGE_URL = 'accessible.png';
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1920,  // 调整xl断点以涵盖2K屏幕
+      xxl: 2560  // 添加一个新的断点专门为2K屏幕
+    }
+  }
+});
 
 export default function MainContent() {
+
+  
   const [eateries, setEateries] = useState([]);
   const [searchresult, setSearch] = useState([]);
   const [searchMode, setSearchMode] = useState('name');
@@ -156,7 +172,15 @@ export default function MainContent() {
         </Box>
       </Box>  
       {/* search */}
-      <Box sx={{ bgcolor: 'grey.200', width: '100vw', m: 0, p: 0 ,mt:10}}>
+      <Box sx={{ bgcolor: 'grey.200', width: '100vw', m: 0, p: 0,
+                mt: {
+                  xs: 70,   // 在小屏幕上 marginTop 为 20px
+                  md: 50,   // 在中等屏幕上 marginTop 为 50px
+                  lg: 50,  // 在大屏幕上 marginTop 为 100px
+                  xl: 20,  // 在超大屏幕上 marginTop 为 150px
+                  xxl: 20,  // 在2K屏幕上 marginTop 为 200px
+                }
+        }}>
         <Box sx={{mb:10}}>
           <Box sx={{ ml: 32, mt: 10, mb: 5 }}> {/* Increased top and bottom margin for this text section */}
             <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 5 }}>
