@@ -1,7 +1,7 @@
 // pages/index.js 或 pages/index.tsx
 "use client";
 
-import '../styles/globals.css';
+import './global.css';
 import React from 'react';
 import SearchBar from '../components/main/homesearch'; // 调整路径以符合您的文件结构
 import VideoBackground from '../components/main/VideoBackground';

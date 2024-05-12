@@ -1,7 +1,7 @@
 // pages/index.js 或 pages/index.tsx
 "use client";
 
-import '../../styles/globals.css';
+import '../global.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { Fade } from '@mui/material';
 import SearchBar from '../../components/main/homesearch'; // 调整路径以符合您的文件结构
@@ -12,11 +12,6 @@ import { useInView } from 'react-intersection-observer';
 import CssBaseline from '@mui/material/CssBaseline';  // 用于应用基础 CSS 样式
 import FirstComponent from './FirstComponent';
 import SecondComponent from './SecondComponent';
-
-
-
-
-
 import Box from '@mui/material/Box';
 const theme = createTheme({
     palette: {
@@ -27,6 +22,16 @@ const theme = createTheme({
     }
 });
 
+const scrollToSecondComponent = () => {
+    const secondComponent = document.getElementById('secondComponent');
+    if (secondComponent) {
+        const yOffset = -100; // 这里可以调整为需要的偏移量，例如标题栏的高度
+        const y = secondComponent.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+};
+  
 export default function Home() {
     const [opacity, setOpacity] = useState(1);
     const [isVisible, setIsVisible] = useState(true);
@@ -81,10 +86,10 @@ export default function Home() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <FirstComponent />
+                    <FirstComponent onProceed={scrollToSecondComponent} />
                 </motion.div>
             )}
-            <Box ref={ref}>
+            <Box ref={ref} id="secondComponent">
                 <SecondComponent />
             </Box>
                 <Box mt={10} mb={10}>

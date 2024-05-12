@@ -118,7 +118,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
               sx={{ borderRadius: 10, objectFit: 'cover' }}
             />
             <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={handleNavigateEateryDrink} variant="outlined" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Eateries</Button>
+              <Button onClick={handleNavigateEateryDrink} variant="contained" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Eateries</Button>
             </CardContent>
           </Card>
           <Card elevation={0} sx={{ maxWidth: 300, width: '100%' }}>
@@ -131,7 +131,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
               sx={{ borderRadius: 10, objectFit: 'cover' }}
             />
             <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={handleNavigateRetail} variant="outlined" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Shops</Button>
+              <Button onClick={handleNavigateRetail} variant="contained" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Shops</Button>
             </CardContent>
           </Card>
         </MotionGrid>
@@ -157,7 +157,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
               sx={{ borderRadius: 10 }}
             />
             <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={handleNavigateTheatres} variant="outlined" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Events</Button>
+              <Button onClick={handleNavigateTheatres} variant="contained" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Events</Button>
             </CardContent>
           </Card>
           <Card elevation={0} sx={{ maxWidth: 300, width: '100%', }}>
@@ -170,7 +170,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
               sx={{ borderRadius: 10 }}
             />
             <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={handleNavigateParks} variant="outlined" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Parks</Button>
+              <Button onClick={handleNavigateParks} variant="contained" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Parks</Button>
             </CardContent>
           </Card>
         </MotionGrid>

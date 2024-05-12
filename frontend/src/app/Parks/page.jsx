@@ -1,7 +1,7 @@
 // pages/index.js 或 pages/index.tsx
 "use client";
 
-import '../../styles/globals.css';
+import '../global.css';
 import React, { useState, useEffect } from 'react';
 import { Fade } from '@mui/material';
 import SearchBar from '../../components/main/homesearch'; // 调整路径以符合您的文件结构

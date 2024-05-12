@@ -38,11 +38,11 @@ func VenuesHandler(c *gin.Context, db *sql.DB) {
 	var conditions []string
 
 	if name != "" {
-		conditions = append(conditions, "venue_name ILIKE '%' || $"+strconv.Itoa(len(args)+1)+" || '%'")
+		conditions = append(conditions, "venue_name ILIKE '%' || $"+strconv.Itoa(len(args)+1)+" || '%' LIMIT 1;")
 		args = append(args, name)
 	}
 	if address != "" {
-		conditions = append(conditions, "street_address ILIKE '%' || $"+strconv.Itoa(len(args)+1)+" || '%'")
+		conditions = append(conditions, "street_address ILIKE '%' || $"+strconv.Itoa(len(args)+1)+" || '%' LIMIT 1;")
 		args = append(args, address)
 	}
 

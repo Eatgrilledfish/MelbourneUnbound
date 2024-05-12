@@ -2,7 +2,7 @@
 import * as React from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import { Box, Card, Container, CardContent, useTheme, CardActionArea, CardMedia, Typography, Button, useMediaQuery } from '@mui/material';
-import '../../styles/globals.css';
+import '../../app/global.css';
 import BarChart from './BarChart'
 import PieChart from './PieChart'
 import { motion, px } from 'framer-motion';

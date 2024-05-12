@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import '../../styles/globals.css';
+import '../../app/global.css';
 import { useRouter } from 'next/navigation'; 
 
 

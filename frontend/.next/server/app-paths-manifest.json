@@ -1,5 +1,12 @@
 {
+  "/_not-found/page": "app/_not-found/page.js",
   "/Recreation/page": "app/Recreation/page.js",
+  "/Parks/page": "app/Parks/page.js",
+  "/Retail/page": "app/Retail/page.js",
+  "/Travel/page": "app/Travel/page.js",
   "/page": "app/page.js",
-  "/Eaterydrink/page": "app/Eaterydrink/page.js"
+  "/Eaterydrink/page": "app/Eaterydrink/page.js",
+  "/tablue/page": "app/tablue/page.js",
+  "/Theatres/page": "app/Theatres/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }

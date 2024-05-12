@@ -32,11 +32,11 @@ func parksHandler(c *gin.Context, db *sql.DB) {
 	query := "SELECT building_name, street_address, clue_small_area, number_of_floors_above_ground, predominant_space_use, accessibility_type, accessibility_type_description, accessibility_rating, longitude, latitude, location, img, website, 5 * ((google_rating / 5.0 * 0.3) + (accessibility_rating / 3.0 * 0.7)) AS final_score FROM parks WHERE TRUE"
 	var args []interface{}
 	if buildingName != "" {
-		query += " AND building_name ILIKE '%' || $1 || '%'"
+		query += " AND building_name ILIKE '%' || $1 || '%'  LIMIT 1;"
 		args = append(args, buildingName)
 	}
 	if streetAddress != "" {
-		query += " AND street_address ILIKE '%' || $" + strconv.Itoa(len(args)+1) + " || '%'"
+		query += " AND street_address ILIKE '%' || $" + strconv.Itoa(len(args)+1) + " || '%'  LIMIT 1;"
 		args = append(args, streetAddress)
 	}
 	if buildingName == "" && streetAddress == "" {

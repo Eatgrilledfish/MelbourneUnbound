@@ -1,7 +1,7 @@
 // pages/index.js 或 pages/index.tsx
 "use client";
 
-import '../../styles/globals.css';
+import '../global.css';
 import React, { useState, useEffect } from 'react';
 import { Fade } from '@mui/material';
 import SearchBar from '../../components/main/homesearch'; // 调整路径以符合您的文件结构
@@ -44,16 +44,9 @@ export default function Home() {
                 <Box mb={8}> {/* mb是margin-bottom的缩写 */}
                     <SearchBar/>
                 </Box>               
-                <Box mt={20} mb={70}>
+                <Box mt={20} >
                     <Maincontent/>
                 </Box>
-                <Box
-                    sx={{
-                        height: '2px', // or '1px' for a thin line
-                        bgcolor: '#F6F4EF', // use any color from the theme or a custom color
-                        width: '100%', // ensures the line stretches across the screen
-                    }}
-                />
                 <Box >
                     <Footer />
                 </Box>

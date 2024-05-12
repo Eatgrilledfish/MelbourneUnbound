@@ -1,9 +1,23 @@
 import { useEffect, useState } from 'react';
 import { Card, CardMedia, CardContent, Typography, Grid, Paper, Button, Box } from '@mui/material';
-import StarRating from './star';
+import StarRating from './InteractiveStar';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import StarIcon from '@mui/icons-material/Star';
 
 const BASE_IMAGE_URL = 'image/';
 const A_IMAGE_URL = 'accessible.png';
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1920,  // 调整xl断点以涵盖2K屏幕
+      xxl: 2560  // 添加一个新的断点专门为2K屏幕
+    }
+  }
+});
 
 export default function MainContent() {
   const [venues, setVenue] = useState([]);
@@ -92,16 +106,16 @@ export default function MainContent() {
                 alignItems: 'flex-end',
                 
                 }}> 
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,fontStyle:'italic',mt:10}}>
+                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,mt:10}}>
                     The Best
                   </Typography>
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,fontStyle:'italic'}}>
+                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5}}>
                     among
                   </Typography>
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,fontStyle:'italic'}}>
+                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5}}>
                     The Best
                   </Typography>
-                  <Typography variant="h5" sx={{ color: 'black', textAlign: 'right', position: 'relative' ,fontStyle:'italic',mr:18,mb:8,}}>
+                  <Typography variant="h5" sx={{ color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:8,}}>
                     Top 10 Retails
                   </Typography>
 
@@ -131,23 +145,25 @@ export default function MainContent() {
               {/* 设置文本在右边 */}
               <Grid item xs={8}>
                 <CardContent sx={{  flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-                  <Typography gutterBottom variant="h5" component="div"sx={{fontStyle:'italic',fontWeight:'bold'}}>
+                  <Typography gutterBottom variant="h5" component="div"sx={{fontWeight:'bold'}}>
                   {index + 1}. {venue.venue_name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {venue.street_address}
                   </Typography>
-                  <Typography variant="h5" color="rgba(0, 0, 0, 0.5)" sx={{ fontStyle: 'italic', fontWeight: 400 }}>
-                    300 wheelchair users say: {venue.final_score.toFixed(2)}/5
-                  </Typography>
+                  <Typography color="rgba(0, 0, 0, 0.5)" sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
+                        <StarIcon sx={{ color: "rgb(245, 197, 24)" }} />
+                        <span style={{ color: 'rgba(0, 0, 0, 0.65)' }}>{venue.final_score.toFixed(2)}</span>/5  Accessible Rating
+                      </Typography>
 
-                  <Button sx={{ mt: 2 ,backgroundColor: 'orange', color: 'black',fontStyle:'italic',mb:2}} variant="contained" color="primary" href={venue.website} target="_blank" rel="noopener noreferrer">
+
+                  <Button sx={{ mt: 2 ,backgroundColor: 'orange', color: 'black',mb:2}} variant="contained" color="primary" href={venue.website} target="_blank" rel="noopener noreferrer">
                     Visit Site
                   </Button>
                   <div>
                     <Box display="flex" alignItems="center">
                       <Typography variant="body1" style={{ marginRight: 8 }}>
-                        Been Here Before? Share your vote! (optional)
+                        Been Here Before? Share your review! (optional)
                       </Typography>
                       <StarRating initialRating={3} />
                     </Box>
@@ -162,13 +178,21 @@ export default function MainContent() {
         </Box>
       </Box>  
       {/* search */}
-      <Box sx={{ bgcolor: 'grey.200', width: '100vw', m: 0, p: 0 ,mt:10}}>
+      <Box sx={{ bgcolor: 'grey.200', width: '100vw', m: 0, p: 0 ,
+                mt: {
+                  xs: 80,   // 在小屏幕上 marginTop 为 20px
+                  md: 80,   // 在中等屏幕上 marginTop 为 50px
+                  lg: 80,  // 在大屏幕上 marginTop 为 100px
+                  xl: 10,  // 在超大屏幕上 marginTop 为 150px
+                  xxl: 10,  // 在2K屏幕上 marginTop 为 200px
+                }
+      }}>
         <Box sx={{mb:10}}>
           <Box sx={{ ml: 32, mt: 10, mb: 5 }}> {/* Increased top and bottom margin for this text section */}
             <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 5 }}>
               Want to go somewhere else?
             </Typography>
-            <Typography variant="h5" sx={{ color: 'text.secondary',fontStyle:'italic' }}>
+            <Typography variant="h5" sx={{ color: 'text.secondary' }}>
               Double-check if they have what you need
             </Typography>
           </Box>
@@ -195,7 +219,7 @@ export default function MainContent() {
         </Box>
 
         {searchresult.id > 0 && (
-          <Box sx={{ mt: 5,ml:20,mb:10 }}> 
+          <Box sx={{bgcolor: 'white', mt: 5,pl:20,mb:10 }}> 
             <Typography variant="h4" gutterBottom>
               <Grid container spacing={5} justifyContent="center">
                 <Grid item sx={{ ml: 10 }} xs={12} container alignItems="center" justifyContent="center">
@@ -224,10 +248,11 @@ export default function MainContent() {
                       <Typography variant="body2" color="text.secondary">
                         {searchresult.format_address}
                       </Typography>
-                      <Typography variant="h5" color="rgba(0, 0, 0, 0.5)" sx={{ fontStyle: 'italic', fontWeight: 400 }}>
-                        300 wheelchair users say: {searchresult.final_score.toFixed(2)}/5
+                      <Typography color="rgba(0, 0, 0, 0.5)" sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
+                        <StarIcon sx={{ color: "rgb(245, 197, 24)" }} />
+                        <span style={{ color: 'rgba(0, 0, 0, 0.65)' }}>{searchresult.final_score.toFixed(2)}</span>/5  Accessible Rating
                       </Typography>
-                      <Button sx={{ mt: 2, backgroundColor: 'orange', color: 'black',fontStyle:'italic'}} variant="contained" color="primary" href={searchresult.website} target="_blank" rel="noopener noreferrer">
+                      <Button sx={{ mt: 2, backgroundColor: 'orange', color: 'black'}} variant="contained" color="primary" href={searchresult.website} target="_blank" rel="noopener noreferrer">
                         Visit Site
                       </Button>
                       <div>
@@ -235,7 +260,7 @@ export default function MainContent() {
                           <Typography variant="body1" sx={{ marginRight: 2 }}>
                             What's the Accessibility rating of the place you visited? (optional)
                           </Typography>
-                          <StarRating initialRating={3} />
+                          <StarRating  />
                         </Box>
                       </div>
                     </CardContent>
