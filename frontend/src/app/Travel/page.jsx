@@ -18,6 +18,16 @@ import TableauViz from './TableauViz';
 import { Padding } from '@mui/icons-material';
 import { styled } from '@mui/system';
 
+const RoundButton = styled(Button)(({ theme }) => ({
+  borderRadius: '50%',
+  width: '50px',
+  height: '50px',
+  backgroundColor: 'green',
+  color: 'white',
+  '&:hover': {
+    backgroundColor: 'darkgreen', // 设置悬停时的颜色
+  },
+}));
 
 const Home = () => {
   const [startAddress, setStartAddress] = useState('');
@@ -519,10 +529,14 @@ const Home = () => {
               ),
             }} />}
           />)}
-          {currentMap === 'Osmmap' ? (<button onClick={handleSearch}>Enter</button>):(<button onClick={handleSearch2}>Enter</button>)}
-          <Button variant="contained" onClick={toggleMap} disabled={isLoading}>
+          {currentMap === 'Osmmap' ? (<RoundButton onClick={handleSearch}>Go</RoundButton>):(<RoundButton onClick={handleSearch2}>Go</RoundButton>)}
+          <Button variant="contained" onClick={toggleMap} disabled={isLoading}  size="small"      style={{ 
+        padding: '5px 10px', 
+        fontSize: '0.875rem', 
+        minWidth: 'auto' 
+      }}>
           Switch Map
-          {isLoading && <CircularProgress size={24} style={{ marginLeft: 10, color: 'white' }} />}
+          {isLoading && <CircularProgress size={16} style={{ marginLeft: 10, color: 'white' }} />}
         </Button>
         </div>
       </Box>
@@ -536,7 +550,7 @@ const Home = () => {
           currentMap === 'Osmmap' ? (
           <Osmmap
             style={{ width: '100%', height: '100%' }}
-            geoJsonUrl="footpath-steepness.geojson"
+
             origin={origin}
             destination={destination}
             searchTrigger={searchCount}
