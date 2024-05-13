@@ -251,7 +251,7 @@ export default function MainContent() {
             initial="hidden"
             animate="visible"
           >
-          <Box sx={{bgcolor: 'white', mt: 5,pl:20,pb:1 }}> 
+          <Box sx={{bgcolor: 'white', mt: 5,pl:20,mb:10  }}> 
             <Typography variant="h4" gutterBottom>
               <Grid container spacing={5} justifyContent="center">
                 <Grid item sx={{ ml: 10 }} xs={12} container alignItems="center" justifyContent="center">
@@ -275,10 +275,10 @@ export default function MainContent() {
                   <Grid item xs={8} sx={{ml:'100px'}}>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        {searchresult.format_name}
+                        {searchresult.venue_name}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {searchresult.format_address}
+                        {searchresult.street_address}
                       </Typography>
                       <Typography color="rgba(0, 0, 0, 0.5)" sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
                         <StarIcon sx={{ color: "rgb(245, 197, 24)" }} />
