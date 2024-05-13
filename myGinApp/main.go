@@ -39,6 +39,9 @@ func main() {
 	router.GET("/venues", func(c *gin.Context) {
 		VenuesHandler(c, db)
 	})
+	router.GET("/retails", func(c *gin.Context) {
+		RetailsHandler(c, db)
+	})
 	router.GET("/addresses", func(c *gin.Context) {
 		getAddresses(c, db)
 	})

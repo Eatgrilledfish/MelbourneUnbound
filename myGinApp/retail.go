@@ -2,7 +2,6 @@ package main
 
 import (
 	"database/sql"
-	"log"
 	"net/http"
 	"strconv"
 	"strings"
@@ -10,66 +9,60 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Retail struct {
-	Id                           int     `json:"id"`
-	FormatName                   string  `json:"format_name"`
-	FormatAddress                string  `json:"format_address"`
-	GoogleRating                 float32 `json:"google_rating"`
-	Website                      string  `json:"website"`
-	AccessibilityRating          float32 `json:"accessibility_rating"`
-	AccessibilityTypeDescription string  `json:"accessibility_type_description"`
-	Photo                        string  `json:"photo"`
+type Retails struct {
+	Id                  int     `json:"id"`
+	RetailName          string  `json:"name"`
+	GoogleRating        float64 `json:"rating"`
+	Website             string  `json:"website"`
+	StreetAddress       string  `json:"address"`
+	Img                 string  `json:"photo_filename"`
+	AccessibilityRating float64 `json:"accessibility_rating"`
+	AccessibilityType   string  `json:"accessibility_type"`
+	Latitude            float64 `json:"latitude"`
+	Longitude           float64 `json:"longitude"`
+	Final_score         float64 `json:"final_score"`
 }
 
-func RetailHandler(c *gin.Context, db *sql.DB) {
+func RetailsHandler(c *gin.Context, db *sql.DB) {
 	name := c.Query("name")
 	address := c.Query("address")
 
-	log.Printf("Received parameters - Name: '%s', Address: '%s'\n", name, address)
-
-	baseQuery := "SELECT id, format_name, format_address, google_rating, website, accessibility_rating, accessibility_type_description, photo, 5 * ((google_rating / 5.0 * 0.3) + (accessibility_rating / 3.0 * 0.7)) AS final_score FROM public.venues"
+	baseQuery := "SELECT id, name, rating, website, address, photo_filename, accessibility_rating, accessibility_type, latitude, longitude, 5 * ((rating / 5.0 * 0.3) + (accessibility_rating / 3.0 * 0.7)) AS final_score FROM public.retails_info"
 	var args []interface{}
 	var conditions []string
 
 	if name != "" {
-		conditions = append(conditions, "format_name ILIKE '%' || $"+strconv.Itoa(len(args)+1)+" || '%'")
+		conditions = append(conditions, "name ILIKE '%' || $"+strconv.Itoa(len(args)+1)+" || '%' LIMIT 1;")
 		args = append(args, name)
 	}
 	if address != "" {
-		conditions = append(conditions, "format_address ILIKE '%' || $"+strconv.Itoa(len(args)+1)+" || '%'")
+		conditions = append(conditions, "address ILIKE '%' || $"+strconv.Itoa(len(args)+1)+" || '%' LIMIT 1;")
 		args = append(args, address)
 	}
 
 	if len(conditions) > 0 {
 		baseQuery += " WHERE " + strings.Join(conditions, " AND ")
 	} else {
-		baseQuery += " ORDER BY final_score DESC LIMIT 10"
+		baseQuery += " WHERE user_rating_count > 20 ORDER BY final_score DESC LIMIT 10"
 	}
 
-	log.Printf("Executing query: %s with arguments: %v\n", baseQuery, args)
+	// Debug: Print the final query and arguments
 
 	rows, err := db.Query(baseQuery, args...)
 	if err != nil {
-		log.Printf("Error querying database: %s\n", err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Internal server error"})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 		return
 	}
 	defer rows.Close()
 
-	var retail []Retail
+	retail := []Retails{}
 	for rows.Next() {
-		var v Retail
-		if err := rows.Scan(&v.Id, &v.FormatName, &v.FormatAddress, &v.GoogleRating, &v.Website, &v.AccessibilityRating, &v.AccessibilityTypeDescription, &v.Photo); err != nil {
-			log.Printf("Error scanning row: %s\n", err)
-			continue
+		var v Retails
+		if err := rows.Scan(&v.Id, &v.RetailName, &v.GoogleRating, &v.Website, &v.StreetAddress, &v.Img, &v.AccessibilityRating, &v.AccessibilityType, &v.Latitude, &v.Longitude, &v.Final_score); err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+			return
 		}
 		retail = append(retail, v)
-	}
-
-	if err := rows.Err(); err != nil {
-		log.Printf("Error during row iteration: %s\n", err)
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error retrieving data"})
-		return
 	}
 
 	if len(retail) == 0 {

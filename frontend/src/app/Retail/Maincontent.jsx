@@ -20,21 +20,21 @@ const theme = createTheme({
 });
 
 export default function MainContent() {
-  const [venues, setVenue] = useState([]);
-  const [searchresult, setSearch] = useState([]);
+  const [retails, setRetails] = useState([]);
+  const [searchresult, setSearch] = useState(null);
   const [searchMode, setSearchMode] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('https://melbourneunbound.com/api/venues');
+      const res = await fetch('https://melbourneunbound.com/api/retails');
       if (!res.ok) {
-        console.error("Failed to fetch venues:", res.status, res.statusText);
+        console.error("Failed to fetch retails:", res.status, res.statusText);
         return [];
       }
       const data = await res.json();
-      setVenue(data);
+      setRetails(data);
     };
 
     fetchData();
@@ -47,21 +47,24 @@ export default function MainContent() {
   }, [searchMode, searchTerm]);
 
   const fetchSearchData = async () => {
+    setLoading(true);
     try {
-      setLoading(true); // Set loading to true at the start of fetch
-      const response = await fetch(`https://melbourneunbound.com/api/venues?${searchMode}=${searchTerm}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+      const response = await fetch(`https://melbourneunbound.com/api/top10eateries?${searchMode}=${searchTerm}`);
+      if (!response.ok) throw new Error('Network response was not ok.');
       const data = await response.json();
-      setSearch(data); // Update the state with new data
-      setLoading(false); // Set loading to false after fetch is complete
+      console.log('we get the data',data)
+      if (data[0].message === "No eateries found") {
+        setSearch([]); // 使用 setSearch 来设置空数组表示没有结果
+      } else {
+        setSearch(data[0]);
+      }
     } catch (error) {
-      console.error('Failed to fetch venues:', error);
-      setLoading(false); // Ensure loading is set to false on error
+      console.error('Failed to fetch eateries:', error);
+      setSearch([]);
+    } finally {
+      setLoading(false);
     }
   };
-  
 
   const handleSearchSubmit = () => {
     console.log(`Manual submit: Searching for ${searchTerm} by ${searchMode}`);
@@ -70,7 +73,7 @@ export default function MainContent() {
     }
   };
 
-  if (!Array.isArray(venues) || venues.length === 0) {
+  if (!Array.isArray(retails) || retails.length === 0) {
     return <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
       <Typography>Loading...</Typography>
     </Box>;
@@ -122,7 +125,7 @@ export default function MainContent() {
             </Grid>
           </Grid>
           <Box sx={{bgcolor:'white',ml:8,width:'1000px',borderRadius:'30px' ,mb:10}} >
-            {venues.map((venue, index) => (
+            {retails.map((retail, index) => (
             <Grid item sx={{mt:1}} spacing={4} key={index} xs={12} sm={12} md={12} lg={12} container alignItems="center" justifyContent="center">
              
               {/* 设置卡片在左边 */}
@@ -137,8 +140,8 @@ export default function MainContent() {
                       borderRadius: '20px'
                     }}
                     height="140"
-                    image={`${BASE_IMAGE_URL}${venue.img}`}
-                    alt={`Photo of ${venue.venue_name}`}
+                    image={`${BASE_IMAGE_URL}${retail.photo_filename}`}
+                    alt={`Photo of ${retail.name}`}
                   />
                 </Card>
               </Grid>
@@ -146,18 +149,18 @@ export default function MainContent() {
               <Grid item xs={8}>
                 <CardContent sx={{  flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
                   <Typography gutterBottom variant="h5" component="div"sx={{fontWeight:'bold'}}>
-                  {index + 1}. {venue.venue_name}
+                  {index + 1}. {retail.name}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {venue.street_address}
+                    {retail.address}
                   </Typography>
                   <Typography color="rgba(0, 0, 0, 0.5)" sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
                         <StarIcon sx={{ color: "rgb(245, 197, 24)" }} />
-                        <span style={{ color: 'rgba(0, 0, 0, 0.65)' }}>{venue.final_score.toFixed(2)}</span>/5  Accessible Rating
+                        <span style={{ color: 'rgba(0, 0, 0, 0.65)' }}>{retail.final_score.toFixed(2)}</span>/5  Accessible Rating
                       </Typography>
 
 
-                  <Button sx={{ mt: 2 ,backgroundColor: 'orange', color: 'black',mb:2}} variant="contained" color="primary" href={venue.website} target="_blank" rel="noopener noreferrer">
+                  <Button sx={{ mt: 2 ,backgroundColor: 'orange', color: 'black',mb:2}} variant="contained" color="primary" href={retail.website} target="_blank" rel="noopener noreferrer">
                     Visit Site
                   </Button>
                   <div>
@@ -218,7 +221,12 @@ export default function MainContent() {
         
         </Box>
 
-        {searchresult.id > 0 && (
+        {searchresult?.id > 0  && (
+                      <motion.div
+                      variants={containerVariants}
+                      initial="hidden"
+                      animate="visible"
+                    >
           <Box sx={{bgcolor: 'white', mt: 5,pl:20,mb:10 }}> 
             <Typography variant="h4" gutterBottom>
               <Grid container spacing={5} justifyContent="center">
@@ -234,8 +242,8 @@ export default function MainContent() {
                           height: 'auto',
                           borderRadius: '20px'
                         }}
-                        image={`${BASE_IMAGE_URL}${searchresult[0].img}`}
-                        alt={`Photo of ${searchresult[0].venue_name}`}
+                        image={`${BASE_IMAGE_URL}${searchresult[0].photo_filename}`}
+                        alt={`Photo of ${searchresult[0].name}`}
                       />
                     </Card>
                   </Grid>
@@ -243,10 +251,10 @@ export default function MainContent() {
                   <Grid item xs={8} sx={{ml:'100px'}}>
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div">
-                        {searchresult.format_name}
+                        {searchresult.name}
                       </Typography>
                       <Typography variant="body2" color="text.secondary">
-                        {searchresult.format_address}
+                        {searchresult.address}
                       </Typography>
                       <Typography color="rgba(0, 0, 0, 0.5)" sx={{ fontWeight: 500, fontSize: '0.875rem' }}>
                         <StarIcon sx={{ color: "rgb(245, 197, 24)" }} />
@@ -269,7 +277,25 @@ export default function MainContent() {
               </Grid>
             </Typography>
           </Box>
+          </motion.div>
         )}
+            {searchresult === null ? (
+      null // 初始状态或未进行搜索，不显示错误消息
+    ) : (
+      searchresult.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ textAlign: 'center', width: '100%' }}
+        >
+          <Typography variant="h6" sx={{ color: 'grey.600' }}>
+            Sorry, we didn't find any results for your search.
+          </Typography>
+        </motion.div>
+      )
+    )}
       </Box>
       
 

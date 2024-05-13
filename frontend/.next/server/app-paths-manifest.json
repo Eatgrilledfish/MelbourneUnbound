@@ -1,7 +1,5 @@
 {
-  "/Travel/page": "app/Travel/page.js",
   "/Recreation/page": "app/Recreation/page.js",
-  "/Theatres/page": "app/Theatres/page.js",
-  "/Eaterydrink/page": "app/Eaterydrink/page.js",
-  "/Retail/page": "app/Retail/page.js"
+  "/Retail/page": "app/Retail/page.js",
+  "/Travel/page": "app/Travel/page.js"
 }
