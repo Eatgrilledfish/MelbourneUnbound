@@ -51,7 +51,7 @@ export default function MainContent() {
 
   const fetchSearchData = async () => {
     try {
-      const response = await fetch(`https://melbourneunbound.com/api/eaterydrink?${searchMode}=${searchTerm}`);
+      const response = await fetch(`https://melbourneunbound.com/api/top10eateries?${searchMode}=${searchTerm}`);
       const data = await response.json();
       console.log('we get the data',data)
       setSearch(data);

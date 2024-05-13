@@ -56,7 +56,7 @@ export default function MainContent() {
       }
       const data = await response.json();
       console.log("Search results:", data);
-      setSearch(data); // Update the state with new data
+      setSearch(data[0]); // Update the state with new data
       setLoading(false); // Set loading to false after fetch is complete
     } catch (error) {
       console.error('Failed to fetch venues:', error);
@@ -68,6 +68,7 @@ export default function MainContent() {
   const handleSearchSubmit = () => {
     if (searchTerm.trim()) {
       fetchSearchData();
+      console.log(searchresult);
     }
   };
 
@@ -220,7 +221,7 @@ export default function MainContent() {
         </Box>
 
         {searchresult.id > 0 && (
-          <Box sx={{bgcolor: 'white', mt: 5,pl:20,mb:10 }}> 
+          <Box sx={{bgcolor: 'white', mt: 5,pl:20,pb:1 }}> 
             <Typography variant="h4" gutterBottom>
               <Grid container spacing={5} justifyContent="center">
                 <Grid item sx={{ ml: 10 }} xs={12} container alignItems="center" justifyContent="center">
@@ -235,8 +236,8 @@ export default function MainContent() {
                           height: 'auto',
                           borderRadius: '20px'
                         }}
-                        image={`${BASE_IMAGE_URL}${searchresult[0].img}`}
-                        alt={`Photo of ${searchresult[0].venue_name}`}
+                        image={`${BASE_IMAGE_URL}${searchresult.img}`}
+                        alt={`Photo of ${searchresult.venue_name}`}
                       />
                     </Card>
                   </Grid>
