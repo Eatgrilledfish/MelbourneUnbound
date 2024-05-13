@@ -337,6 +337,17 @@ const Home = () => {
             </div>
           </div>
       </div>
+      <div>
+      <iframe 
+        width="800" 
+        height="650" 
+        src="https://lookerstudio.google.com/embed/reporting/6a62475b-3519-4fc9-ad0a-e41d4f042c17/page/2cszD" 
+        frameborder="0" 
+        style={{ border: '0' }}  // Corrected style syntax
+        allowfullscreen 
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+      </iframe>
+      </div>
 
       <div style={{ width: '100%', height: '500px', position: 'relative',marginTop:'100px' }}>
         <img src="travelend.jpg" alt="Travel End" style={{ width: '100%', height: '500px', objectFit: 'cover' }} />

@@ -4,6 +4,7 @@ import DialogContent from '@mui/material/DialogContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Grow from '@mui/material/Grow';
+import StarRating from './StarRating'
 
 // 创建一个转场组件
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -12,6 +13,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 function InteractiveStar() {
   const [open, setOpen] = useState(false);
+  const [rating, setRating] = useState(0);
   const videoRef = useRef(null);
 
   const handleMouseOver = () => {
@@ -37,17 +39,11 @@ function InteractiveStar() {
     setOpen(false);
   };
 
-  // 弹窗组件定义
-  const YourDialogComponent = ({ close }) => (
-    <div>
-      <Typography variant="h6">{"Use Google's location service?"}</Typography>
-      <Typography variant="body1">
-        Let Google help apps determine location. This means sending anonymous location data to
-        Google, even when no apps are running.
-      </Typography>
-      <Button onClick={close}>Close</Button>
-    </div>
-  );
+
+  const handleRate = () => {
+    setOpen(false);
+  };
+  
 
   return (
     <>
@@ -68,9 +64,16 @@ function InteractiveStar() {
         aria-describedby="dialog-description"
         TransitionComponent={Transition}
         keepMounted
+        PaperProps={{
+          sx: {
+            backgroundColor: '#D7D7D9' // 调整为浅灰色背景
+          }
+        }}
       >
         <DialogContent>
-          <YourDialogComponent close={handleClose} />
+        <Typography variant="h6">Rate your experience</Typography>
+          <StarRating rating={rating} setRating={setRating} />
+          <Button onClick={() =>{handleClose;handleRate(rating)}}>Rate</Button>
         </DialogContent>
       </Dialog>
     </>

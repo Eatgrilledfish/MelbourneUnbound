@@ -11,7 +11,7 @@ self["webpackHotUpdate_N_E"]("webpack",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ !function() {
-/******/ 	__webpack_require__.h = function() { return "cce6dc40d3c77be2"; }
+/******/ 	__webpack_require__.h = function() { return "bcc62360866984e3"; }
 /******/ }();
 /******/ 
 /******/ /* webpack/runtime/jsonp chunk loading */
@@ -36,7 +36,7 @@ self["webpackHotUpdate_N_E"]("webpack",{},
 /******/ 				if(installedChunkData) {
 /******/ 					promises.push(installedChunkData[2]);
 /******/ 				} else {
-/******/ 					if(!/^(css\-(node_modules_next_font_google_target|src_app_global)_css|webpack)$/.test(chunkId)) {
+/******/ 					if(/^(app(\/((|Recreation\/)page|layout)|\-pages\-internals)|main\-app)$/.test(chunkId)) {
 /******/ 						// setup Promise in chunk cache
 /******/ 						var promise = new Promise(function(resolve, reject) { installedChunkData = installedChunks[chunkId] = [resolve, reject]; });
 /******/ 						promises.push(installedChunkData[2] = promise);

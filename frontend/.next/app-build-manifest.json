@@ -12,6 +12,18 @@
       "static/css/css-node_modules_next_font_google_target_css.css",
       "static/chunks/app/layout.js"
     ],
+    "/Recreation/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/css-src_app_global_css.css",
+      "static/chunks/app/Recreation/page.js"
+    ],
+    "/Eaterydrink/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/css-src_app_global_css.css",
+      "static/chunks/app/Eaterydrink/page.js"
+    ],
     "/Travel/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
