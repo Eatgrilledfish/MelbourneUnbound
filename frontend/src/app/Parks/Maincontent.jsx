@@ -174,10 +174,10 @@ export default function MainContent() {
           </Grid>
         </Box>
       </Box>
-      <Box sx={{ display: 'flex',alignItems: 'center', }}>
+      <Box sx={{ display: 'flex',alignItems: 'center', mt:60 }}>
         <Grid container spacing={2} alignItems="center" justifyContent="center" sx={{ width: '100%', margin: 0 }}>
           {/* 左侧内容区域 */}
-          <Grid item xs={12} md={6} sx={{ textAlign: 'left', padding: 2 }}>
+          <Grid item xs={10} md={5} sx={{ textAlign: 'left', padding: 2 }}>
             <Typography variant="h4" sx={{ fontWeight: 'bold', marginBottom: 2 }}>
               Know where you’re going but dont know how to get there?
             </Typography>
@@ -190,7 +190,7 @@ export default function MainContent() {
           </Grid>
 
           {/* 右侧图片区域 */}
-          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Grid item xs={10} md={5} sx={{ display: 'flex', justifyContent: 'center'}}>
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 component="img"
@@ -202,7 +202,6 @@ export default function MainContent() {
           </Grid>
         </Grid>
       </Box>
-
 
     </Box>
   );

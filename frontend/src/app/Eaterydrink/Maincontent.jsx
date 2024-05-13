@@ -4,6 +4,7 @@ import StarRating from './InteractiveStar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import StarIcon from '@mui/icons-material/Star';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation'; 
 
 
 
@@ -30,6 +31,7 @@ export default function MainContent() {
   const [searchMode, setSearchMode] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();  // Use the navigate function
 
   const containerVariants = {
     hidden: {

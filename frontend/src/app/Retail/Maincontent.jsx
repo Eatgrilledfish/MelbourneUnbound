@@ -3,8 +3,10 @@ import { Card, CardMedia, CardContent, Typography, Grid, Paper, Button, Box } fr
 import StarRating from './InteractiveStar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import StarIcon from '@mui/icons-material/Star';
+import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation'; 
 
-const BASE_IMAGE_URL = 'image/';
+const BASE_IMAGE_URL = 'retail_image/';
 const A_IMAGE_URL = 'accessible.png';
 const theme = createTheme({
   breakpoints: {
@@ -19,12 +21,31 @@ const theme = createTheme({
   }
 });
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.3,
+      duration: 0.5
+    }
+  }
+};
+
 export default function MainContent() {
   const [retails, setRetails] = useState([]);
   const [searchresult, setSearch] = useState(null);
   const [searchMode, setSearchMode] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();  // Use the navigate function
+  const handleNavigation = (path) => () => {
+    router.push(`/${path}`);  // Use navigate instead of router.push
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +70,7 @@ export default function MainContent() {
   const fetchSearchData = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`https://melbourneunbound.com/api/top10eateries?${searchMode}=${searchTerm}`);
+      const response = await fetch(`https://melbourneunbound.com/api/retails?${searchMode}=${searchTerm}`);
       if (!response.ok) throw new Error('Network response was not ok.');
       const data = await response.json();
       console.log('we get the data',data)
@@ -57,6 +78,7 @@ export default function MainContent() {
         setSearch([]); // 使用 setSearch 来设置空数组表示没有结果
       } else {
         setSearch(data[0]);
+        console.log('this is data',data[0])
       }
     } catch (error) {
       console.error('Failed to fetch eateries:', error);
@@ -227,7 +249,7 @@ export default function MainContent() {
                       initial="hidden"
                       animate="visible"
                     >
-          <Box sx={{bgcolor: 'white', mt: 5,pl:20,mb:10 }}> 
+          <Box sx={{bgcolor: 'white', mt: 0,pl:20,mb:10 }}> 
             <Typography variant="h4" gutterBottom>
               <Grid container spacing={5} justifyContent="center">
                 <Grid item sx={{ ml: 10 }} xs={12} container alignItems="center" justifyContent="center">
@@ -238,12 +260,12 @@ export default function MainContent() {
                         component="img"
                         style={{
                           width: '100%',
-                          maxWidth: '500px',
+                          maxWidth: '400px',
                           height: 'auto',
                           borderRadius: '20px'
                         }}
-                        image={`${BASE_IMAGE_URL}${searchresult[0].photo_filename}`}
-                        alt={`Photo of ${searchresult[0].name}`}
+                        image={`${BASE_IMAGE_URL}${searchresult.photo_filename}`}
+                        alt={`Photo of ${searchresult.name}`}
                       />
                     </Card>
                   </Grid>
@@ -297,7 +319,35 @@ export default function MainContent() {
       )
     )}
       </Box>
-      
+      <Box sx={{ display: 'flex',alignItems: 'center', }}>
+        <Grid container spacing={2} alignItems="center" justifyContent="center" sx={{ width: '100%', margin: 0 }}>
+          {/* 左侧内容区域 */}
+          <Grid item xs={10} md={5} sx={{ textAlign: 'left', padding: 2 }}>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', marginBottom: 2 }}>
+              Know where you’re going but dont know how to get there?
+            </Typography>
+            <Typography variant="body1" sx={{ marginBottom: 3 }}>
+              Find your nearest accessible public transport stops here
+            </Typography>
+            <Button variant="contained" sx={{ backgroundColor: 'orange', color: 'black' }} onClick={handleNavigation('Travel')}>
+              Navigate
+            </Button>
+          </Grid>
+
+          {/* 右侧图片区域 */}
+          <Grid item xs={10} md={5} sx={{ display: 'flex', justifyContent: 'center'}}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                component="img"
+                height="194"
+                image="transportlink.jpg"  // 替换为你的图片URL
+                alt="Descriptive Alt Text"
+              />
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
+
 
     </Box>
   );

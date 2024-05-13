@@ -44,7 +44,7 @@ export default function Home() {
                 <Box mb={8}> {/* mb是margin-bottom的缩写 */}
                     <SearchBar/>
                 </Box>               
-                <Box mt={20} mb={30}>
+                <Box mt={20} mb={2}>
                     <Maincontent/>
                 </Box>
                 <Box

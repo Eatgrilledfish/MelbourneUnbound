@@ -433,10 +433,10 @@ const Map = ({ origin, destination, searchTrigger }) => {
         )}
       </Grid>
     </Container>
-    <div>
+    <div style={{ textAlign: 'center' }}>
     <Typography>More over! Click here to get the AI Generated Voice Guide!</Typography>
     <AudioPlayer routeData={routeData} />
-    </div>
+</div>
     </>
   );
 };

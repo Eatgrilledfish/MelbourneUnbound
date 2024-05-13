@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Map from './Map';
-import { Box,Button } from '@mui/material';
+import { Dialog, DialogContent, Box, Button, IconButton,Typography } from '@mui/material';
+import { motion, AnimatePresence } from 'framer-motion';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { debounce } from 'lodash';
@@ -10,7 +11,8 @@ import SearchBar from '../../components/main/homesearch'; // Adjust path to fit 
 import Footer from '../../components/main/Footer';
 import { AspectRatio } from './AspectRatio';
 import Osmmap from './OSMmap';
-import CircularProgress from '@mui/material/CircularProgress';
+import CloseIcon from '@mui/icons-material/Close'; // 导入关闭图标
+
 import { GoogleMapsProvider } from './GoogleMapsProvider';
 import TableauViz from './TableauViz';
 import { Padding } from '@mui/icons-material';
@@ -31,6 +33,37 @@ const Home = () => {
   const [searchCount, setSearchCount] = useState(0);  // 使用计数器作为触发器
   const [currentMap, setCurrentMap] = useState('Osmmap'); // 'Osmmap' 或 'Map'
   const [isLoading, setIsLoading] = useState(false);
+  const [open, setOpen] = useState(true); // 控制弹窗显示的状态
+
+  // 动画变量
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setOpen(false); // 在5秒后设置open为false，从而关闭弹窗
+    }, 5000); // 5000毫秒等于5秒
+
+    return () => clearTimeout(timer); // 清理计时器，以避免内存泄漏
+  }, []); // 空数组确保这个效果只在组件首次渲染时运行
+
+  const modalVariants = {
+    hidden: {
+      scale: 0,
+      opacity: 0
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    },
+    exit: {
+      scale: 0,
+      opacity: 0,
+      transition: {
+        duration: 0.3
+      }
+    }
+  };
 
   const toggleMap = () => {
     setIsLoading(true);
@@ -93,7 +126,7 @@ const Home = () => {
   const handleSearch2 = () => {
     if (startAddress) {
       setOrigin(startAddress);
-      setSearchCount(prev => prev + 1);  // 递增计数器触发更新
+      setSearchCount(prev => prev + 1);Explore  // 递增计数器触发更新
     }
   };
 
@@ -286,6 +319,66 @@ const Home = () => {
 
   return (
     <>
+      <AnimatePresence>
+        {open && (
+          <Dialog
+            open={open}
+            onClose={() => setOpen(false)}
+            aria-labelledby="privacy-modal"
+            aria-describedby="privacy-message"
+            PaperProps={{
+              sx: {
+                backgroundColor: '#BFBFBF',// 调整为浅灰色背景
+                minWidth: '500px',
+                display: 'flex', // Use flexbox to allow centering
+                flexDirection: 'column', // Stack children vertically
+                justifyContent: 'center', // Center vertically
+                alignItems: 'center', // Center horizontally
+                padding: '10px'
+              }
+            }}
+          >
+            <DialogContent>
+            <IconButton
+                aria-label="close"
+                onClick={() => setOpen(false)}
+                style={{
+                  position: 'absolute', // 绝对定位
+                  right: 8, // 从右侧8px的位置
+                  top: 8, // 从顶部8px的位置
+                  color: '#333' // 设置颜色，根据需要调整
+                }}
+              >
+                <CloseIcon />
+              </IconButton>
+              <motion.div
+                variants={modalVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
+                style={{
+                  borderRadius: '10px', // 圆角边框
+                  padding: '20px' // 内边距
+                }}
+              >
+                <Typography variant="h6" gutterBottom>
+                  Data Privacy
+                </Typography>
+                <Typography variant="body2" gutterBottom>
+                  We collect and process location data solely for the purpose of providing accessible travel information in Melbourne. Your data is securely stored and used in accordance with our privacy policy.
+                </Typography>
+                <Typography variant="h6" gutterBottom>
+                  CBD Restriction
+                </Typography>
+                <Typography variant="body2">
+                  Our current service coverage is limited to the Central Business District (CBD) of Melbourne.
+                </Typography>
+                
+              </motion.div>
+            </DialogContent>
+          </Dialog>
+        )}
+      </AnimatePresence>
     <Box style={{ display: 'flex', flexDirection: 'column', height: '100vh' ,justifyContent: 'space-between'}}>
       <Box mb={20}><SearchBar /></Box>
       <Box>
@@ -385,7 +478,7 @@ const Home = () => {
           </div>
         </div>        
       
-        <h1 style={{ fontSize: '40px' ,marginTop:'100px',textAlign: 'left', marginLeft: '200px'}}>Explore Melbourne CBD</h1>
+        <h1 style={{ fontSize: '40px' ,marginTop:'100px',textAlign: 'center'}}>Explore Melbourne CBD</h1>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
           <Autocomplete
             disablePortal

@@ -16,3 +16,11 @@ body {
   h1 {
     font-family: var(--font-inter);
   }
+
+  #userway-container {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000; /* 确保它位于其他内容的上方 */
+  }
