@@ -3,6 +3,11 @@ import { Card, CardMedia, CardContent, Typography, Grid, Paper, Button, Box } fr
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import StarRating from './InteractiveStar';
 import StarIcon from '@mui/icons-material/Star';
+import { useRouter } from 'next/navigation'; 
+
+
+
+
 
 
 const BASE_IMAGE_URL = 'image/';
@@ -20,11 +25,14 @@ const theme = createTheme({
   }
 });
 
+
+
 export default function MainContent() {
   const [parks, setparks] = useState([]);
   const [searchresult, setSearch] = useState([]);
   const [searchMode, setSearchMode] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');
+  const router = useRouter();  // Use the navigate function
   const [loading, setLoading] = useState(false);
     const handleNavigation = (path) => () => {
     router.push(`/${path}`);  // Use navigate instead of router.push

@@ -119,6 +119,9 @@ export default function MainContent() {
           maxWidth: '100%', // 确保图片不超过容器宽度
           height: '300vh'
         }} />
+              <Typography variant="h5" sx={{ fontWeight:'bold',color: 'black', textAlign: 'left', position: 'relative' ,mr:80,mb:5,mt:10}}>
+              Discover the finest recreational destinations meticulously curated from data, focusing on venues with the highest accessibility ratings.
+                  </Typography>
         <Grid item xs={8} md={8} sx={{ 
               display: 'flex',       // Enable flexbox
               flexDirection: 'column', // Stack children vertically
@@ -126,6 +129,7 @@ export default function MainContent() {
               borderRadius:'30px'
               }} container spacing={5} justifyContent="center">
                 <Grid container sx={{ justifyContent: 'flex' }}>
+                  
         
             <Grid item xs={8} md={12} sx={{ 
                 display: 'flex',       // Enable flexbox
@@ -133,6 +137,7 @@ export default function MainContent() {
                 alignItems: 'flex-end',
                 
                 }}> 
+
                   <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,mt:10}}>
                     The Best
                   </Typography>
