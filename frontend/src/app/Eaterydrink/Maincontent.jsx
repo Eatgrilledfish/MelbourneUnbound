@@ -3,6 +3,8 @@ import { Card, CardMedia, CardContent, Typography, Grid, Paper, Button, Box } fr
 import StarRating from './InteractiveStar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import StarIcon from '@mui/icons-material/Star';
+import { motion } from 'framer-motion';
+
 
 
 const BASE_IMAGE_URL = 'image/';
@@ -24,10 +26,25 @@ export default function MainContent() {
 
 
   const [eateries, setEateries] = useState([]);
-  const [searchresult, setSearch] = useState([]);
+  const [searchresult, setSearch] = useState(null);
   const [searchMode, setSearchMode] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      y: 50
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.3,
+        duration: 0.5
+      }
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -50,13 +67,22 @@ export default function MainContent() {
   }, [searchMode, searchTerm]);
 
   const fetchSearchData = async () => {
+    setLoading(true);
     try {
       const response = await fetch(`https://melbourneunbound.com/api/top10eateries?${searchMode}=${searchTerm}`);
+      if (!response.ok) throw new Error('Network response was not ok.');
       const data = await response.json();
       console.log('we get the data',data)
-      setSearch(data);
+      if (data[0].message === "No eateries found") {
+        setSearch([]); // 使用 setSearch 来设置空数组表示没有结果
+      } else {
+        setSearch(data[0]);
+      }
     } catch (error) {
       console.error('Failed to fetch eateries:', error);
+      setSearch([]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -215,8 +241,12 @@ export default function MainContent() {
           </div>
 
         </Box>
-
-        {searchresult.id > 0 && (
+        {searchresult?.id > 0  && (
+                      <motion.div
+                      variants={containerVariants}
+                      initial="hidden"
+                      animate="visible"
+                    >
           <Box sx={{ bgcolor: 'white', mt: 5, pl: 20, mb: 10 }}>
             <Typography variant="h4" gutterBottom>
               <Grid container spacing={5} justifyContent="center">
@@ -267,7 +297,25 @@ export default function MainContent() {
               </Grid>
             </Typography>
           </Box>
+          </motion.div>
         )}
+    {searchresult === null ? (
+      null // 初始状态或未进行搜索，不显示错误消息
+    ) : (
+      searchresult.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ textAlign: 'center', width: '100%' }}
+        >
+          <Typography variant="h6" sx={{ color: 'grey.600' }}>
+            Sorry, we didn't find any results for your search.
+          </Typography>
+        </motion.div>
+      )
+    )}
       </Box>
 
 

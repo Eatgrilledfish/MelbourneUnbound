@@ -3,6 +3,7 @@ import { Card, CardMedia, CardContent, Typography, Grid, Paper, Button, Box } fr
 import StarRating from './InteractiveStar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import StarIcon from '@mui/icons-material/Star';
+import { motion } from 'framer-motion';
 
 const BASE_IMAGE_URL = 'image/';
 const A_IMAGE_URL = 'accessible.png';
@@ -19,9 +20,25 @@ const theme = createTheme({
   }
 });
 
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.3,
+      duration: 0.5
+    }
+  }
+};
+
+
 export default function MainContent() {
   const [venues, setVenue] = useState([]);
-  const [searchresult, setSearch] = useState([]);
+  const [searchresult, setSearch] = useState(null);
   const [searchMode, setSearchMode] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
@@ -47,24 +64,26 @@ export default function MainContent() {
   }, [searchMode, searchTerm]);
 
   const fetchSearchData = async () => {
+    setLoading(true);
     try {
       console.log(`Starting search for: ${searchTerm} by ${searchMode}`);
       setLoading(true); // Set loading to true at the start of fetch
       const response = await fetch(`https://melbourneunbound.com/api/venues?${searchMode}=${searchTerm}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
+      if (!response.ok) throw new Error('Network response was not ok.');
       const data = await response.json();
-      console.log("Search results:", data);
-      setSearch(data[0]); // Update the state with new data
-      setLoading(false); // Set loading to false after fetch is complete
+      console.log('we get the data',data)
+      if (data[0].message === "No eateries found") {
+        setSearch([]); // 使用 setSearch 来设置空数组表示没有结果
+      } else {
+        setSearch(data[0]);
+      }
     } catch (error) {
-      console.error('Failed to fetch venues:', error);
-      setLoading(false); // Ensure loading is set to false on error
+      console.error('Failed to fetch eateries:', error);
+      setSearch([]);
+    } finally {
+      setLoading(false);
     }
   };
-  
-
   const handleSearchSubmit = () => {
     if (searchTerm.trim()) {
       fetchSearchData();
@@ -118,7 +137,7 @@ export default function MainContent() {
                     The Best
                   </Typography>
                   <Typography variant="h5" sx={{ color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:8,}}>
-                    Top 10 Retails
+                    Top 10 Venues
                   </Typography>
 
             </Grid>
@@ -220,7 +239,12 @@ export default function MainContent() {
         
         </Box>
 
-        {searchresult.id > 0 && (
+        {searchresult?.id > 0 && (
+            <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
           <Box sx={{bgcolor: 'white', mt: 5,pl:20,pb:1 }}> 
             <Typography variant="h4" gutterBottom>
               <Grid container spacing={5} justifyContent="center">
@@ -259,7 +283,7 @@ export default function MainContent() {
                       </Button>
                       <div>
                         <Box display="flex" alignItems="center" mt={2}>
-                          <Typography variant="body1" sx={{ marginRight: 2 }}>
+                          <Typography variant="body1" sx={{ marginRight: 0 }}>
                             What's the Accessibility rating of the place you visited? (optional)
                           </Typography>
                           <StarRating  />
@@ -271,7 +295,25 @@ export default function MainContent() {
               </Grid>
             </Typography>
           </Box>
+          </motion.div>
         )}
+            {searchresult === null ? (
+      null // 初始状态或未进行搜索，不显示错误消息
+    ) : (
+      searchresult.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ textAlign: 'center', width: '100%' }}
+        >
+          <Typography variant="h6" sx={{ color: 'grey.600' }}>
+            Sorry, we didn't find any results for your search.
+          </Typography>
+        </motion.div>
+      )
+    )}
       </Box>
       
 

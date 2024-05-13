@@ -97,6 +97,8 @@ function ResponsiveAppBar(props) {
 
   const handleNavigation = (path) => () => {
 
+    console.log(pathname)
+
 
     if (path === 'Home') {
         router.push(`/`);
@@ -219,6 +221,8 @@ function ResponsiveAppBar(props) {
                 <Button
                   key={page.name}
                   onClick={handleNavigation(page.name)}
+                  onMouseEnter={() => setHoveredItem(page.name)}
+                  onMouseLeave={() => setHoveredItem(null)}
                   sx={{
                     my: 2,
                     color: 'black',
@@ -228,16 +232,12 @@ function ResponsiveAppBar(props) {
                     color: 'rgb(32, 20, 69)',
                     padding: '10px 60px',
                     fontSize: '1rem',
-                    backgroundColor: pathname === page.path ? 'orange' : 'transparent',
+                    backgroundColor: hoveredItem === page.name ? 'orange' : (pathname === page.path && hoveredItem === null ? 'orange' : 'transparent'),
                     '&:hover': {
-                      backgroundColor: 'orange',  // Changes background to orange on hover
+                      backgroundColor: 'orange',
                       textDecoration: 'underline'
-                    },
-                    '&:not(:hover)': {
-                      '.MuiBox-root:hover &': {  // 当任何按钮悬停时，当前按钮未悬停
-                        backgroundColor: pathname === page.path ? 'transparent' : 'transparent'
-                      }
                     }
+                    
                   }}
                 >
                   {page.name}
