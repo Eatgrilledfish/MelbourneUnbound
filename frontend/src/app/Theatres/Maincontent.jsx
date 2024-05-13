@@ -4,6 +4,7 @@ import StarRating from './InteractiveStar';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import StarIcon from '@mui/icons-material/Star';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation'; 
 
 const BASE_IMAGE_URL = 'image/';
 const A_IMAGE_URL = 'accessible.png';
@@ -42,6 +43,11 @@ export default function MainContent() {
   const [searchMode, setSearchMode] = useState('name');
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();  // Use the navigate function
+  
+  const handleNavigation = (path) => () => {
+    router.push(`/${path}`);  // Use navigate instead of router.push
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -315,7 +321,34 @@ export default function MainContent() {
       )
     )}
       </Box>
-      
+      <Box sx={{ display: 'flex',alignItems: 'center', }}>
+        <Grid container spacing={2} alignItems="center" justifyContent="center" sx={{ width: '100%', margin: 0 }}>
+          {/* 左侧内容区域 */}
+          <Grid item xs={10} md={5} sx={{ textAlign: 'left', padding: 2 }}>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', marginBottom: 2 }}>
+              Know where you’re going but dont know how to get there?
+            </Typography>
+            <Typography variant="body1" sx={{ marginBottom: 3 }}>
+              Find your nearest accessible public transport stops here
+            </Typography>
+            <Button variant="contained" sx={{ backgroundColor: 'orange', color: 'black' }} onClick={handleNavigation('Travel')}>
+              Navigate
+            </Button>
+          </Grid>
+
+          {/* 右侧图片区域 */}
+          <Grid item xs={10} md={5} sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Card sx={{ maxWidth: 345 }}>
+              <CardMedia
+                component="img"
+                height="194"
+                image="transportlink.jpg"  // 替换为你的图片URL
+                alt="Descriptive Alt Text"
+              />
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
 
     </Box>
   );
