@@ -62,7 +62,7 @@ const AudioPlayer = ({ routeData }) => {
   }, [routeData]);
 
   const AnimatedIcon = ({ loading, onClick }) => {
-    const style = { cursor: 'pointer', width: '50px', height: '50px' }; 
+    const style = { alignItems: 'center',justifyContent: 'center',cursor: 'pointer', width: '50px', height: '50px' }; 
     // if (!audioSrc){
         if (loading) {
             return (
