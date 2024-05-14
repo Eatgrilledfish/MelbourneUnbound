@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 
 
 const MotionGrid = motion(Grid);
+const MotionCardMedia = motion(CardMedia);
 
 const SecondComponent = React.forwardRef((props, ref) => {
   const router = useRouter();
@@ -109,29 +110,33 @@ const SecondComponent = React.forwardRef((props, ref) => {
           alignItems="center"
         >
           <Card elevation={0} sx={{ maxWidth: 300, width: '100%', marginBottom: 2 }}> {/* Set maximum width for Cards */}
-            <CardMedia
+            <MotionCardMedia
               component="img"
               height="280"
               width="100%"  // Ensure the width fills the card
               image="/eateries.jpg"
               alt="Image Description 1"
-              sx={{ borderRadius: 10, objectFit: 'cover' }}
+              sx={{ borderRadius: 10, objectFit: 'cover', cursor: 'pointer' }}
+              whileHover={{ scale: 1.05 }} 
+              onClick={handleNavigateEateryDrink}
             />
             <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={handleNavigateEateryDrink} variant="contained" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Eateries</Button>
+              <Button onClick={handleNavigateEateryDrink} variant="contained" sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Eateries</Button>
             </CardContent>
           </Card>
           <Card elevation={0} sx={{ maxWidth: 300, width: '100%' }}>
-            <CardMedia
+            <MotionCardMedia
               component="img"
               height="280"
               width="100%"
               image="/retail.jpg"
               alt="Image Description 2"
-              sx={{ borderRadius: 10, objectFit: 'cover' }}
+              sx={{ borderRadius: 10, objectFit: 'cover', cursor: 'pointer' }}
+              whileHover={{ scale: 1.05 }} // Add hover effect using Framer Motion
+              onClick={handleNavigateRetail} 
             />
             <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={handleNavigateRetail} variant="contained" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Shops</Button>
+              <Button onClick={handleNavigateRetail} variant="contained" sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Shops</Button>
             </CardContent>
           </Card>
         </MotionGrid>
@@ -148,29 +153,33 @@ const SecondComponent = React.forwardRef((props, ref) => {
           alignItems="center"
         >
           <Card elevation={0} sx={{ maxWidth: 300, width: '100%', marginBottom: 2 }}>
-            <CardMedia
+            <MotionCardMedia
               component="img"
               height="280"
               width='100%'
               image="/theatres.jpg"
               alt="Image Description 3"
-              sx={{ borderRadius: 10 }}
+              sx={{ borderRadius: 10, cursor: 'pointer' }}
+              whileHover={{ scale: 1.05 }} // Add hover effect using Framer Motion
+              onClick={handleNavigateTheatres} 
             />
             <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={handleNavigateTheatres} variant="contained" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Events</Button>
+              <Button onClick={handleNavigateTheatres} variant="contained" sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Events</Button>
             </CardContent>
           </Card>
           <Card elevation={0} sx={{ maxWidth: 300, width: '100%', }}>
-            <CardMedia
+            <MotionCardMedia
               component="img"
               height="280"
               width='100%'
               image="/parks.jpg" // Make sure this should be "grid4.jpg" if different
               alt="Image Description 4"
-              sx={{ borderRadius: 10 }}
+              sx={{ borderRadius: 10, cursor: 'pointer' }}
+              whileHover={{ scale: 1.05 }} // Add hover effect using Framer Motion
+              onClick={handleNavigateParks}
             />
             <CardContent sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Button onClick={handleNavigateParks} variant="contained" sx={{ color: 'black', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Parks</Button>
+              <Button onClick={handleNavigateParks} variant="contained" sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>See Parks</Button>
             </CardContent>
           </Card>
         </MotionGrid>

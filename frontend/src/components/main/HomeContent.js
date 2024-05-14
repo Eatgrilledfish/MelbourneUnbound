@@ -54,6 +54,24 @@ export default function Home() {
     }
   };
 
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8, rotate: -15 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      rotate: 0,
+      transition: {
+        duration: 1.5,
+        ease: 'easeInOut'
+      }
+    }
+  };
+
+  const [imageRef, imageInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.3
+  });
+
   // 假设这些是您的数据
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up('lg'));
@@ -581,11 +599,11 @@ export default function Home() {
             // If you want a specific font, add it here and ensure it's loaded in your project
             // fontFamily: 'Your Font Family',
             '& span': {
-              color: "orange", // Use the secondary color from the theme or provide a custom one
+              color: "white", // Use the secondary color from the theme or provide a custom one
             }
           }}
         >
-          WE <span>FEEL</span> YOU
+          <span>WE FEEL YOU</span>
         </Typography>
       </Box>
 
@@ -606,7 +624,14 @@ export default function Home() {
           }
         }}
       >
-        <img src="we feel you group.png" alt="Full Width Image" />
+        <motion.img
+          src="we feel you group.png"
+          alt="Full Width Image"
+          ref={imageRef}
+          variants={imageVariants}
+          initial="hidden"
+          animate={imageInView ? "visible" : "hidden"}
+        />
       </Box>
 
 

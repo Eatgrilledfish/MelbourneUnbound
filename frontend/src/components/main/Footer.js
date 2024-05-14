@@ -49,8 +49,9 @@ function Footer() {
 
         <Grid item xs={4} md={4}>
           <Typography variant="h4" gutterBottom>
-            Let's keep in touch.
+            Get In Touch
           </Typography>
+          <Box display="flex" alignItems="center">
           <TextField
             variant="outlined"
             placeholder="Email address"
@@ -65,10 +66,10 @@ function Footer() {
             }}
           />
           <Box mt={3}>
-            <IconButton><FacebookIcon /></IconButton>
-            <IconButton><InstagramIcon /></IconButton>
-            <IconButton><TwitterIcon /></IconButton>
-            <IconButton><PinterestIcon /></IconButton>
+          <IconButton component="a" style={{marginBottom:20}}href="https://www.instagram.com/melbourneunbound?igsh=YmprOHkwZDVsdTA5" target="_blank" rel="noopener noreferrer">
+          <InstagramIcon />
+            </IconButton>
+            </Box>
           </Box>
         </Grid>
       </Grid>

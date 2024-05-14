@@ -119,9 +119,7 @@ export default function MainContent() {
           maxWidth: '100%', // 确保图片不超过容器宽度
           height: '300vh'
         }} />
-              <Typography variant="h5" sx={{ fontWeight:'bold',color: 'black', textAlign: 'left', position: 'relative' ,mr:80,mb:5,mt:10}}>
-              Discover the finest recreational destinations meticulously curated from data, focusing on venues with the highest accessibility ratings.
-                  </Typography>
+
         <Grid item xs={8} md={8} sx={{ 
               display: 'flex',       // Enable flexbox
               flexDirection: 'column', // Stack children vertically
