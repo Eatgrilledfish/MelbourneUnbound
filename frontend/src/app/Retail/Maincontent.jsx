@@ -205,10 +205,10 @@ export default function MainContent() {
       {/* search */}
       <Box sx={{ bgcolor: 'grey.200', width: '100vw', m: 0, p: 0 ,
                 mt: {
-                  xs: 80,   // 在小屏幕上 marginTop 为 20px
-                  md: 80,   // 在中等屏幕上 marginTop 为 50px
-                  lg: 80,  // 在大屏幕上 marginTop 为 100px
-                  xl: 45,  // 在超大屏幕上 marginTop 为 150px
+                  xs: 115,   // 在小屏幕上 marginTop 为 20px
+                  md: 100,   // 在中等屏幕上 marginTop 为 50px
+                  lg: 100,  // 在大屏幕上 marginTop 为 100px
+                  xl: 65,  // 在超大屏幕上 marginTop 为 150px
                   xxl: 0,  // 在2K屏幕上 marginTop 为 200px
                 }
       }}>
