@@ -1,12 +1,11 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
   "/Retail/page": "app/Retail/page.js",
-  "/Parks/page": "app/Parks/page.js",
-  "/page": "app/page.js",
-  "/Travel/page": "app/Travel/page.js",
-  "/tablue/page": "app/tablue/page.js",
   "/Recreation/page": "app/Recreation/page.js",
-  "/Eaterydrink/page": "app/Eaterydrink/page.js",
+  "/Parks/page": "app/Parks/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/Theatres/page": "app/Theatres/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js"
+  "/Eaterydrink/page": "app/Eaterydrink/page.js",
+  "/Travel/page": "app/Travel/page.js",
+  "/page": "app/page.js"
 }
