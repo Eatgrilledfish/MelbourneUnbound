@@ -132,11 +132,11 @@ export default function MainContent() {
                 
                 }}> 
                   <Typography variant="h2" sx={{ fontWeight: 'bold', color: 'black', textAlign: 'left', position: 'relative', mb: 3, mt: 10,ml:10 }}>
-                  The Best  Among  The Best
+                  Top 10 Shops
                 </Typography>
                
                 <Typography variant="h5" sx={{  color: 'gray', textAlign: 'left', position: 'relative', mr: 10, mb: 2, ml:10}}>
-                  Top 10 Eateries
+                 The Best  Among  The Best
                 </Typography>
                 <Typography  sx={{fontSize:'17px', color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 2,ml:10 }}>
                   Here are the top 10 accessible spots in Melbourne, selected for their excellent accessibility features and positive feedback from wheelchair users.
