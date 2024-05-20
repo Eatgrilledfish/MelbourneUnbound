@@ -114,7 +114,7 @@ export default function MainContent() {
         <Box component="img" src={`${A_IMAGE_URL}`} sx={{
           position: 'absolute',
           left: 130,
-          top: '45%', 
+          top: '35%', 
           transform: 'translateY(-50%)', // 垂直居中
           maxWidth: '100%', // 确保图片不超过容器宽度
           height: '300vh'
@@ -132,22 +132,31 @@ export default function MainContent() {
             <Grid item xs={8} md={12} sx={{ 
                 display: 'flex',       // Enable flexbox
                 flexDirection: 'column', // Stack children vertically
-                alignItems: 'flex-end',
+                alignItems: 'flex',
                 
                 }}> 
 
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5,mt:10}}>
-                    The Best
-                  </Typography>
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5}}>
-                    among
-                  </Typography>
-                  <Typography variant="h2" sx={{ fontWeight:'bold',color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:5}}>
-                    The Best
-                  </Typography>
-                  <Typography variant="h5" sx={{ color: 'black', textAlign: 'right', position: 'relative' ,mr:18,mb:8,}}>
-                    Top 10 Venues
-                  </Typography>
+<Typography variant="h2" sx={{ fontWeight: 'bold', color: 'black', textAlign: 'left', position: 'relative', mb: 3, mt: 10,ml:10 }}>
+                  The Best  Among  The Best
+                </Typography>
+               
+                <Typography variant="h5" sx={{  color: 'gray', textAlign: 'left', position: 'relative', mr: 10, mb: 2, ml:10}}>
+                  Top 10 Eateries
+                </Typography>
+                <Typography  sx={{fontSize:'17px', color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 2,ml:10 }}>
+                   A website that I made
+                </Typography>
+                <Typography  sx={{ fontSize:'17px',color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 2,ml:10 }}>
+                  It caters to accessibility issues people of Melbourne with wheelchair disabilities face.
+
+                </Typography>
+                <Typography  sx={{ fontSize:'17px',color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 2,ml:10 }}>
+                  We are providing them with top 10 recreational spots in 4 categories that are accessible, domains of spots are eateries, retails stores, theatres and parks. 
+
+                </Typography>
+                <Typography  sx={{ fontSize:'17px',color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 8,ml:10 }}>
+                  In second feature we are providing them with an accessible navigation system which has pathways, trams, train info for Melbourne CBD. We are also providing with a way to download these routes.
+                </Typography>
 
             </Grid>
           </Grid>
