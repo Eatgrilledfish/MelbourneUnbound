@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Map from './Map';
-import { Dialog, DialogContent, Box,CircularProgress, Button, IconButton,Typography } from '@mui/material';
+import { Dialog, DialogContent, Box,CircularProgress, Button, IconButton,Typography,Grid } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
@@ -209,10 +209,12 @@ const Home = () => {
   //   height: '600px', // 调整尺寸
   // };
   const [imageStyle, setImageStyle] = useState({
-    left: '0',
+    left: '50%',
+    transform: 'translateX(-50%)',
     marginTop: '100px',
-    width: '70%',
-    height: '600px',
+    width: '50%',
+    height: '400px',
+    position: 'relative',
   });
 
   useEffect(() => {
@@ -226,8 +228,8 @@ const Home = () => {
       } else {
         setImageStyle(prevStyle => ({
           ...prevStyle,
-          width: '70%', // 大屏幕恢复默认宽度
-          height:'600px'
+          width: '50%', // 大屏幕恢复默认宽度
+          height:'400px'
         }));
       }
     }
@@ -389,22 +391,22 @@ const Home = () => {
           </Dialog>
         )}
       </AnimatePresence>
-    <Box style={{ display: 'flex', flexDirection: 'column', height: '100vh' ,justifyContent: 'space-between'}}>
+    <Box style={{ display: 'flex', flexDirection: 'column', height: '100vh' ,justifyContent: 'space-between',}}>
       <Box mb={20}><SearchBar /></Box>
       <Box>
         <Box
-        sx={{
-          textAlign: 'left',
-          
-          marginLeft: {
-            xs: '20px',   
-            sm: '50px',   
-            md: '100px',  
-            lg: '200px',  
-            xl: '200px',  
+          sx={{
+            textAlign: 'left',
             
-          }
-        }}>
+            marginLeft: {
+              xs: '20px',   
+              sm: '50px',   
+              md: '100px',  
+              lg: '200px',  
+              xl: '200px',  
+              
+            }
+          }}>
           <h1 style={{ fontSize: '40px',alignItems: 'center' }}>Accessible Transport</h1>
           <p style={{ fontSize: '14px', color: 'gray', marginTop: '-20px', marginBottom: '50px' ,alignItems: 'center'}}>
             Know your options and plan ahead
@@ -487,8 +489,11 @@ const Home = () => {
             </div>
           </div>
         </div>        
-      
-        <h1 style={{ fontSize: '40px' ,marginTop:'100px',textAlign: 'center'}}>Explore Melbourne CBD</h1>
+      <div style={{backgroundColor: '#eeeeee',marginBottom:'100px'}}>
+        <h1 style={{ fontSize: '40px' ,marginTop:'100px',marginBottom:'100px',marginLeft:'200px',textAlign: 'left',opacity: 1,background: 'linear-gradient(to bottom, black, #CCCCCC)', 
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',backgroundClip: 'text',
+                  color: 'transparent'}}>READY. SET. MAP</h1>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '10px' }}>
           <Autocomplete
             disablePortal
@@ -531,44 +536,66 @@ const Home = () => {
           />)}
           {currentMap === 'Osmmap' ? (<RoundButton onClick={handleSearch}>Go</RoundButton>):(<RoundButton onClick={handleSearch2}>Go</RoundButton>)}
           <Button variant="contained" onClick={toggleMap} disabled={isLoading}  size="small"      style={{ 
-        padding: '5px 10px', 
-        fontSize: '0.875rem', 
-        minWidth: 'auto',color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }
-      }}>
+            padding: '5px 10px', 
+            fontSize: '0.875rem', 
+            minWidth: 'auto',color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }
+          }}>
           Switch Map
           {isLoading && <CircularProgress size={16} style={{ marginLeft: 10, color: 'white' }} />}
-        </Button>
+          </Button>
         </div>
-      </Box>
-      <div style={{ width: '100%' }}>
-        <div style={{ position: 'relative', width: '100%', height: '500px' }}>
-          {isLoading ? (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
-              <CircularProgress />
-            </div>
-          ) :(
-          currentMap === 'Osmmap' ? (
-          <Osmmap
-            style={{ width: '100%', height: '100%' }}
+      
+        <div style={{ width: '100%' }}>
+          <div style={{ position: 'relative', width: '100%', height: '500px' }}>
+            {isLoading ? (
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+                <CircularProgress />
+              </div>
+            ) :(
+            currentMap === 'Osmmap' ? (
+            <Osmmap
+              style={{ width: '100%', height: '100%' }}
 
-            origin={origin}
-            destination={destination}
-            searchTrigger={searchCount}
-          />
-        ) : (
-          <Map
-            style={{ width: '100%', height: '100%' }}
-            originInput={origin}
-            searchTrigger={searchCount}
-          />
-        )
-          )}
-        
+              origin={origin}
+              destination={destination}
+              searchTrigger={searchCount}
+            />
+          ) : (
+            <Map
+              style={{ width: '100%', height: '100%' }}
+              originInput={origin}
+              searchTrigger={searchCount}
+            />
+          )
+            )}
+          
+          </div>
         </div>
-      </div>
+        </div> 
+       </Box>         
+        <Box sx={{ padding: '100px' }}>
+          <Grid container spacing={2} alignItems="center">
+            <Grid item xs={6}>
+              <Typography variant="h1" sx={{ fontSize: '60px', fontWeight:'700',marginRight:'100px',textAlign: 'right',opacity: 1,background: 'linear-gradient(to bottom, black, #CCCCCC)', 
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',backgroundClip: 'text',
+                  color: 'transparent' }}>
+                Take your route with you
+              </Typography>
+            </Grid>
+            <Grid item xs={6} container direction="column" alignItems="flex-start">
+              <Typography variant="body1" sx={{ fontSize: '16px', textAlign: 'left', marginBottom: '10px' }}>
+                Never fear losing your way. Download the accessible stop information and skim through at your convenience.
+              </Typography>
+              <Button variant="contained" sx={{ backgroundColor: 'orange' }}>
+                Hear Voice
+              </Button>
+            </Grid>
+          </Grid>
+        </Box>
 
       {/* <TableauViz /> */}
-      <div style={{ textAlign: 'center', marginTop: '150px' }}>
+      <div style={{ textAlign: 'center', marginTop: '150px' ,backgroundColor: '#eeeeee'}}>
           <h1 style={{ fontSize: '40px' }}>ACCESS PUBLIC WASHROOMS</h1>
           <p style={{ fontSize: '20px', marginTop: '50px' }}>
             We filter through dozens of public washrooms in CBD to bring you the closest accessible ones
@@ -588,7 +615,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%',backgroundColor: '#eeeeee' }}>
         <iframe 
           width="1100px" 
           height="600px" 
@@ -600,7 +627,7 @@ const Home = () => {
         </iframe>
       </div>
 
-      <div style={{ width: '100%', height: '500px', position: 'relative', marginTop: '100px' }}>
+      <div style={{ width: '100%', height: '500px', position: 'relative' }}>
         <img src="travelend.jpg" alt="Travel End" style={{ width: '100%', height: '500px', objectFit: 'cover' }} />
         <div style={textStyle}>
           <h1 style={{ marginTop: '50px', fontSize: '50px' }}>Travel Ready</h1>

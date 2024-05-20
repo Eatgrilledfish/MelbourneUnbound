@@ -17,24 +17,6 @@
       "static/css/css-src_app_global_css-node_modules_next_font_google_target_css.css",
       "static/chunks/app/Recreation/page.js"
     ],
-    "/Retail/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_app_global_css-node_modules_next_font_google_target_css.css",
-      "static/chunks/app/Retail/page.js"
-    ],
-    "/Parks/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_app_global_css-node_modules_next_font_google_target_css.css",
-      "static/chunks/app/Parks/page.js"
-    ],
-    "/Theatres/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/css-src_app_global_css-node_modules_next_font_google_target_css.css",
-      "static/chunks/app/Theatres/page.js"
-    ],
     "/Eaterydrink/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
