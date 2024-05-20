@@ -533,7 +533,7 @@ const Home = () => {
           <Button variant="contained" onClick={toggleMap} disabled={isLoading}  size="small"      style={{ 
         padding: '5px 10px', 
         fontSize: '0.875rem', 
-        minWidth: 'auto' 
+        minWidth: 'auto',color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }
       }}>
           Switch Map
           {isLoading && <CircularProgress size={16} style={{ marginLeft: 10, color: 'white' }} />}

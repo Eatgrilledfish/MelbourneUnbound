@@ -187,7 +187,7 @@ export default function MainContent() {
                       </Typography>
 
 
-                  <Button sx={{ mt: 2 ,backgroundColor: 'orange', color: 'black',mb:2}} variant="contained" color="primary" href={venue.website} target="_blank" rel="noopener noreferrer">
+                  <Button sx={{ mt: 2 ,color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' },mb:2}} variant="contained" color="primary" href={venue.website} target="_blank" rel="noopener noreferrer">
                     Visit Site
                   </Button>
                   <div>
@@ -237,7 +237,7 @@ export default function MainContent() {
             <Button sx={{ color: 'orange', m: 1 }} onClick={() => setSearchMode(searchMode === 'name' ? 'address' : 'name')}>
               Switch to {searchMode === 'name' ? 'Address' : 'Name'}
             </Button>
-            <Button sx={{ backgroundColor: 'orange', color: 'black', m: 1 }}
+            <Button sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }, m: 1 }}
               onClick={handleSearchSubmit}
               variant="contained"
               color="primary"
@@ -287,7 +287,7 @@ export default function MainContent() {
                         <StarIcon sx={{ color: "rgb(245, 197, 24)" }} />
                         <span style={{ color: 'rgba(0, 0, 0, 0.65)' }}>{searchresult.final_score.toFixed(2)}</span>/5  Accessible Rating
                       </Typography>
-                      <Button sx={{ mt: 2, backgroundColor: 'orange', color: 'black'}} variant="contained" color="primary" href={searchresult.website} target="_blank" rel="noopener noreferrer">
+                      <Button sx={{ mt: 2, color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }}} variant="contained" color="primary" href={searchresult.website} target="_blank" rel="noopener noreferrer">
                         Visit Site
                       </Button>
                       <div>
@@ -334,7 +334,7 @@ export default function MainContent() {
             <Typography variant="body1" sx={{ marginBottom: 3 }}>
               Find your nearest accessible public transport stops here
             </Typography>
-            <Button variant="contained" sx={{ backgroundColor: 'orange', color: 'black' }} onClick={handleNavigation('Travel')}>
+            <Button variant="contained" sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }} onClick={handleNavigation('Travel')}>
               Navigate
             </Button>
           </Grid>

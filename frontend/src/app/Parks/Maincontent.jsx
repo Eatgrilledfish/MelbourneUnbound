@@ -162,7 +162,7 @@ export default function MainContent() {
                         <span style={{ color: 'rgba(0, 0, 0, 0.65)' }}>{parks.final_score.toFixed(2)}</span>/5  Accessible Rating
                       </Typography>
 
-                      <Button sx={{ mt: 2, backgroundColor: 'orange', color: 'black', mb: 2 }} variant="contained" color="primary" href={parks.website} target="_blank" rel="noopener noreferrer">
+                      <Button sx={{ mt: 2, color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }, mb: 2 }} variant="contained" color="primary" href={parks.website} target="_blank" rel="noopener noreferrer">
                         Visit Site
                       </Button>
                       <div>
@@ -192,7 +192,7 @@ export default function MainContent() {
             <Typography variant="body1" sx={{ marginBottom: 3 }}>
               Find your nearest accessible public transport stops here
             </Typography>
-            <Button variant="contained" sx={{ backgroundColor: 'orange', color: 'black' }} onClick={handleNavigation('Travel')}>
+            <Button variant="contained" sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }} onClick={handleNavigation('Travel')}>
               Navigate
             </Button>
           </Grid>

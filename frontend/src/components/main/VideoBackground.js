@@ -69,7 +69,7 @@ export default function VideoBackground() {
           <Typography variant="subtitle1" my={2}sx={{fontSize:'20px',mr:"100px",fontWeight:'bold'}}>
             Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
-          <Button onClick={handleNavigation('/Recreation')} variant="contained" sx={{ bgcolor: 'orange', color: 'black' }}>
+          <Button onClick={handleNavigation('/Recreation')} variant="contained" sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }}>
             Get Started
           </Button>
         </Box>
@@ -96,7 +96,7 @@ export default function VideoBackground() {
           <Typography variant="subtitle1" my={2} sx={{ fontSize: '1rem'}}>
             Explore Melbourne's inclusive recreational hubs, complete with travel routes tailored to your accessibility requirements.
           </Typography>
-          <Button variant="contained" sx={{ bgcolor: 'orange', color: 'black' }} >
+          <Button variant="contained" sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' } }} >
             Get Started
           </Button>
         </Box>

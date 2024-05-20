@@ -38,7 +38,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
       transition: {
         type: "tween",
         ease:"easeOut",
-        duration: 3,
+        duration: 1.5,
       }
     }
   };
@@ -53,7 +53,7 @@ const SecondComponent = React.forwardRef((props, ref) => {
       transition: {
         type: "tween",
         ease:"easeOut",
-        duration: 3,
+        duration: 1.5,
       }
     }
   };

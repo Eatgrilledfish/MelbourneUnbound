@@ -137,7 +137,7 @@ export default function Home() {
                     <Button
                       variant="contained"
                       color="primary"
-                      sx={{ backgroundColor: 'orange', color: 'black', width: '50%' }}
+                      sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }, width: '50%' }}
                       onClick={() => router.push(feature.path)}
                     >
                       {feature.buttonText}
@@ -170,7 +170,7 @@ export default function Home() {
                     <Button
                       variant="contained"
                       color="primary"
-                      sx={{ backgroundColor: 'orange', color: 'black', width: '50%' }}
+                      sx={{ color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }, width: '50%' }}
                       onClick={() => router.push(feature.path)}
                     >
                       {feature.buttonText}
