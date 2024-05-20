@@ -30,7 +30,7 @@ const DownloadButton = React.memo(({ routeData }) => {
   };
 
   return (
-    <Button variant="contained" color="primary" onClick={handleDownload}>
+    <Button variant="contained" color="primary" onClick={handleDownload} sx={{color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }}}>
       Download Route
     </Button>
   );
