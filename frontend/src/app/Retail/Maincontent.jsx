@@ -139,19 +139,15 @@ export default function MainContent() {
                   Top 10 Eateries
                 </Typography>
                 <Typography  sx={{fontSize:'17px', color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 2,ml:10 }}>
-                   A website that I made
+                  Here are the top 10 accessible spots in Melbourne, selected for their excellent accessibility features and positive feedback from wheelchair users.
                 </Typography>
                 <Typography  sx={{ fontSize:'17px',color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 2,ml:10 }}>
-                  It caters to accessibility issues people of Melbourne with wheelchair disabilities face.
-
-                </Typography>
-                <Typography  sx={{ fontSize:'17px',color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 2,ml:10 }}>
-                  We are providing them with top 10 recreational spots in 4 categories that are accessible, domains of spots are eateries, retails stores, theatres and parks. 
-
+                  Whether you're dining out, catching a show, enjoying nature, or shopping, these locations offer a comfortable and enjoyable experience.
                 </Typography>
                 <Typography  sx={{ fontSize:'17px',color: 'black', textAlign: 'left', position: 'relative', mr: 10, mb: 8,ml:10 }}>
-                  In second feature we are providing them with an accessible navigation system which has pathways, trams, train info for Melbourne CBD. We are also providing with a way to download these routes.
+                  You can also see what other wheelchair users are saying about these places and leave your own reviews if you choose.
                 </Typography>
+
 
             </Grid>
           </Grid>

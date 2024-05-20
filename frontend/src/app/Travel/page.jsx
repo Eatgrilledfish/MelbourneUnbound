@@ -490,7 +490,7 @@ const Home = () => {
           </div>
         </div>        
       <div style={{backgroundColor: '#eeeeee',marginBottom:'100px'}}>
-        <h1 style={{ fontSize: '40px' ,marginTop:'100px',marginBottom:'100px',marginLeft:'200px',textAlign: 'left',opacity: 1,background: 'linear-gradient(to bottom, black, #CCCCCC)', 
+        <h1 style={{ fontSize: '40px' ,marginTop:'100px',marginBottom:'50px',marginLeft:'200px',textAlign: 'left',opacity: 1,background: 'linear-gradient(to bottom, black, #CCCCCC)', 
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',backgroundClip: 'text',
                   color: 'transparent'}}>READY. SET. MAP</h1>
@@ -540,7 +540,7 @@ const Home = () => {
             fontSize: '0.875rem', 
             minWidth: 'auto',color: '#F2F2F2', backgroundColor: 'orange', '&:hover': { backgroundColor: '#e65100' }
           }}>
-          Switch Map
+           {currentMap === 'Osmmap' ? 'Switch to TRAM' : 'Switch Map'}
           {isLoading && <CircularProgress size={16} style={{ marginLeft: 10, color: 'white' }} />}
           </Button>
         </div>
@@ -573,26 +573,7 @@ const Home = () => {
         </div>
         </div> 
        </Box>         
-        <Box sx={{ padding: '100px' }}>
-          <Grid container spacing={2} alignItems="center">
-            <Grid item xs={6}>
-              <Typography variant="h1" sx={{ fontSize: '60px', fontWeight:'700',marginRight:'100px',textAlign: 'right',opacity: 1,background: 'linear-gradient(to bottom, black, #CCCCCC)', 
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',backgroundClip: 'text',
-                  color: 'transparent' }}>
-                Take your route with you
-              </Typography>
-            </Grid>
-            <Grid item xs={6} container direction="column" alignItems="flex-start">
-              <Typography variant="body1" sx={{ fontSize: '16px', textAlign: 'left', marginBottom: '10px' }}>
-                Never fear losing your way. Download the accessible stop information and skim through at your convenience.
-              </Typography>
-              <Button variant="contained" sx={{ backgroundColor: 'orange' }}>
-                Hear Voice
-              </Button>
-            </Grid>
-          </Grid>
-        </Box>
+
 
       {/* <TableauViz /> */}
       <div style={{ textAlign: 'center', marginTop: '150px' ,backgroundColor: '#eeeeee'}}>

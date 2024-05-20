@@ -450,9 +450,6 @@ const Map = ({ originInput,searchTrigger }) => {
             }}>
               {/* 图表容器 */}
             </canvas>
-            <Box position="absolute" left={10} bottom={10} zIndex="tooltip">
-                <DownloadButton routeData={routeData} />
-              </Box>
           </div>
         </Grid>
         {routeData && (
@@ -466,6 +463,39 @@ const Map = ({ originInput,searchTrigger }) => {
     <Typography>More over! Click here to get the AI Generated Voice Guide!</Typography>
     <AudioPlayer routeData={routeData} />
 </div>
+<Box sx={{ padding: '10px', display: 'flex', justifyContent: 'center' }}>
+  <Grid container spacing={2} alignItems="center" sx={{ maxWidth: '80%', textAlign: 'center' }}>
+    <Grid item xs={12} md={6}>
+      <Typography variant="h1" sx={{ 
+        fontSize: { xs: '30px', md: '60px' }, 
+        fontWeight: '700', 
+        marginRight: { xs: '0', md: '50px' }, 
+        textAlign: { xs: 'center', md: 'right' }, 
+        opacity: 1, 
+        background: 'linear-gradient(to bottom, black, #CCCCCC)', 
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent', 
+        backgroundClip: 'text', 
+        color: 'transparent' 
+      }}>
+        Take your route with you
+      </Typography>
+    </Grid>
+    <Grid item xs={12} md={6} container direction="column" alignItems={{ xs: 'center', md: 'flex-start' }}>
+      <Typography variant="body1" sx={{ 
+        fontSize: { xs: '14px', md: '16px' }, 
+        textAlign: { xs: 'center', md: 'left' }, 
+        marginBottom: '10px' 
+      }}>
+        Never fear losing your way. Download the accessible stop information and skim through at your convenience.
+      </Typography>
+      <Box sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'flex-start' } }}>
+        <DownloadButton routeData={routeData} />
+      </Box>
+    </Grid>
+  </Grid>
+</Box>
+
     </>
   );
 };
