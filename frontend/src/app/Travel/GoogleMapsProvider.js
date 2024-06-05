@@ -12,7 +12,7 @@ export const GoogleMapsProvider = ({ children }) => {
       setApiLoaded(true); // API is already loaded
     } else if (!document.querySelector('script[src*="maps.googleapis"]')) {
       const script = document.createElement('script');
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDjQXyYlP5QOFLFJ58xocind5smlnaC3mA&libraries=places,geometry`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=api&libraries=places,geometry`;
       script.async = true;
       script.defer = true;
       document.head.appendChild(script);
