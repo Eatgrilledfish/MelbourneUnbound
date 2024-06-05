@@ -77,7 +77,7 @@ const Map = ({ origin, destination, searchTrigger }) => {
         setApiLoaded(true);
       } else if (!document.querySelector('script[src*="maps.googleapis"]')) {
         const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyDjQXyYlP5QOFLFJ58xocind5smlnaC3mA&libraries=places,geometry`;
+        script.src = `https://maps.googleapis.com/maps/api/js?key=dd&libraries=places,geometry`;
         script.async = true;
         script.defer = true;
         document.head.appendChild(script);
@@ -137,7 +137,7 @@ const Map = ({ origin, destination, searchTrigger }) => {
         headers: {
           'Accept': 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8',
           'Content-Type': 'application/json',
-          'Authorization': '5b3ce3597851110001cf62486ab7a2ec0ad349c69dc9111dc0cb6e29'
+          'Authorization': 'dd'
         },
         data: {
           coordinates: [[originCoords.lng, originCoords.lat], [destinationCoords.lng, destinationCoords.lat]],
