@@ -58,7 +58,7 @@ func RequestChatGPT(c *gin.Context) {
 		return
 	}
 
-	responseBody, err := sendPostRequest("https://openai.api2d.net/v1/chat/completions", "fk225497-nITxrRWU8iOBh9yN0eAZt1fIl9sKqPlE", body)
+	responseBody, err := sendPostRequest("https://openai.api2d.net/v1/chat/completions", "xxx", body)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to request ChatGPT"})
 		return
@@ -70,7 +70,7 @@ func RequestChatGPT(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to parse ChatGPT response"})
 		return
 	}
-	audioContent, err := textToSpeech(chatGPTResponse.Choices[0].Message.Content, "cd1b2377c0cb43d9b1e44c0a41bf377b", "australiaeast")
+	audioContent, err := textToSpeech(chatGPTResponse.Choices[0].Message.Content, "xxx", "australiaeast")
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to convert text to speech", "details": err.Error()})
 		return
