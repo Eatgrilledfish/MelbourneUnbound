@@ -17,7 +17,7 @@ const Map = ({ geoJsonUrl, origin, destination,searchTrigger }) => {
       }
       if (!document.querySelector('script[src*="maps.googleapis"]')) {
         const script = document.createElement('script');
-        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyA4bcHQArQWH2Qxb47goCAhbstZX0WkUZk&libraries=places,geometry`;
+        script.src = `https://maps.googleapis.com/maps/api/js?key=dd&libraries=places,geometry`;
         script.async = true;
         script.defer = true;
         script.onload = () => setApiLoaded(true);
