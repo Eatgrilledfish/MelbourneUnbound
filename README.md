@@ -1,6 +1,6 @@
 # MelbourneUnbound
 
-Welcome vist our IE project
+Welcome visit our IE project
 
 https://melbourneunbound.com/
 
